@@ -1,0 +1,920 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,700;0,800;1,700;1,800&family=Forum&family=Lemonada:wght@600;700&display=swap');
+
+/* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
+
+/* some basic css resetting */
+
+body { margin: 0; box-sizing: border-box; }
+
+a { text-decoration: none; color:black; }
+
+/*============================Fonts==========================*/
+
+/* ========== Text Stylings ==========*/
+
+span {
+            font-family: "Exo2Black";
+            color: rgb(59, 48, 16);
+            font-family: 'Exo 2', sans-serif;
+        }
+
+h1, h2, h3, h4, h5, h6, cite {
+            font-family: "Lemonada";
+            text-align: center;    
+        }
+
+h2 {
+            font-size: 4rem;
+        }
+
+h2 span, h3 span, h4 span, h5 span, h3, h4, h5 {
+            font-size: 3.8rem;
+        }
+
+p, a {
+            font-family: 'Forum', cursive;
+        }
+
+/* ========== h1 = Header ============== */
+
+h1 {
+            font-size: 5rem;
+            text-shadow:5px 5px white;           
+        }
+
+h1 span{
+            font-size: 4.8rem;
+        }
+
+/* ============ h2 = Segment Headings ========== */
+
+h2 {
+            text-shadow:2px 2px white;
+        }
+
+/* ============h4 = Filter buttons  ========== */
+
+a {
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+a:hover{
+            color: #688FB3;
+        }
+
+/* ============ Paragraph ============ */
+
+p  {
+            margin-bottom: 2px;  
+        }
+
+h6 {
+            font-size: 1.4rem;
+        }
+
+/* ==========HEADER============= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+header {
+    margin: 0;
+    width: 100vw;
+    height: 20vh;
+    position: relative;
+    background-color: rgb(116, 131, 145);
+}
+
+.headline{
+    position: absolute;
+    margin: 0;
+}
+
+/* ==========LOGO============= */
+
+/* ==========NAVIGATION============= */
+
+/* Sticky Navigation Bar by Tutorial Republic
+https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-footer-using-css.php*/
+
+label, #burger {
+    display: none; 
+}
+
+label {
+    display: block; 
+    padding: 10px;
+}
+
+nav input:checked ~ a { 
+    display: block;
+}
+
+.topnav  {    
+    position: sticky; 
+    top:0;
+    z-index: 2;
+    width: 100vw;
+    background-color:#fbd88f;
+}
+
+.navcontent {
+    width: 60vw;
+    margin: 0 20vw;
+    padding: 0vw;
+    top: 0;
+}
+
+nav {
+    background-color: #fbd88f;
+}
+
+/*Button for Website Navigation*/
+
+nav a {
+ display: inline-block;
+ text-align: center;
+ padding: 1% 4%;
+ text-decoration: none;   
+}
+
+nav a:hover{
+    background-color: #FDB7B3;
+    color: black;
+}
+
+a:hover {
+    color: #688FB3;
+}
+
+/* ==========MAIN BODY CONTENT============= */
+
+.content {
+    width: 100vw;
+    height:100%;
+    border-top: solid #fcfcfc 1px;
+    background-color: rgb(224, 224, 224);
+  }
+
+* {
+    box-sizing: border-box;
+  }
+
+/* ============= Announcement Space =============== */
+
+/*
+PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+https://codepen.io/rokobuljan/pen/XXzqKQ
+*/
+
+.CSSgal {
+	position: relative;
+	overflow: hidden;
+	height: 100%; /* Or set a fixed height */
+}
+
+/* SLIDER */
+
+.CSSgal .slider {
+	
+	white-space: nowrap;
+	font-size: 0;
+	transition: 0.8s;
+}
+
+.info {
+    height: 100%;
+    width: 60vw;
+    padding: 5%;
+}
+
+/* SLIDES */
+
+.CSSgal .slider > * {
+	font-size: 1rem;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+	width: 100%;
+	background: none 50% no-repeat;
+	background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+	position: absolute;
+	z-index: 2;
+    top: 40%;
+    bottom: 40%;
+	width: 100%;
+	height: 0;
+}
+
+.CSSgal .prevNext > div+div {
+	visibility: hidden; /* Hide all but first P/N container */
+}
+
+.CSSgal .prevNext a {
+	background: #fff;
+	position: absolute;
+	width:       60px;
+	height:      60px;
+	line-height: 60px; /* If you want to place numbers */
+	text-align: center;
+	opacity: 0.7;
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+	-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+	left: 0;
+}
+
+.CSSgal .prevNext a:hover {
+	opacity: 1;
+}
+
+.CSSgal .prevNext a+a {
+	left: auto;
+	right: 0;
+}
+
+/* NAVIGATION */
+
+.CSSgal .bullets {
+	position: relative;
+	z-index: 2;
+	bottom: 0;
+	padding: 10px 0;
+	width: 100%;
+    text-align: center;
+    transform: translateY(-110%);
+}
+
+.CSSgal .bullets > a {
+	display: inline-block;
+	width:       15px;
+	height:      15px;
+	line-height: 15px;
+	text-decoration: none;
+	text-align: center;
+	background: rgba(255, 255, 255, 1);
+	-webkit-transition: 0.3s;
+        transition: 0.3s;
+    margin: .5vw;
+    
+}
+
+.CSSgal .bullets > a+a {
+	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+
+.CSSgal .bullets > a:hover {
+	background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* NAVIGATION BUTTONS */
+
+/* ALL: */
+
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+
+/* ACTIVE */
+
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+
+#s5:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+
+#s6:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+
+#s7:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+
+#s8:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+
+#s9:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+
+#s10:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+
+#s11:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+
+#s12:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+
+#s13:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+
+#s14:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+
+#s15:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+
+#s16:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+
+/* ALL: */
+
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+
+/* ACTIVE: */
+
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+
+#s5:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+
+#s6:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+
+#s7:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+
+#s8:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+
+#s9:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+
+#s10:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+
+#s11:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+
+#s12:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+
+#s13:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+
+#s14:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+
+#s15:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+
+#s16:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+
+#s5:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+
+#s6:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+
+#s7:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+
+#s8:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+
+#s9:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+
+#s10:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+
+#s11:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+
+#s12:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+
+#s13:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+
+#s14:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+
+#s15:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+
+#s16:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+
+/* More slides? Add here more rules */
+
+/* YOU'RE THE DESIGNER! 
+   ____________________
+   All above was mainly to get it working :)
+   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
+
+.CSSgal{
+	color: #fff;	
+	text-align: center;
+}
+
+.CSSgal .slider h3 {
+    top: 40%;
+    left: 50%;
+	font-weight: 200;
+	letter-spacing: -0.06em;
+	word-spacing: 0.2em;
+	font-size: 3vw;
+}
+
+.CSSgal a {
+	border-radius: 50%;
+	margin: 0 3px;
+	color: rgba(0,0,0,0.8);
+	text-decoration: none;
+}
+
+/* ==========End Announcement Space Styling=========*/
+
+/*============General Styling========*/
+
+.segment {
+    height: 100%;
+    padding-bottom: 1.8%;
+    position: relative;
+}
+
+.segment:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*======Image Styling=========*/
+
+img {
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+figure {
+    margin: -10px;
+    padding: 0px;
+}
+
+.gallery div {display: block;}
+
+.gallery .frame, .gallery .framelscape { 
+    display:inline-block;
+}
+
+/*====Picture description======*/
+
+figcaption {
+    font-family: "Forum";
+    text-align: center;
+    background-color: white;
+    padding: 3px;
+    margin: 2px 0;
+    transform: translateY(-5px);
+    font-size: 1vw;
+}
+
+/*=====Videoclips=========*/
+
+.video {
+    max-width: 100%;
+    height: auto;
+    padding: 5px;
+}
+
+/* ==========SECTION 1 STYLING============= */
+
+label, #burger {
+    display: none; 
+}
+
+article.mainblock {
+    position: relative;
+    top: 10%;
+    display: block;
+    width: 100%;
+}
+
+.writeup {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+article.mainblock:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.paragraph {
+    width: 30vw;
+    height: 100%;
+    
+}
+
+.promopic {
+    padding: 0;
+    margin: 0;
+}
+
+a.filter {
+    font-family: "Lemonada";
+    text-align: center;
+    color: white;
+    font-size: 2vw;
+}
+
+.centered {
+    position: relative;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -350%);
+}
+
+/* ==========SECTION 2 STYLING============= */
+
+div.museum {
+    position: relative;
+    margin: 2% 0%;
+    padding: 0;
+    width: 100%;
+}
+
+/*Gallery Layout by W3 Schools - Mixed Layout
+https://www.w3schools.com/howto/howto_css_mixed_columns.asp
+*/
+
+.frame {
+    float: left;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.frame figure {
+    margin: 5px;
+}
+
+/* ==========SECTION 3 STYLING============= */
+
+/* ==========SECTION 4 STYLING============= */
+
+/*
+Tab Headers Tutorial by W3Schools
+https://www.w3schools.com/howto/howto_js_tab_header.asp
+*/
+
+.tablink {
+    background-color: #9ACEFC;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 2%;
+    font-size: 1vw;
+    font-family: "Forum";
+    font-weight: bolder;
+    width: 20%;
+}
+
+.tablink:hover {
+    background-color: #688FB3;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 2% ;
+    text-align: center;
+    width: 60vw;
+}
+
+#Asia {background-color:white;}
+
+#Africa {background-color:white;}
+
+#Europe {background-color:white;}
+
+#Carribean {background-color:white;}
+
+#Americas {background-color:white;}
+
+/* ==========SECTION 5 STYLING============= */
+
+.filternav{
+    width: 60vw;
+    background-color: #9ACEFC ;
+}
+
+.tabfilter_2 {
+    background-color: #9ACEFC;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 2%;
+    font-size: 1vw;
+    font-family: "Forum";
+    font-weight: bolder;
+    width: 20%;
+}
+
+.tabfilter_2:hover {
+    background-color: #688FB3;
+}
+
+#AllProducts, #CanvasProducts, #Paintingmaterials, #Digital, #Misc {background-color:white;}
+
+/* ==========FOOTER STYLIING============= */
+
+.buttonb2top {
+    background-color: #688FB3;
+
+}
+
+.footer{
+    width: 100vw;
+    background-color: rgb(116, 131, 145);
+    padding: 1%;
+}
+
+/* ==========RESPONSIVE DESIGN============= */
+
+/* ===== 5K RETINA MAC LABS: Media queries for Curtin Uni mac lab testing only ===== */
+
+@media only screen and (max-width: 5120px) {
+
+        
+}
+
+/* ===== SMALL DESKTOP: Media queries for laptop/small desktop ===== */
+
+@media only screen and (max-width: 1980px) { 
+    h1 {
+        text-align:left; 
+        transform:translate(-5%, -90%);
+    }
+    .frame {
+        width: 25%;
+        height: auto;
+    }
+    .promopic {
+        float: left;
+        width: 30vw;
+    }
+    .segment {
+        width: 60vw;
+        margin: 0 20vw;
+    } 
+    .paragraph {
+        width: 20vw;
+        float: right;
+        padding: 1%; 
+        margin: 0 10% 0 0;  
+    }
+    .writeup {
+        position: relative;
+        display: inline-block;
+    }
+
+    .headline {
+        float: right;
+        padding:0 25%;
+        transform: translate(5%, -290%);
+    }
+
+    header {
+        padding: 5%;
+    }
+
+    h4.tagline {
+        font-size: 1vw;
+        color: white;
+    }
+    a.filter {
+        font-size: 1vw;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    h1 {
+        transform:translate(-5%, -40%);
+    }
+    .headline{
+        padding: 0 20%;
+        float: none;
+        transform: translate(-15%, -180%);
+        width: 100%;
+    } 
+}
+
+/* ===== TABLET: Media queries for verticle and horizontal ===== */
+
+@media only screen and (max-width: 1024px) {
+    h1 {
+        text-align:center;
+        transform: translate(-5%, -60%);
+        font-size: 12vh;
+    }
+    h4.tagline {
+        font-size: 1.6vw;
+    }
+
+    .headline{
+        padding: 0 20%;
+        float: none;
+        transform: translate(-5%, -540%);
+    } 
+    .CSSgal .prevNext a {
+        width:       60px;
+        height:      60px;
+        line-height: 60px; /* If you want to place numbers */
+    }
+    .CSSgal .bullets > a {
+        display: inline-block;
+        width:       30px;
+        height:      30px;
+        line-height: 30px;
+    }
+    .navcontent {
+        width: 80vw;
+        margin: 0 10vw;
+    }
+    .frame {
+        width: 50%;
+    }
+
+    .segment {
+        width: 70vw;
+        margin: 0 15vw;
+    } 
+
+
+    .writeup {
+        position: relative;
+        display: inline-block;
+    }
+    .tabcontent {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .paragraph {
+        width: 80vw;  
+        float: none; 
+        padding: 0;
+        text-align: left;
+    }
+
+    .segment {
+        width: 90vw;
+        margin: 0 5vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .headline{
+        float: none;
+        padding: 0;
+        transform: translate(-5%, -340%);
+    } 
+    .frame{
+        width: 50%;
+        
+    }
+
+    .paragraph{
+        margin: 0 1% 0 0;
+    }
+
+
+    .navcontent {
+        width: 90vw;
+        margin: 0 5vw;
+    }
+
+
+    .writeup {
+        position: relative;
+        display: block;
+    }
+
+    label {
+        display: block; 
+        padding: 10px;
+    }
+    nav a {
+        display: none; 
+    }
+    
+    nav input:checked ~ a {
+        display: block;
+    }
+
+    .CSSgal .prevNext a {
+        width:       60px;
+        height:      60px;
+        line-height: 60px; /* If you want to place numbers */
+    }
+    .CSSgal .bullets > a {
+        display: inline-block;
+        width:       25px;
+        height:      25px;
+        line-height: 25px;
+    }
+
+}
+
+/* ===== MOBILE: Media queries for small mobile resolution. ===== */
+
+@media only screen and (max-width: 616px) { 
+    .navcontent {
+        width: 100vw;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 414px) { 
+    h1 {
+        transform: translate(-5%, -50%);
+        font-size: 10vh;
+    }
+
+
+    .headline {
+        width: 100vw;
+        margin: 0;
+        transform: translate(-7%, -260%);
+    }
+    header {
+        padding: 2%;
+    }
+    .promopic {
+        float: none;
+        height: 50vh;
+        width: auto;
+    }
+    .frame{
+        height: 25%;
+        width: auto;
+    }
+    a.filter {
+        font-size: 4vh;
+    }
+    .filternav{
+        width: 90vw;
+    }
+    .tabcontent {
+        width: 100vw;
+    }
+
+    .centered {
+        transform: translate(-50%, -300%);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .headline {
+        transform: translate(-8%, -275%);
+    }
+
+    h1 {
+        text-align: center;
+
+    }
+
+
+    .centered {
+        transform: translate(-50%, -280%);
+    }
+
+    
+}
+
+@media only screen and (max-width: 360px) { 
+    .headline {
+        transform: translate(-2.5%, -340%);
+    }
+    header {
+        padding: 1%;
+    }
+
+    .segment {
+        width: 98vw;
+        margin: 0 1vw;
+    }
+    
+    
+}
+/*# sourceMappingURL=index.971090c7.css.map */

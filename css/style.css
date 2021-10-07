@@ -1,23 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,700;0,800;1,700;1,800&family=Forum&family=Lemonada:wght@600;700&display=swap');
+
 /* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
     /* some basic css resetting */
 body { margin: 0; box-sizing: border-box; }
 a { text-decoration: none; color:black; }
+/*============================Fonts==========================*/
+    /* ========== Text Stylings ==========*/
+        span {
+            font-family: "Exo2Black";
+            color: rgb(59, 48, 16);
+            font-family: 'Exo 2', sans-serif;
+        }
 
-/* ==========FONTS SET-UP======== */
-@font-face {
-    font-family: "Lemonada";
-    src: url(../fonts/Lemonada-Bold.ttf);
-}
+        h1, h2, h3, h4, h5, h6, cite {
+            font-family: "Lemonada";
+            text-align: center;    
+        }
 
-@font-face {
-    font-family: "Exo2Black";
-    src: url(../fonts/Exo2-Black.ttf);
-}
+        h2 {
+            font-size: 4rem;
+        }
 
-@font-face {
-    font-family: "Forum";
-    src: url(../fonts/Forum-Regular.ttf);
-}
+        h2 span, h3 span, h4 span, h5 span, h3, h4, h5 {
+            font-size: 3.8rem;
+        }
+
+        p, a {
+            font-family: 'Forum', cursive;
+        }
+    /* ========== h1 = Header ============== */
+        h1 {
+            font-size: 5rem;
+            text-shadow:5px 5px white;           
+        }
+
+        h1 span{
+            font-size: 4.8rem;
+        }
+
+    /* ============ h2 = Segment Headings ========== */
+        h2 {
+            text-shadow:2px 2px white;
+        }
+
+    /* ============h4 = Filter buttons  ========== */
+        a {
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+        a:hover{
+            color: #688FB3;
+        }
+    
+    /* ============ Paragraph ============ */
+        p  {
+            margin-bottom: 2px;  
+        }
+        h6 {
+            font-size: 1.4rem;
+        }
 
 /* ==========HEADER============= */
 html {
@@ -101,65 +142,7 @@ a:hover {
   * {
     box-sizing: border-box;
   }
-/* ========== Text Stylings ==========*/
-span {
-    font-family: "Exo2Black";
-    color: rgb(59, 48, 16);
-}
-/* ========== h1 = Header ============== */
-h1 {
-    text-shadow:5px 5px white;
-    font-family: "Lemonada";
-    text-align: center;
-    font-size: 6vw;
-}
 
-span.hd1 {
-    font-size: 5.2vw;
-}
-/* ============ h2 = Segment Headings ========== */
-h2 {
-    text-shadow:2px 2px white;
-    font-family: "Lemonada";
-    text-align: center;
-    font-size: 4vw;
-}
-
-span.hd2 {
-    font-size: 3.2vw;
-}
-/* ============h3 = Section headers  ========== */
-h3 {
-    font-family: "Lemonada";
-    text-align: center;
-    font-size: 3.2vw;
-}
-
-/* ============h4 = Filter buttons  ========== */
-h4 {
-    font-family: "Lemonada";
-    text-align: center;
-    font-size: 1.2vw;
-}
-a {
-    font-family: "Forum";
-    text-align: center;
-    font-size: 1vw;
-    font-weight: bolder;
-}
-a:hover{
-    color: #688FB3;
-}
-cite {
-    font-family: "Lemonada";
-    text-align: center;
-}
-/* ============ Paragraph ============ */
-p  {
-    font-family: "Forum"; 
-    padding: 2px;  
-    font-size: 1vw;
-}
 
 /* ============= Announcement Space =============== */
 
@@ -275,18 +258,18 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 #s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
 #s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
 #s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
-#s5:target ~ .bullets >*:nth-child(5) {background: rgba(255, 255, 255,   1);}
-#s6:target ~ .bullets >*:nth-child(6) {background: rgba(255, 255, 255,   1);}
-#s7:target ~ .bullets >*:nth-child(7) {background: rgba(255, 255, 255,   1);}
-#s8:target ~ .bullets >*:nth-child(8) {background: rgba(255, 255, 255,   1);}
-#s9:target ~ .bullets >*:nth-child(9) {background: rgba(255, 255, 255,   1);}
-#s10:target ~ .bullets >*:nth-child(10) {background: rgba(255, 255, 255,   1);}
-#s11:target ~ .bullets >*:nth-child(11) {background: rgba(255, 255, 255,   1);}
-#s12:target ~ .bullets >*:nth-child(12) {background: rgba(255, 255, 255,   1);}
-#s13:target ~ .bullets >*:nth-child(13) {background: rgba(255, 255, 255,   1);}
-#s14:target ~ .bullets >*:nth-child(14) {background: rgba(255, 255, 255,   1);}
-#s15:target ~ .bullets >*:nth-child(15) {background: rgba(255, 255, 255,   1);}
-#s16:target ~ .bullets >*:nth-child(16) {background: rgba(255, 255, 255,   1);}
+#s5:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s6:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s7:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s8:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s9:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s10:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s11:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s12:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s13:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s14:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s15:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s16:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
 /* More slides? Add here more rules */
 
 /* PREV/NEXT CONTAINERS VISIBILITY */
@@ -297,18 +280,18 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 #s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
 #s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
 #s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
-#s5:target ~ .prevNext >*:nth-child(5) {visibility: visible;}
-#s6:target ~ .prevNext >*:nth-child(6) {visibility: visible;}
-#s7:target ~ .prevNext >*:nth-child(7) {visibility: visible;}
-#s8:target ~ .prevNext >*:nth-child(8) {visibility: visible;}
-#s9:target ~ .prevNext >*:nth-child(9) {visibility: visible;}
-#s10:target ~ .prevNext >*:nth-child(10) {visibility: visible;}
-#s11:target ~ .prevNext >*:nth-child(11) {visibility: visible;}
-#s12:target ~ .prevNext >*:nth-child(12) {visibility: visible;}
-#s13:target ~ .prevNext >*:nth-child(13) {visibility: visible;}
-#s14:target ~ .prevNext >*:nth-child(14) {visibility: visible;}
-#s15:target ~ .prevNext >*:nth-child(15) {visibility: visible;}
-#s16:target ~ .prevNext >*:nth-child(16) {visibility: visible;}
+#s5:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s6:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s7:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s8:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s9:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s10:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s11:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s12:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s13:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s14:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s15:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s16:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
 /* More slides? Add here more rules */
 
 /* SLIDER ANIMATION POSITIONS */
@@ -359,7 +342,7 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 /*============General Styling========*/
 .segment {
     height: 100%;
-    padding: 0;
+    padding-bottom: 1.8%;
     position: relative;
 }
 
@@ -452,6 +435,8 @@ a.filter {
     left: 50%;
     transform: translate(-50%, -350%);
 }
+
+
 /* ==========SECTION 2 STYLING============= */
 div.museum {
     position: relative;
@@ -534,11 +519,7 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     background-color: #688FB3;
 }
 
-#AllProducts {background-color:white;}
-#CanvasProducts {background-color:white;}
-#Paintingmaterials {background-color:white;}
-#Digital {background-color:white;}
-#Misc {background-color:white;}
+#AllProducts, #CanvasProducts, #Paintingmaterials, #Digital, #Misc {background-color:white;}
 
 /* ==========FOOTER STYLIING============= */
 .buttonb2top {
@@ -593,7 +574,7 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     .headline {
         float: right;
         padding:0 25%;
-        transform:translate(5%, -400%);
+        transform: translate(5%, -290%);
     }
 
     header {
@@ -734,25 +715,6 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         line-height: 25px;
     }
 
-    a{
-        font-size: 3vh;
-    }
-
-    span.hd1 {
-        font-size: 9vh;
-    }
-
-    span.hd2 {
-        font-size: 5.2vh;
-    }
-
-    h2{
-        font-size: 6vh;
-    }
-
-    h4.tagline {
-        font-size: 2vh;
-    }
 }
 
 /* ===== MOBILE: Media queries for small mobile resolution. ===== */
@@ -769,21 +731,6 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         font-size: 10vh;
     }
 
-    span.hd1 {
-        font-size: 9vh;
-    }
-
-    h2 {
-        font-size: 4vh;
-    }
-
-    span.hd2 {
-        font-size: 3.2vh;
-    }
-
-    h4.tagline {
-        font-size: 2vh;
-    }
 
     .headline {
         width: 100vw;
@@ -822,26 +769,11 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         transform: translate(-8%, -275%);
     }
 
-    h4 {
-        font-size: 2.8vh;
-    }
-
-    h4.tagline {
-        font-size: 1.8vh;
-    }
-
     h1 {
         text-align: center;
-        transform: translate(-5%, -45%);
-        font-size: 10vh;
+
     }
 
-    h3 {
-        font-size: 3.2vh;
-    }
-    a.filter {
-        font-size: 4vh;
-    }
 
     .centered {
         transform: translate(-50%, -280%);
@@ -861,11 +793,6 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     .segment {
         width: 98vw;
         margin: 0 1vw;
-    }
-
-    h1 {
-        transform: translate(-2%, -45%);
-        
     }
     
     

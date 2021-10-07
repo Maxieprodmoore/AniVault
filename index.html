@@ -11,8 +11,14 @@
         <meta name="keywords" content="Anime,Resource,Anime Resource Website, Artist, resources">
 
         <link rel="stylesheet" href="css/style.css">         
-        <link rel="icon" href="place-your-tab-icon-here">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+        <!--<link rel="icon" href="place-your-tab-icon-here">-->
+        <link rel="stylesheet" href="./node_modules/@shoelace-style/shoelace/dist/themes/light.css">
+        <script type="module" src="./node_modules/@shoelace-style/shoelace/dist/shoelace.js"></script>
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+        <script type="module">
+            import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
+            setBasePath('/dist/shoelace');
+        </script>
         <script src="js/jquery.js"></script>    
         <script src="js/tabs.js"></script>   
     </head>
@@ -23,7 +29,7 @@
         
             <header>
                 <div class="segment">
-                    <h1>A<span class="hd1">ni</span>V<span class="hd1">ault</span></h1>
+                    <h1>A<span>ni</span>V<span>ault</span></h1>
                     <div class="headline">
                         <h4 class="tagline">A treasure trove of Anime and Creativity</h4>
                     </div>
@@ -62,12 +68,12 @@
                         <div class="writeup">
                             <img class="promopic" src="images/OnePeace-wallpapers.jpg" alt="AniVerse Welcome image">
                             <div class="paragraph">
-                                <h4>Welcome to AniVault! A treasure trove of Anime and Creativity. <br> 
+                                <h6>Welcome to AniVault! A treasure trove of Anime and Creativity. <br> 
                                     Whether you’re here just to look at the Posters of your favourite anime, illustrations of your favourite characters, 
                                     or you’re an aspiring artist looking for inspiration to create your own, <br>
                                     I hope that you’ll enjoy your visit here. <br>
                                     Thank you for your time!
-                                </h4>
+                                </h6>
                             </div>                            
                         </div>                                                                                                                             
                     </article>

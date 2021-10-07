@@ -2,18 +2,19 @@
   "name": "anivault",
   "version": "1.0.0",
   "description": "A site for Anime fans all over the world!",
-  "source": "index.html",
+  "source": "./index.html",
   "browserslist": [
     "since 2017-06"
   ],
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "devDependencies": {
-    "parcel": "^1.12.4"
+    "start": "parcel serve ./index.html",
+    "build": "parcel build ./index.html"
   },
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.0.0-beta.53"
+    "@shoelace-style/shoelace": "^2.0.0-beta.53",
+    "parcel": "^2.0.0-rc.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0"
   }
 }
