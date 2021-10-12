@@ -12,10 +12,14 @@
 
         <link rel="stylesheet" href="css/style.css">         
         <!--<link rel="icon" href="place-your-tab-icon-here">-->
-        <link rel="stylesheet" href="./node_modules/@shoelace-style/shoelace/dist/themes/light.css">
-        <script type="module" src="./node_modules/@shoelace-style/shoelace/dist/shoelace.js"></script>
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
         <script type="module">
+            import '@shoelace-style/shoelace/dist/themes/light.css';
+            import '@shoelace-style/shoelace/dist/components/icon/icon.js';
+            import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
+            import '@shoelace-style/shoelace/dist/components/button/button.js';
+            import '@shoelace-style/shoelace/dist/components/card/card.js';
+            import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
             import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
             setBasePath('/dist/shoelace');
         </script>
@@ -68,12 +72,12 @@
                         <div class="writeup">
                             <img class="promopic" src="images/OnePeace-wallpapers.jpg" alt="AniVerse Welcome image">
                             <div class="paragraph">
-                                <h6>Welcome to AniVault! A treasure trove of Anime and Creativity. <br> 
+                                <h5>Welcome to AniVault! A treasure trove of Anime and Creativity. <br> 
                                     Whether you’re here just to look at the Posters of your favourite anime, illustrations of your favourite characters, 
                                     or you’re an aspiring artist looking for inspiration to create your own, <br>
                                     I hope that you’ll enjoy your visit here. <br>
                                     Thank you for your time!
-                                </h6>
+                                </h5>
                             </div>                            
                         </div>                                                                                                                             
                     </article>
@@ -183,55 +187,51 @@
                             </div>
                         </article>
                         <div class="museum">
-                            <div class="frame">
-                                   <figure>
-                                       <a target="_blank" href="https://www.amazon.com/Sunrise-Works-Cowboy-Bebop-Anime/dp/4835447905">
-                                           <img src="images/CowboyBebop.jpg" alt="Cowboy Bebop TV Series Art Book Image">                                                    
-                                       </a>
-                                       <figcaption>
-                                           <cite>Sunrise Art Works Cowboy Bebop Tv Series 2012 Edition Anime Art Book</cite>  
-                                           <br>
-                                           by Sunrise
-                                       </figcaption>                               
-                                   </figure>                                        
-                            </div>
-                            <div class="frame">
-                                   <figure> 
-                                       <a target="_blank" href="https://twitter.com/johnsama">
-                                           <img src="images/Kirito_ACD_1.png" alt="Kirito Kazuto Kirigaya Character Design Sheet">                                            
-                                       </a>
-                                       <figcaption>
-                                           <cite>Kirito Character Design Sheet </cite>  
-                                           <br>
-                                           by Shingo Adachi
-                                       </figcaption>
-                                </figure>
-                            </div>
-                            <div class="frame">
-                                   <figure>
-                                       <a target="_blank" href="https://web.archive.org/web/20110722072635/http://www.megaman-ntwarrior.com/">
-                                           <img src="images/MegaMan_NT_Warrior_-_Sketch_-1.jpg" alt="Mega Man NT Warrior Character lineup">
-                                       </a>  
-                                       <figcaption>
-                                           <cite>MegaMan NT Warrior Character Lineup Sketch</cite>  
-                                           <br>
-                                           by Mitsuru Ishihara
-                                       </figcaption>           
-                                   </figure>
-                            </div>
+                            <sl-card class="frame">
+                                
+                                <a target="_blank" href="https://www.amazon.com/Sunrise-Works-Cowboy-Bebop-Anime/dp/4835447905">
+                                    <img slot="image" src="images/CowboyBebop.jpg" alt="Cowboy Bebop TV Series Art Book Image">                                                    
+                                </a>
+                                <div class="caption" slot="footer">
+                                    <cite>Sunrise Art Works Cowboy Bebop Tv Series 2012 Edition Anime Art Book</cite>  
+                                    <br>
+                                    by Sunrise
+                                </div>                               
+                                                                    
+                            </sl-card>
+                            <sl-card class="frame">
+                                <a target="_blank" href="https://twitter.com/johnsama">
+                                    <img slot="image" src="images/Kirito_ACD_1.png" alt="Kirito Kazuto Kirigaya Character Design Sheet">                                            
+                                </a>
+                                <div slot="footer" class="caption">
+                                    <cite>Kirito Character Design Sheet </cite>  
+                                    <br>
+                                    by Shingo Adachi
+                                </div>
+                            </sl-card>
+                            <sl-card class="frame">                            
+                                <a target="_blank" href="https://web.archive.org/web/20110722072635/http://www.megaman-ntwarrior.com/">
+                                    <img slot="image" src="images/MegaMan_NT_Warrior_-_Sketch_-1.jpg" alt="Mega Man NT Warrior Character lineup">
+                                </a>  
+                                <div slot="footer" class="caption">
+                                    <cite>MegaMan NT Warrior Character Lineup Sketch</cite>  
+                                    <br>
+                                    by Mitsuru Ishihara
+                                </div>           
+                                   
+                            </sl-card>
                                                                                            
-                               <div class="frame">
-                                   <figure>
-                                       <a target="_blank" href="https://wallpapercave.com/genei-ryodan-wallpapers">
-                                           <img src="images/HunterxHunter.jpg" alt="Hunter X Hunter Wallpaper">
-                                       </a>  
-                                       <figcaption>
-                                           <cite>Hunter X Hunter</cite>  
-                                           <br>
-                                           by Yoshihiro Togashi
-                                       </figcaption>           
-                                   </figure>
-                               </div>                                                                                            
+                            <sl-card class="frame">                                   
+                                <a target="_blank" href="https://wallpapercave.com/genei-ryodan-wallpapers">
+                                    <img slot="image" src="images/HunterxHunter.jpg" alt="Hunter X Hunter Wallpaper">
+                                </a>  
+                                <div slot="footer" class="caption">
+                                    <cite>Hunter X Hunter</cite>  
+                                    <br>
+                                    by Yoshihiro Togashi
+                                </div>                                           
+                            </sl-card>      
+                                                                                                                  
                         </div>
                     </div>
                 </div>
@@ -319,56 +319,48 @@
                         </div>
                     </article>
                     <div class="museum">
-                         <div class="frame">
-                                <figure>
+                            <sl-card class="frame">
                                     <a target="_blank" href="http://fav.me/d7xxad6">
-                                        <img src="images/_exe_tn.png" alt=".EXE Hikari Brothers">                                                    
+                                        <img slot="image" src="images/_exe_tn.png" alt=".EXE Hikari Brothers">                                                    
                                     </a>
-                                    <figcaption>
+                                    <div class="caption" slot="footer">
                                         <cite>EXE Brothers</cite>  
                                         <br>
-                                        by UltimatemaverickX
-                                    </figcaption>                               
-                                </figure>                                        
-                         </div>
+                                        <p>by UltimatemaverickX</P>
+                                    </div>                                                                   
+                            </sl-card>
                          
-                         <div class="frame">
-                                <figure>
+                            <sl-card class="frame">
                                     <a target="_blank" href="https://twitter.com/Wia_vi/status/1266887260923785218">
-                                        <img src="images/Lauriam&Strelitzia_Photo.png" alt="Young Lauriam & Strelitzia Photo">
+                                        <img slot="image" src="images/Lauriam&Strelitzia_Photo.png" alt="Young Lauriam & Strelitzia Photo">
                                     </a>  
-                                    <figcaption>
+                                    <div class="caption" slot="footer">
                                         <cite>Young Lauriam & Strelitzia</cite>  
                                         <br>
-                                        by Wia_Vi
-                                    </figcaption>           
-                                </figure>
-                         </div>
+                                        <p>by Wia_Vi</p>
+                                    </div>           
+                            </sl-card>
                                                                                         
-                            <div class="frame">
-                                <figure>
-                                    <a target="_blank" href="https://www.deviantart.com/han960691/art/Bond-between-us-Monster-Hunter-Stories-686959756">
-                                        <img src="images/bond_between_us.jpg" alt="Monster Hunter Stories Bond Between Us">
-                                    </a>  
-                                    <figcaption>
-                                        <cite>Bonds between Us</cite>  
-                                        <br>
-                                        by Han960691
-                                    </figcaption>           
-                                </figure>
-                            </div> 
-                            <div class="frame">
-                                <figure> 
+                            <sl-card class="frame">
+                                <a target="_blank" href="https://www.deviantart.com/han960691/art/Bond-between-us-Monster-Hunter-Stories-686959756">
+                                    <img slot="image" src="images/bond_between_us.jpg" alt="Monster Hunter Stories Bond Between Us">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>Bonds between Us</cite>  
+                                    <br>
+                                    <p>by Han960691</p>
+                                </div>           
+                            </sl-card> 
+                            <sl-card class="frame">
                                     <a target="_blank" href="https://twitter.com/Maxieprodmoore/status/1190628356473016320">
-                                        <img src="images/InktoberDay25_Player-WEB.png" alt="Inktober2018Day25_Kingdom Hearts Union Cross Player">                                            
+                                        <img slot="image" src="images/InktoberDay25_Player-WEB.png" alt="Inktober2018Day25_Kingdom Hearts Union Cross Player">                                            
                                     </a>
-                                    <figcaption>
+                                    <div class="caption" slot="footer">
                                         <cite>KHUX Avatar</cite>  
                                         <br>
-                                        by Maxieprodmoore
-                                    </figcaption>
-                             </figure>
-                         </div>                                                                                           
+                                        <p>by Maxieprodmoore</p>
+                                    </div>
+                            </sl-card>                                                                                           
                      </div>
                 </div>
                 
@@ -549,186 +541,83 @@
                         </div>
                     </article>
                     <div class="museum">
-                        <div class="filternav">
-                            <button class="tabfilter_2" onclick="openCity('AllProducts', this, 'pink')">All Products</button>
-                            <button class="tabfilter_2" onclick="openCity('CanvasProducts', this, 'pink')">Canvas</button>
-                            <button class="tabfilter_2" onclick="openCity('Paintingmaterials', this, 'pink')">Painting materials</button>
-                            <button class="tabfilter_2" onclick="openCity('Digital', this, 'pink')">Digital Products</button>
-                            <button class="tabfilter_2" onclick="openCity('Misc', this, 'pink')">Miscellaneous Products</button>
-                        </div>
+                        <sl-button-group class="filternav">
+                            <sl-button class="tabfilter_2" onclick="openCity('AllProducts', this, 'pink')">All Products</sl-button>
+                            <sl-button class="tabfilter_2" onclick="openCity('CanvasProducts', this, 'pink')">Canvas</sl-button>
+                            <sl-button class="tabfilter_2" onclick="openCity('Paintingmaterials', this, 'pink')">Painting materials</sl-button>
+                            <sl-button class="tabfilter_2" onclick="openCity('Digital', this, 'pink')">Digital Products</sl-button>
+                            <sl-button class="tabfilter_2" onclick="openCity('Misc', this, 'pink')">Miscellaneous Products</sl-button>
+                        </sl-button-group>
                         
                         <div id="AllProducts" class="tabcontent">
-                          
                             <div class="museum">
-                                <div class="frame">
-                                       <figure>
+                                <sl-card class="frame">
                                            <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
-                                               <img src="images/Wacom1Button.png" alt="Wacom 1 Tablet">                                                    
+                                               <img slot="image" src="images/Wacom1Button.png" alt="Wacom 1 Tablet">                                                    
                                            </a>
-                                           <figcaption>
+                                           <div class="caption" slot="footer">
                                                <cite>Wacom One Tablet</cite>                                  
-                                           </figcaption>                               
-                                       </figure>                                        
-                                </div>
-                                <div class="frame">
-                                       <figure> 
+                                           </div>                                                                     
+                                </sl-card>
+                                <sl-card class="frame">
                                            <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
-                                               <img src="images/AcryllicPaper.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
+                                               <img slot="image" src="images/AcryllicPaper.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
                                            </a>
-                                           <figcaption>
+                                           <div class="caption" slot="footer">
                                                <cite>
                                                    System 3 Acryllic Paper
                                                 </cite>  
                                                <br>
-                                               by Daler Rowney Ltd.
-                                           </figcaption>
-                                     </figure>
-                                </div>
-                                <div class="frame">
-                                       <figure>
+                                               <p>by Daler Rowney Ltd.</p>
+                                            </div>
+                                </sl-card>
+                                <sl-card class="frame">
                                            <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
-                                               <img src="images/KneadableEraserButton.png" alt="Daler Rowney Soft Putty Eraser">
+                                               <img slot="image" src="images/KneadableEraserButton.png" alt="Daler Rowney Soft Putty Eraser">
                                            </a>  
-                                           <figcaption>
+                                           <div class="caption" slot="footer">
                                                <cite>
                                                    Daler Rowney Soft Putty Eraser
                                                </cite>  
                                                <br>
-                                               by Daler Rowney Ltd.
-                                           </figcaption>           
-                                       </figure>
+                                               <p>by Daler Rowney Ltd.</p>
+                                            </div>           
                                 </div>
                                                                                                
-                                <div class="frame">
-                                    <figure>
-                                           <a target="_blank" href="https://copic.jp/en/product/classic/">
-                                               <img src="images/CopicMarkersButton.png" alt="Copic Markers Classic">
-                                           </a>  
-                                           <figcaption>
-                                               <cite>Copic Markers Classic Set</cite>  
-                                               <br>
-                                               by Copic
-                                           </figcaption>           
-                                       </figure>
-                                </div>
+                                <sl-card class="frame">
+                                    <a target="_blank" href="https://copic.jp/en/product/classic/">
+                                        <img slot="image" src="images/CopicMarkersButton.png" alt="Copic Markers Classic">
+                                    </a>  
+                                    <div class="caption" slot="footer">
+                                        <cite>Copic Markers Classic Set</cite>  
+                                        <br>
+                                       <p> by Copic</p>
+                                    </div>           
+                                </sl-card>
                                 
-                                <div class="frame">
-                                    <figure>
-                                        <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
-                                            <img src="images/PencilExtender.jpg" alt="Derwent Pencil Extender">
-                                        </a>  
-                                        <figcaption>
-                                            <cite>Derwent Pencil Extender</cite>  
-                                            <br>
-                                            by Derwent - ACCO UK Ltd.
-                                        </figcaption>           
-                                    </figure>
-                                </div>
-
-                                <div class="frame">
-                                    <figure>
-                                           <a target="_blank" href="https://colorwheelco.com/products/">
-                                               <img src="images/ColorwheelButton.png" alt="Colour Wheel Pocket Guide">
-                                           </a>  
-                                           <figcaption>
-                                               <cite>Colour Wheel Pocket Guide</cite>  
-                                               <br>
-                                               by Colour Wheel Company
-                                           </figcaption>           
-                                       </figure>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div id="CanvasProducts" class="tabcontent">
-                            <div class="frame">
-                                <figure> 
-                                    <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
-                                        <img src="images/AcryllicPaper.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
-                                    </a>
-                                    <figcaption>
-                                        <cite>
-                                            System 3 Acryllic Paper
-                                        </cite>  
-                                        <br>
-                                        by Daler Rowney Ltd.
-                                    </figcaption>
-                              </figure>
-                            </div>
-                            
-                        </div>
-                        
-                        <div id="Paintingmaterials" class="tabcontent">
-                          
-                            <div class="frame">
-                                <figure>
-                                       <a target="_blank" href="https://copic.jp/en/product/classic/">
-                                           <img src="images/CopicMarkersButton.png" alt="Copic Markers Classic">
-                                       </a>  
-                                       <figcaption>
-                                           <cite>Copic Markers Classic Set</cite>  
-                                           <br>
-                                           by Copic
-                                       </figcaption>           
-                                   </figure>
-                            </div>
-                        </div>
-                        
-                        <div id="Digital" class="tabcontent">
-                          
-                            <div class="frame">
-                                <figure>
-                                    <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
-                                        <img src="images/Wacom1Button.png" alt="Wacom 1 Tablet">                                                    
-                                    </a>
-                                    <figcaption>
-                                        <cite>Wacom One Tablet</cite>                                  
-                                    </figcaption>                               
-                                </figure>                                        
-                         </div>
-                        </div> 
-                        
-                        <div id="Misc" class="tabcontent">
-                            <div class="frame">
-                                <figure>
-                                    <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
-                                        <img src="images/KneadableEraserButton.png" alt="Daler Rowney Soft Putty Eraser">
-                                    </a>  
-                                    <figcaption>
-                                        <cite>Daler Rowney Soft Putty Eraser</cite>  
-                                        <br>
-                                        by Daler Rowney Ltd.
-                                    </figcaption>           
-                                </figure>
-                            </div>
-                            
-                            <div class="frame">
-                                <figure>
+                                <sl-card class="frame">
                                     <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
-                                        <img src="images/PencilExtender.jpg" alt="Derwent Pencil Extender">
+                                        <img slot="image" src="images/PencilExtender.jpg" alt="Derwent Pencil Extender">
                                     </a>  
-                                    <figcaption>
+                                    <div class="caption" slot="footer">
                                         <cite>Derwent Pencil Extender</cite>  
                                         <br>
-                                        by Derwent - ACCO UK Ltd.
-                                    </figcaption>           
-                                </figure>
-                            </div>
-                            
-                            <div class="frame">
-                                <figure>
-                                       <a target="_blank" href="https://colorwheelco.com/products/">
-                                           <img src="images/ColorwheelButton.png" alt="Colour Wheel Pocket Guide">
-                                       </a>  
-                                       <figcaption>
-                                           <cite>Colour Wheel Pocket Guide</cite>  
-                                           <br>
-                                           by Colour Wheel Company
-                                       </figcaption>           
-                                   </figure>
-                            </div>
+                                       <p> by Derwent - ACCO UK Ltd.</p>
+                                    </div>           
+                                </div>
 
-                        </div>                                                
+                                <sl-card class="frame">
+                                    <a target="_blank" href="https://colorwheelco.com/products/">
+                                               <img src="images/ColorwheelButton.png" alt="Colour Wheel Pocket Guide">
+                                    </a>  
+                                    <div class="caption" slot="footer">
+                                               <cite>Colour Wheel Pocket Guide</cite>  
+                                               <br>
+                                            <p>by Colour Wheel Company </p>
+                                    </div>           
+                                </sl-card>
+                            </div>
+                        </div>                                               
                     </div>
                 </div>
                 

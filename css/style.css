@@ -21,7 +21,7 @@ a { text-decoration: none; color:black; }
             font-size: 4rem;
         }
 
-        h2 span, h3 span, h4 span, h5 span, h3, h4, h5 {
+        h2 span, h3 span, h4 span, h5 span, h3, h4 {
             font-size: 3.8rem;
         }
 
@@ -56,8 +56,8 @@ a { text-decoration: none; color:black; }
         p  {
             margin-bottom: 2px;  
         }
-        h6 {
-            font-size: 1.4rem;
+        h5 {
+            font-size: 2rem;
         }
 
 /* ==========HEADER============= */
@@ -354,33 +354,27 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 /*======Image Styling=========*/
 img {
     border-radius: 10px;
-    padding: 0;
+    padding: 3px;
     margin: 0;
+    width: 600px;
     max-width: 100%;
-    max-height: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-figure {
-    margin: -10px;
-    padding: 0px;
-}
 .gallery div {display: block;}
 .gallery .frame, .gallery .framelscape { 
-    display:inline-block;
+    display:flex;
+    flex-direction: row;
 }
 
-/*====Picture description======*/
-
-
-figcaption {
-    font-family: "Forum";
-    text-align: center;
-    background-color: white;
-    padding: 3px;
-    margin: 2px 0;
-    transform: translateY(-5px);
-    font-size: 1vw;
-}
+    /*====Picture description======*/
+    .caption {
+        background-color: white;
+        padding: .1%;
+        margin: 2px 0;
+        font-size: 1.5rem;
+    }
 /*=====Videoclips=========*/
 .video {
     max-width: 100%;
@@ -413,15 +407,6 @@ article.mainblock:after {
     clear: both;
 }
 
-.paragraph {
-    width: 30vw;
-    height: 100%;
-    
-}
-.promopic {
-    padding: 0;
-    margin: 0;
-}
 a.filter {
     font-family: "Lemonada";
     text-align: center;
@@ -450,15 +435,11 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 */
 .frame {
     float: left;
-    width: 25%;
-    margin: 0;
-    padding: 0;
+    width: 24%;
+    margin-right: 1%;
     text-align: center;
 }
 
-.frame figure {
-    margin: 5px;
-}
 
 /* ==========SECTION 3 STYLING============= */
 
@@ -492,11 +473,8 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     width: 60vw;
 }
   
-#Asia {background-color:white;}
-#Africa {background-color:white;}
-#Europe {background-color:white;}
-#Carribean {background-color:white;}
-#Americas {background-color:white;}
+#Asia, #Africa, #Europe, #Carribean, #Americas {background-color:white;}
+
 /* ==========SECTION 5 STYLING============= */
 .filternav{
     width: 60vw;
@@ -549,22 +527,22 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         transform:translate(-5%, -90%);
     }
     .frame {
-        width: 25%;
+        width: 24%;
         height: auto;
     }
     .promopic {
         float: left;
-        width: 30vw;
+        width: 40%;
     }
     .segment {
-        width: 60vw;
-        margin: 0 20vw;
+        width: 80vw;
+        margin: 0 10vw;
     } 
     .paragraph {
-        width: 20vw;
+        width: 58%;
         float: right;
-        padding: 1%; 
-        margin: 0 10% 0 0;  
+        padding-left: 2%; 
+        text-align: left; 
     }
     .writeup {
         position: relative;
@@ -581,10 +559,6 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         padding: 5%;
     }
 
-    h4.tagline {
-        font-size: 1vw;
-        color: white;
-    }
     a.filter {
         font-size: 1vw;
     }
@@ -606,10 +580,6 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     h1 {
         text-align:center;
         transform: translate(-5%, -60%);
-        font-size: 12vh;
-    }
-    h4.tagline {
-        font-size: 1.6vw;
     }
 
     .headline{
@@ -636,12 +606,6 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         width: 50%;
     }
 
-    .segment {
-        width: 70vw;
-        margin: 0 15vw;
-    } 
-
-
     .writeup {
         position: relative;
         display: inline-block;
@@ -651,13 +615,6 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     }
 }
 @media only screen and (max-width: 1000px) {
-
-    .paragraph {
-        width: 80vw;  
-        float: none; 
-        padding: 0;
-        text-align: left;
-    }
 
     .segment {
         width: 90vw;
