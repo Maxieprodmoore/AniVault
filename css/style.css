@@ -455,7 +455,7 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     outline: none;
     cursor: pointer;
     padding: 2%;
-    font-size: 1vw;
+    font-size: 1.8rem;
     font-family: "Forum";
     font-weight: bolder;
     width: 20%;
@@ -469,35 +469,52 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
 .tabcontent {
     display: none;
     padding: 2% ;
-    text-align: center;
-    width: 60vw;
+    text-align: left;
+    width: 100%;
+}
+
+.show {
+    display: block;
 }
   
 #Asia, #Africa, #Europe, #Carribean, #Americas {background-color:white;}
 
 /* ==========SECTION 5 STYLING============= */
 .filternav{
-    width: 60vw;
+    width: 100%;
     background-color: #9ACEFC ;
 }
-.tabfilter_2 {
-    background-color: #9ACEFC;
+.tabfilter::part(base) {
+    background: #9ACEFC;
     float: left;
-    border: none;
-    outline: none;
     cursor: pointer;
-    padding: 2%;
-    font-size: 1vw;
     font-family: "Forum";
+    font-size: 1.8rem;
     font-weight: bolder;
-    width: 20%;
+    width: 100%;
 }
 
-.tabfilter_2:hover {
-    background-color: #688FB3;
+.tabfilter::part(label){
+    color: black;
 }
 
-#AllProducts, #CanvasProducts, #Paintingmaterials, #Digital, #Misc {background-color:white;}
+.tabfilter::part(base):hover {
+    background: #FDB7B3;
+}
+
+.tabfilterActive::part(base) {
+    background: #FDB7B3;
+}
+
+
+.productDiv {
+    background-color:white;
+    float: left;
+    width: 24%;
+    margin-right: 1%;
+    text-align: center;
+    display: none;
+}
 
 /* ==========FOOTER STYLIING============= */
 .buttonb2top {
@@ -679,6 +696,10 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     .navcontent {
         width: 100vw;
         margin: 0;
+    }
+
+    .paragraph{
+        text-align: left;
     }
 }
 

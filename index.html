@@ -15,11 +15,8 @@
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
         <script type="module">
             import '@shoelace-style/shoelace/dist/themes/light.css';
-            import '@shoelace-style/shoelace/dist/components/icon/icon.js';
-            import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
             import '@shoelace-style/shoelace/dist/components/button/button.js';
             import '@shoelace-style/shoelace/dist/components/card/card.js';
-            import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
             import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
             setBasePath('/dist/shoelace');
         </script>
@@ -542,16 +539,16 @@
                     </article>
                     <div class="museum">
                         <sl-button-group class="filternav">
-                            <sl-button class="tabfilter_2" onclick="openCity('AllProducts', this, 'pink')">All Products</sl-button>
-                            <sl-button class="tabfilter_2" onclick="openCity('CanvasProducts', this, 'pink')">Canvas</sl-button>
-                            <sl-button class="tabfilter_2" onclick="openCity('Paintingmaterials', this, 'pink')">Painting materials</sl-button>
-                            <sl-button class="tabfilter_2" onclick="openCity('Digital', this, 'pink')">Digital Products</sl-button>
-                            <sl-button class="tabfilter_2" onclick="openCity('Misc', this, 'pink')">Miscellaneous Products</sl-button>
+                            <sl-button  class="tabfilter tabfilterActive" size="large" onclick="filterSelection('all')" >All Products</sl-button>
+                            <sl-button class="tabfilter" size="large" on>Canvas</sl-button>
+                            <sl-button class="tabfilter" size="large">Colouring materials</sl-button>
+                            <sl-button class="tabfilter" size="large">Digital Products</sl-button>
+                            <sl-button class="tabfilter" size="large">Miscellaneous Products</sl-button>
                         </sl-button-group>
                         
-                        <div id="AllProducts" class="tabcontent">
+                       
                             <div class="museum">
-                                <sl-card class="frame">
+                                <sl-card class="productDiv Digital">
                                            <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
                                                <img slot="image" src="images/Wacom1Button.png" alt="Wacom 1 Tablet">                                                    
                                            </a>
@@ -559,7 +556,7 @@
                                                <cite>Wacom One Tablet</cite>                                  
                                            </div>                                                                     
                                 </sl-card>
-                                <sl-card class="frame">
+                                <sl-card class="productDiv canvasProducts">
                                            <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
                                                <img slot="image" src="images/AcryllicPaper.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
                                            </a>
@@ -571,7 +568,7 @@
                                                <p>by Daler Rowney Ltd.</p>
                                             </div>
                                 </sl-card>
-                                <sl-card class="frame">
+                                <sl-card class="productDiv Misc">
                                            <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
                                                <img slot="image" src="images/KneadableEraserButton.png" alt="Daler Rowney Soft Putty Eraser">
                                            </a>  
@@ -582,9 +579,9 @@
                                                <br>
                                                <p>by Daler Rowney Ltd.</p>
                                             </div>           
-                                </div>
+                                </sl-card>
                                                                                                
-                                <sl-card class="frame">
+                                <sl-card class="productDiv colouringMaterials">
                                     <a target="_blank" href="https://copic.jp/en/product/classic/">
                                         <img slot="image" src="images/CopicMarkersButton.png" alt="Copic Markers Classic">
                                     </a>  
@@ -595,7 +592,7 @@
                                     </div>           
                                 </sl-card>
                                 
-                                <sl-card class="frame">
+                                <sl-card class="productDiv Misc">
                                     <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
                                         <img slot="image" src="images/PencilExtender.jpg" alt="Derwent Pencil Extender">
                                     </a>  
@@ -604,9 +601,9 @@
                                         <br>
                                        <p> by Derwent - ACCO UK Ltd.</p>
                                     </div>           
-                                </div>
+                                </sl-card>
 
-                                <sl-card class="frame">
+                                <sl-card class="productDiv Misc">
                                     <a target="_blank" href="https://colorwheelco.com/products/">
                                                <img src="images/ColorwheelButton.png" alt="Colour Wheel Pocket Guide">
                                     </a>  
@@ -617,7 +614,7 @@
                                     </div>           
                                 </sl-card>
                             </div>
-                        </div>                                               
+                                                                     
                     </div>
                 </div>
                 
