@@ -103,7 +103,7 @@ nav input:checked ~ a {
 .topnav  {    
     position: sticky; 
     top:0;
-    z-index: 2;
+    z-index: 200;
     width: 100vw;
     background-color:#fbd88f;
 }
@@ -371,8 +371,8 @@ img {
     /*====Picture description======*/
     .caption {
         background-color: white;
-        padding: .1%;
-        margin: 2px 0;
+        padding: 0.1%;
+        margin: 0;
         font-size: 1.5rem;
     }
 /*=====Videoclips=========*/
@@ -411,14 +411,13 @@ a.filter {
     font-family: "Lemonada";
     text-align: center;
     color: white;
-    font-size: 2vw;
 }
 .centered {
     position: relative;
     width: 100%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -350%);
+    transform: translate(-50%, -150%);
 }
 
 
@@ -444,25 +443,22 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 /* ==========SECTION 3 STYLING============= */
 
 /* ==========SECTION 4 STYLING============= */
-/*
-Tab Headers Tutorial by W3Schools
-https://www.w3schools.com/howto/howto_js_tab_header.asp
-*/
-.tablink {
+
+.tablink{
     background-color: #9ACEFC;
     float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 2%;
     font-size: 1.8rem;
     font-family: "Forum";
     font-weight: bolder;
+    padding: 1% 0;
     width: 20%;
 }
   
 .tablink:hover {
-    background-color: #688FB3;
+    background-color: #FDB7B3;
 }
   
   /* Style the tab content */
@@ -473,14 +469,12 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     width: 100%;
 }
 
-.show {
-    display: block;
-}
+
   
 #Asia, #Africa, #Europe, #Carribean, #Americas {background-color:white;}
 
 /* ==========SECTION 5 STYLING============= */
-.filternav{
+.navFilter{
     width: 100%;
     background-color: #9ACEFC ;
 }
@@ -516,6 +510,9 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     display: none;
 }
 
+.show {
+    display: block;
+}
 /* ==========FOOTER STYLIING============= */
 .buttonb2top {
     background-color: #688FB3;
@@ -577,7 +574,7 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     }
 
     a.filter {
-        font-size: 1vw;
+        font-size: 2.5rem;
     }
 }
 
@@ -599,6 +596,22 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         transform: translate(-5%, -60%);
     }
 
+    .paragraph h3{
+        font-size: 2rem;
+    }
+
+    .paragraph h5{
+        font-size: 1.15rem;
+    }
+
+    .paragraph{
+        padding-left: 0.5%;
+    }
+
+    .topnav{
+        padding-top: 2.5%;
+    }
+
     .headline{
         padding: 0 20%;
         float: none;
@@ -617,10 +630,9 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     }
     .navcontent {
         width: 80vw;
-        margin: 0 10vw;
     }
     .frame {
-        width: 50%;
+        width: 48%;
     }
 
     .writeup {
@@ -637,22 +649,43 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         width: 90vw;
         margin: 0 5vw;
     }
+
+    header {
+        height: 15vh;
+    }
+    
+    .tabcontent {
+        width: 100%;
+    }
 }
+
+@media only screen and (max-width: 810px) {
+    h4.tagline{
+        transform: initial;
+        padding: 0;
+        font-size: 1.2rem;
+    }
+
+    .headline {
+        transform: translate(-5%, -245%);
+        padding: 0 10%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .headline{
         float: none;
         padding: 0;
         transform: translate(-5%, -340%);
     } 
-    .frame{
-        width: 50%;
-        
-    }
 
     .paragraph{
         margin: 0 1% 0 0;
     }
 
+    .topnav {
+        padding-top: initial;
+    }
 
     .navcontent {
         width: 90vw;
@@ -689,6 +722,7 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
         line-height: 25px;
     }
 
+
 }
 
 /* ===== MOBILE: Media queries for small mobile resolution. ===== */
@@ -703,58 +737,99 @@ https://www.w3schools.com/howto/howto_js_tab_header.asp
     }
 }
 
-@media only screen and (max-width: 414px) { 
+@media only screen and (max-width: 428px) { 
     h1 {
         transform: translate(-5%, -50%);
-        font-size: 10vh;
     }
 
+     h3 span, h4 span, h5 span, h3, h4 {
+        font-size: 1.3rem;
+    }
+
+
+    h4.tagline {
+        font-size: 1rem;
+    }
+
+    .paragraph h5 {
+        text-align: left;
+        font-size: 1.25rem;
+    }
+
+    .CSSgal .slider h3{
+        font-size: 2rem;
+    }
 
     .headline {
         width: 100vw;
         margin: 0;
-        transform: translate(-7%, -260%);
+        transform: translate(-7%, -270%);
     }
     header {
         padding: 2%;
     }
     .promopic {
         float: none;
-        height: 50vh;
+        height: 100%;
         width: auto;
+    }
+
+    .paragraph{
+        width: 100%;
+        margin: initial;
+        padding-left: initial;
     }
     .frame{
         height: 25%;
         width: auto;
+        margin-right: initial;
+        margin-bottom: 2%;
     }
-    a.filter {
-        font-size: 4vh;
-    }
+
     .filternav{
         width: 90vw;
     }
+
     .tabcontent {
-        width: 100vw;
+        width: 100%;
+    }
+
+    .tablink{
+        width: 100%;
+    }
+    .productDiv{
+        width: 99%;
+        margin: 0.5%;
+    }
+
+    .tabfilter::part(base) {
+        width: 100%;
     }
 
     .centered {
-        transform: translate(-50%, -300%);
+        transform: translate(-50%, -180%);
     }
 }
 
 @media only screen and (max-width: 375px) {
     .headline {
-        transform: translate(-8%, -275%);
+        transform: translate(-8%, -205%);
     }
 
     h1 {
         text-align: center;
+        transform: translate(-5%, -60%);
+    }
 
+    
+
+    .info{
+        padding: 3% ;
     }
 
 
     .centered {
-        transform: translate(-50%, -280%);
+        transform: translate(-50%, -160%);
     }
 
     

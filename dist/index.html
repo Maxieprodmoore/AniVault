@@ -2428,12 +2428,12 @@ else {
                         </div>
                     </article>
                     <div class="museum">
-                        <sl-button-group class="filternav">
+                        <sl-button-group class="navFilter" id="productFilter">
                             <sl-button class="tabfilter tabfilterActive" size="large" onclick="filterSelection('all')">All Products</sl-button>
-                            <sl-button class="tabfilter" size="large" on="">Canvas</sl-button>
-                            <sl-button class="tabfilter" size="large">Colouring materials</sl-button>
-                            <sl-button class="tabfilter" size="large">Digital Products</sl-button>
-                            <sl-button class="tabfilter" size="large">Miscellaneous Products</sl-button>
+                            <sl-button class="tabfilter" size="large" onclick="filterSelection('canvasProducts')">Canvas</sl-button>
+                            <sl-button class="tabfilter" size="large" onclick="filterSelection('colouringMaterials')">Colouring materials</sl-button>
+                            <sl-button class="tabfilter" size="large" onclick="filterSelection('Digital')">Digital Products</sl-button>
+                            <sl-button class="tabfilter" size="large" onclick="filterSelection('Misc')">Miscellaneous Products</sl-button>
                         </sl-button-group>
                         
                        
