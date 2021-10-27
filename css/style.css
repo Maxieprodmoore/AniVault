@@ -17,12 +17,8 @@ a { text-decoration: none; color:black; }
             text-align: center;    
         }
 
-        h2 {
-            font-size: 4rem;
-        }
-
-        h2 span, h3 span, h4 span, h5 span, h3, h4 {
-            font-size: 3.8rem;
+        h2, h2 span, h3 span, h4 span, h5 span, h3, h4 {
+            font-size: 3.2rem;
         }
 
         p, a {
@@ -57,8 +53,9 @@ a { text-decoration: none; color:black; }
             margin-bottom: 2px;  
         }
         h5 {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
+        
 
 /* ==========HEADER============= */
 html {
@@ -77,10 +74,7 @@ header {
     position: relative;
     background-color: rgb(116, 131, 145);
 }
-.headline{
-    position: absolute;
-    margin: 0;
-}
+
 /* ==========LOGO============= */
 /* ==========NAVIGATION============= */
 /* Sticky Navigation Bar by Tutorial Republic
@@ -169,6 +163,7 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
     height: 100%;
     width: 60vw;
     padding: 5%;
+    color: black;
 }
 /* SLIDES */
 
@@ -334,7 +329,7 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 }
 .CSSgal a {
 	border-radius: 50%;
-	margin: 0 3px;
+	margin: 0 1%;
 	color: rgba(0,0,0,0.8);
 	text-decoration: none;
 }
@@ -375,6 +370,15 @@ img {
         margin: 0;
         font-size: 1.5rem;
     }
+
+    .caption h5{
+        margin-top: 0;
+        margin-bottom: 0.25%;
+    }
+
+    .caption p {
+        margin: 0;
+    }
 /*=====Videoclips=========*/
 .video {
     max-width: 100%;
@@ -391,16 +395,19 @@ article.mainblock {
     position: relative;
     top: 10%;
     display: block;
-    width: 100%;
+    width: 95%;
+    margin: 3% 2.5% 1.25%;
 }
 .writeup {
-    position: relative;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
+    display: flex;
     width: 100%;
     text-align: center;
 }
+
+.info .writeup{
+    display: inline-block;
+}
+
 article.mainblock:after {
     content: "";
     display: table;
@@ -422,11 +429,21 @@ a.filter {
 
 
 /* ==========SECTION 2 STYLING============= */
-div.museum {
+.museum {
     position: relative;
-    margin: 2% 0%;
+    margin:  0% 2%;
     padding: 0;
     width: 100%;
+}
+
+.museum::part(nav){
+    width: 100%;
+    background-color: #fbd88f;
+
+}
+
+.museum::part(active-tab-indicator){
+    --indicator-color: #FDB7B3;
 }
 
 /*Gallery Layout by W3 Schools - Mixed Layout
@@ -444,75 +461,38 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
 /* ==========SECTION 4 STYLING============= */
 
-.tablink{
-    background-color: #9ACEFC;
+.tablink::part(base), .tabfilter::part(base){
+    background-color: #fbd88f;
+    color: black;
     float: left;
-    border: none;
-    outline: none;
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-family: "Forum";
     font-weight: bolder;
-    padding: 1% 0;
-    width: 20%;
-}
-  
-.tablink:hover {
-    background-color: #FDB7B3;
+    --padding: 1% 0;
 }
   
   /* Style the tab content */
 .tabcontent {
-    display: none;
-    padding: 2% ;
+    --padding: 2% ;
     text-align: left;
     width: 100%;
 }
 
 
   
-#Asia, #Africa, #Europe, #Carribean, #Americas {background-color:white;}
+#Asia, #Africa, #Europe, #Carribean, #Americas, .museum::part(body) {background-color:white;}
 
 /* ==========SECTION 5 STYLING============= */
-.navFilter{
-    width: 100%;
-    background-color: #9ACEFC ;
-}
-.tabfilter::part(base) {
-    background: #9ACEFC;
-    float: left;
-    cursor: pointer;
-    font-family: "Forum";
-    font-size: 1.8rem;
-    font-weight: bolder;
-    width: 100%;
-}
-
-.tabfilter::part(label){
-    color: black;
-}
-
-.tabfilter::part(base):hover {
-    background: #FDB7B3;
-}
-
-.tabfilterActive::part(base) {
-    background: #FDB7B3;
-}
-
-
 .productDiv {
-    background-color:white;
-    float: left;
-    width: 24%;
-    margin-right: 1%;
-    text-align: center;
-    display: none;
+    width: 23%;
+    margin: 0 1.25% 0.5%;
 }
 
-.show {
-    display: block;
+.museum::part(body){
+   padding: 3% 0 2%; 
 }
+
 /* ==========FOOTER STYLIING============= */
 .buttonb2top {
     background-color: #688FB3;
@@ -546,27 +526,21 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
     .promopic {
         float: left;
-        width: 40%;
+        margin-right: 0;
     }
     .segment {
         width: 80vw;
         margin: 0 10vw;
     } 
     .paragraph {
-        width: 58%;
-        float: right;
         padding-left: 2%; 
         text-align: left; 
     }
     .writeup {
-        position: relative;
-        display: inline-block;
+        margin-top: 2%;
     }
-
-    .headline {
-        float: right;
-        padding:0 25%;
-        transform: translate(5%, -290%);
+    .writeup .paragraph {
+        margin-left: 0%;
     }
 
     header {
@@ -582,12 +556,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     h1 {
         transform:translate(-5%, -40%);
     }
-    .headline{
-        padding: 0 20%;
-        float: none;
-        transform: translate(-15%, -180%);
-        width: 100%;
-    } 
 }
 /* ===== TABLET: Media queries for verticle and horizontal ===== */
 @media only screen and (max-width: 1024px) {
@@ -612,11 +580,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         padding-top: 2.5%;
     }
 
-    .headline{
-        padding: 0 20%;
-        float: none;
-        transform: translate(-5%, -540%);
-    } 
     .CSSgal .prevNext a {
         width:       60px;
         height:      60px;
@@ -666,18 +629,9 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         font-size: 1.2rem;
     }
 
-    .headline {
-        transform: translate(-5%, -245%);
-        padding: 0 10%;
-    }
 }
 
 @media only screen and (max-width: 768px) {
-    .headline{
-        float: none;
-        padding: 0;
-        transform: translate(-5%, -340%);
-    } 
 
     .paragraph{
         margin: 0 1% 0 0;
@@ -735,6 +689,16 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     .paragraph{
         text-align: left;
     }
+
+    .CSSgal .prevNext a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .productDiv{
+        width: 98%;
+        margin: 1% 0 ;
+    }
 }
 
 @media only screen and (max-width: 428px) { 
@@ -760,11 +724,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         font-size: 2rem;
     }
 
-    .headline {
-        width: 100vw;
-        margin: 0;
-        transform: translate(-7%, -270%);
-    }
     header {
         padding: 2%;
     }
@@ -797,10 +756,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     .tablink{
         width: 100%;
     }
-    .productDiv{
-        width: 99%;
-        margin: 0.5%;
-    }
+    
 
     .tabfilter::part(base) {
         width: 100%;
@@ -812,9 +768,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
 
 @media only screen and (max-width: 375px) {
-    .headline {
-        transform: translate(-8%, -205%);
-    }
 
     h1 {
         text-align: center;
@@ -836,9 +789,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
 
 @media only screen and (max-width: 360px) { 
-    .headline {
-        transform: translate(-2.5%, -340%);
-    }
+
     header {
         padding: 1%;
     }

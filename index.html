@@ -9,19 +9,22 @@
         <meta name="author" content="Ho Bing Lin">
         <meta name="description" content="A Treasure vault of Anime & Creativity">
         <meta name="keywords" content="Anime,Resource,Anime Resource Website, Artist, resources">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.58/dist/themes/light.css">
         <link rel="stylesheet" href="css/style.css">         
         <!--<link rel="icon" href="place-your-tab-icon-here">-->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.58/dist/shoelace.js"></script>
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
         <script type="module">
             import '@shoelace-style/shoelace/dist/themes/light.css';
             import '@shoelace-style/shoelace/dist/components/button/button.js';
             import '@shoelace-style/shoelace/dist/components/card/card.js';
+            import '@shoelace-style/shoelace/dist/components/tab-group/tab-group.js';
+            import '@shoelace-style/shoelace/dist/components/tab/tab.js';
+            import '@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js';
             import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
             setBasePath('/dist/shoelace');
         </script>
-        <script src="js/jquery.js"></script>    
-        <script src="js/tabs.js"></script>   
+        <script src="js/jquery.js"></script>     
     </head>
     <body>
         
@@ -31,9 +34,6 @@
             <header>
                 <div class="segment">
                     <h1>A<span>ni</span>V<span>ault</span></h1>
-                    <div class="headline">
-                        <h4 class="tagline">A treasure trove of Anime and Creativity</h4>
-                    </div>
                 </div>                
             </header>
             
@@ -67,15 +67,12 @@
                 <div class="segment">
                     <article class="mainblock">
                         <div class="writeup">
-                            <img class="promopic" src="images/OnePeace-wallpapers.jpg" alt="AniVerse Welcome image">
-                            <div class="paragraph">
-                                <h5>Welcome to AniVault! A treasure trove of Anime and Creativity. <br> 
+                            <img class="promopic" src="images/OnePeace-wallpapers.jpg" alt="AniVerse Welcome image">                    
+                                <h5>
+                                    Welcome to AniVault, A treasure trove of Anime and Creativity. <br> 
                                     Whether you’re here just to look at the Posters of your favourite anime, illustrations of your favourite characters, 
-                                    or you’re an aspiring artist looking for inspiration to create your own, <br>
-                                    I hope that you’ll enjoy your visit here. <br>
-                                    Thank you for your time!
-                                </h5>
-                            </div>                            
+                                    or you’re an aspiring artist looking for inspiration, enjoy your time here! 
+                                </h5>                          
                         </div>                                                                                                                             
                     </article>
                     <div class="museum">
@@ -134,35 +131,59 @@
                                 <div class="slider">
                                   <div class="info" style="background:#fbd88f;">
                                         <div class="writeup">
-                                            <h3>Professional Art Studio of the month:</h3>
-                                            <h4>Collateral Damage Studios (CDS)</h4>
-                                            <p>Collateral Damage Studios is a group of art enthusiasts who debuted on the Singapore illustration scene in 2007. 
+                                            <h2>Professional Art Studio of the month:</h2>
+                                            <h3>Collateral Damage Studios (CDS)</h3>
+                                            <p>
+                                                Collateral Damage Studios is a group of art enthusiasts who debuted on the Singapore illustration scene in 2007. 
                                                 Inspired by pop culture, CDS aims to promote local creative talents, produce high quality illustrations, and have plenty of fun.
                                                    <br>
                                                 Actively engaging with international doujin communities, they work closely with companies and agencies to create concept art and branding visuals.
                                                 <br>
                                                 Reflecting on their origins in Kaleidoscope, Collateral Damage Studios advise and support student initiatives, such as Extravaganza, to provide aspiring Singaporean artists with platforms to debut.
                                             </p>
-                                            <p> For some examples of their work, check out their website <a target="_blank" href="https://www.collateralds.com/portfolio/">here</a>.</p>
+                                            <p> 
+                                                For some examples of their work, check out their website 
+                                                <a target="_blank" href="https://www.collateralds.com/portfolio/">here</a>.
+                                            </p>
                                         </div>
                                         
                                   </div>
                                   <div class="info" style="background:#fbd88f;">
                                         <div class="writeup">
                                             <h3>Anime (Artist/Studio) 2</h3>
-                                            <p> Infomation about them here.</p>
+                                            <p> 
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                Integer vitae justo eget magna fermentum iaculis. Turpis cursus in hac habitasse platea dictumst quisque sagittis purus. 
+                                                Et magnis dis parturient montes nascetur ridiculus. Tempor orci eu lobortis elementum nibh tellus. 
+                                                Laoreet sit amet cursus sit amet. Sapien eget mi proin sed libero enim sed faucibus. Ipsum a arcu cursus vitae congue mauris rhoncus. 
+                                                Lectus urna duis convallis convallis tellus id interdum velit. Morbi tempus iaculis urna id volutpat. 
+                                                Cras fermentum odio eu feugiat pretium nibh. In aliquam sem fringilla ut morbi tincidunt augue interdum.
+                                            </p>
                                         </div>
                                     </div>
                                   <div class="info" style="background:#fbd88f;">
                                     <div class="writeup">
                                         <h3>Anime (Artist/Studio) 3</h3>
-                                        <p> Infomation about them here.</p>
+                                        <p> 
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Eget aliquet nibh praesent tristique magna sit amet purus gravida. Cras pulvinar mattis nunc sed. In ante metus dictum at tempor. 
+                                            Euismod nisi porta lorem mollis aliquam ut. Lorem sed risus ultricies tristique nulla aliquet enim. Lorem sed risus ultricies tristique nulla. 
+                                            Ultrices in iaculis nunc sed augue. Gravida dictum fusce ut placerat orci nulla. Nibh tellus molestie nunc non blandit massa enim nec dui. 
+                                            Nam libero justo laoreet sit amet. Ut morbi tincidunt augue interdum. 
+                                            Penatibus et magnis dis parturient montes nascetur ridiculus mus. Arcu odio ut sem nulla pharetra diam sit amet nisl.
+                                        </p>
                                     </div>
                                     </div>
                                   <div class="info" style="background:#fbd88f;">
                                     <div class="writeup">
-                                        <h3>Anime (Artist/Studio) 3</h3>
-                                        <p> Infomation about them here.</p>
+                                        <h3>Anime (Artist/Studio) 4</h3>
+                                        <p> 
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Egestas quis ipsum suspendisse ultrices. Imperdiet proin fermentum leo vel orci porta. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. 
+                                            Aliquam nulla facilisi cras fermentum odio eu. Nunc aliquet bibendum enim facilisis gravida. Lobortis scelerisque fermentum dui faucibus in ornare. 
+                                            Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Quam pellentesque nec nam aliquam sem et. 
+                                            Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Tellus at urna condimentum mattis. Enim tortor at auctor urna nunc id cursus.
+                                        </p>
                                     </div>
                                     </div>
                                 </div>
@@ -190,9 +211,10 @@
                                     <img slot="image" src="images/CowboyBebop.jpg" alt="Cowboy Bebop TV Series Art Book Image">                                                    
                                 </a>
                                 <div class="caption" slot="footer">
-                                    <cite>Sunrise Art Works Cowboy Bebop Tv Series 2012 Edition Anime Art Book</cite>  
-                                    <br>
-                                    by Sunrise
+                                    <h5>Sunrise Art Works Cowboy Bebop Tv Series 2012 Edition Anime Art Book</h5>  
+                                    <p>
+                                        by Sunrise
+                                    </p>
                                 </div>                               
                                                                     
                             </sl-card>
@@ -201,9 +223,10 @@
                                     <img slot="image" src="images/Kirito_ACD_1.png" alt="Kirito Kazuto Kirigaya Character Design Sheet">                                            
                                 </a>
                                 <div slot="footer" class="caption">
-                                    <cite>Kirito Character Design Sheet </cite>  
-                                    <br>
-                                    by Shingo Adachi
+                                    <h5>Kirito Character Design Sheet </h5>  
+                                    <p>
+                                        by Shingo Adachi
+                                    </p>
                                 </div>
                             </sl-card>
                             <sl-card class="frame">                            
@@ -211,9 +234,10 @@
                                     <img slot="image" src="images/MegaMan_NT_Warrior_-_Sketch_-1.jpg" alt="Mega Man NT Warrior Character lineup">
                                 </a>  
                                 <div slot="footer" class="caption">
-                                    <cite>MegaMan NT Warrior Character Lineup Sketch</cite>  
-                                    <br>
-                                    by Mitsuru Ishihara
+                                    <h5>MegaMan NT Warrior Character Lineup Sketch</h5>  
+                                    <p>
+                                        by Mitsuru Ishihara
+                                    </p>
                                 </div>           
                                    
                             </sl-card>
@@ -223,9 +247,10 @@
                                     <img slot="image" src="images/HunterxHunter.jpg" alt="Hunter X Hunter Wallpaper">
                                 </a>  
                                 <div slot="footer" class="caption">
-                                    <cite>Hunter X Hunter</cite>  
-                                    <br>
-                                    by Yoshihiro Togashi
+                                    <h5>Hunter X Hunter</h5>  
+                                    <p>
+                                        by Yoshihiro Togashi
+                                    </p>
                                 </div>                                           
                             </sl-card>      
                                                                                                                   
@@ -257,7 +282,8 @@
                                             <img class="promopic" src="images/placeholder.jpg" alt="Artist Profile picture">
                                         </div>                                        
                                         <div class="paragraph">
-                                            <p>Information about the artist here. 
+                                            <p>
+                                                Information about the artist here. 
                                                 His Social medias, the medium he specialises in, etc.
                                             </p>
                                         </div>                            
@@ -294,6 +320,16 @@
                               <div class="info" style="background:#fbd88f;">
                                     <div class="writeup">
                                         <h4>Slide 4</h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales. Sed risus pretium quam vulputate dignissim. 
+                                            Porttitor lacus luctus accumsan tortor posuere ac ut. Praesent tristique magna sit amet purus gravida quis blandit turpis. 
+                                            Diam ut venenatis tellus in metus vulputate eu scelerisque. Ultricies mi eget mauris pharetra et ultrices neque ornare. 
+                                            Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Rutrum tellus pellentesque eu tincidunt. 
+                                            Sed tempus urna et pharetra pharetra. Tempor orci eu lobortis elementum nibh tellus molestie nunc non. 
+                                            Aliquam id diam maecenas ultricies mi eget mauris. 
+                                            Mattis rhoncus urna neque viverra justo nec. Varius morbi enim nunc faucibus a pellentesque.
+                                        </p>
                                     </div>
                              </div>
                              
@@ -316,24 +352,13 @@
                         </div>
                     </article>
                     <div class="museum">
-                            <sl-card class="frame">
-                                    <a target="_blank" href="http://fav.me/d7xxad6">
-                                        <img slot="image" src="images/_exe_tn.png" alt=".EXE Hikari Brothers">                                                    
-                                    </a>
-                                    <div class="caption" slot="footer">
-                                        <cite>EXE Brothers</cite>  
-                                        <br>
-                                        <p>by UltimatemaverickX</P>
-                                    </div>                                                                   
-                            </sl-card>
                          
                             <sl-card class="frame">
                                     <a target="_blank" href="https://twitter.com/Wia_vi/status/1266887260923785218">
                                         <img slot="image" src="images/Lauriam&Strelitzia_Photo.png" alt="Young Lauriam & Strelitzia Photo">
                                     </a>  
                                     <div class="caption" slot="footer">
-                                        <cite>Young Lauriam & Strelitzia</cite>  
-                                        <br>
+                                        <h5>Young Lauriam & Strelitzia</h5>  
                                         <p>by Wia_Vi</p>
                                     </div>           
                             </sl-card>
@@ -343,18 +368,25 @@
                                     <img slot="image" src="images/bond_between_us.jpg" alt="Monster Hunter Stories Bond Between Us">
                                 </a>  
                                 <div class="caption" slot="footer">
-                                    <cite>Bonds between Us</cite>  
-                                    <br>
+                                    <h5>Bonds between Us</h5>  
                                     <p>by Han960691</p>
                                 </div>           
                             </sl-card> 
+                            <sl-card class="frame">
+                                <a target="_blank" href="http://fav.me/d7xxad6">
+                                    <img slot="image" src="images/_exe_tn.png" alt=".EXE Hikari Brothers">                                                    
+                                </a>
+                                <div class="caption" slot="footer">
+                                    <h5>EXE Brothers</h5>  
+                                    <p>by UltimatemaverickX</P>
+                                </div>                                                                   
+                            </sl-card>
                             <sl-card class="frame">
                                     <a target="_blank" href="https://twitter.com/Maxieprodmoore/status/1190628356473016320">
                                         <img slot="image" src="images/InktoberDay25_Player-WEB.png" alt="Inktober2018Day25_Kingdom Hearts Union Cross Player">                                            
                                     </a>
                                     <div class="caption" slot="footer">
-                                        <cite>KHUX Avatar</cite>  
-                                        <br>
+                                        <h5>KHUX Avatar</h5>  
                                         <p>by Maxieprodmoore</p>
                                     </div>
                             </sl-card>                                                                                           
@@ -382,11 +414,21 @@
                           
                             <div class="slider">
                               <div class="info" style="background:#fbd88f;">
-                                    <h3>Latest Updates:</h3>                        
+                                    <h3>Latest Updates:</h3> 
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor elit sed vulputate mi sit. 
+                                        Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci a scelerisque purus semper. 
+                                        Felis donec et odio pellentesque diam. Nibh ipsum consequat nisl vel pretium lectus quam. Sed enim ut sem viverra. 
+                                        In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Pulvinar pellentesque habitant morbi tristique senectus et. 
+                                        Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Dictum varius duis at consectetur. 
+                                        Est sit amet facilisis magna. Et tortor at risus viverra. Lectus magna fringilla urna porttitor rhoncus. 
+                                        Eget nullam non nisi est sit. Faucibus turpis in eu mi bibendum neque egestas congue.
+                                    </p>                       
                                 </div>
                               <div class="info" style="background:#B06F6B;">
                                     <h3>CoVid-19 Information</h3>
-                                    <p>Dear Visitor,
+                                    <p>
+                                        Dear Visitor,
                                         Due to the CoVid-19 Situation, It is with regret that I must inform you all that most 
                                         Physical Events have been cancelled, if not, Postponed.
                                         <br>
@@ -400,9 +442,21 @@
                                 </div>
                               <div class="info" style="background:#fbd88f;">
                                     <h3>News/Events update 1</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Morbi tempus iaculis urna id volutpat. Pulvinar mattis nunc sed blandit libero volutpat sed. 
+                                        Consectetur a erat nam at lectus. 
+                                        Eu sem integer vitae justo eget. In hac habitasse platea dictumst quisque.
+                                    </p>
                                 </div>
                               <div class="info" style="background:#fbd88f;">
                                     <h3>News/Events update 2</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. 
+                                        Quis imperdiet massa tincidunt nunc pulvinar sapien. Donec et odio pellentesque diam volutpat. 
+                                        Tristique senectus et netus et malesuada. Massa vitae tortor condimentum lacinia quis.
+                                    </p>
                                 </div>
                             </div>
                             
@@ -422,33 +476,62 @@
                           
                         </div>
                     </article>
-                    <div class="museum">
-                        <button class="tablink" onclick="openCity('Asia', this, 'pink')">Asia-Pacific</button>
-                        <button class="tablink" onclick="openCity('Africa', this, 'pink')">The Africas</button>
-                        <button class="tablink" onclick="openCity('Europe', this, 'pink')">European Union</button>
-                        <button class="tablink" onclick="openCity('Carribean', this, 'pink')">The Carribeans</button>
-                        <button class="tablink" onclick="openCity('Americas', this, 'pink')" id="defaultOpen" >The Americas</button>
-                        <div id="Asia" class="tabcontent">
-                          
-                          <p>Under Construction.</p>
-                        </div>
+                    <sl-tab-group class="museum">
+                        <sl-tab slot="nav" panel="africa" class="tablink">The Africas</sl-tab>
+                        <sl-tab slot="nav" panel="americas" class="tablink" active >The Americas</sl-tab>
+                        <sl-tab slot="nav" panel="asia" class="tablink">Asia-Pacific</sl-tab>
+                        <sl-tab slot="nav" panel="europe" class="tablink">European Union</sl-tab>
+                        <sl-tab slot="nav" panel="carribean" class="tablink">The Carribeans</sl-tab>
                         
-                        <div id="Africa" class="tabcontent">
-                          
-                          <p>Under Construction.</p> 
-                        </div>
+                        <sl-tab-panel name="asia" id="Asia" class="tabcontent">
+                            <div class="paragraph">
+                                <h3>Sodales ut etiam</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Amet volutpat consequat mauris nunc congue nisi. Quam vulputate dignissim suspendisse in est ante in. 
+                                    In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Pharetra massa massa ultricies mi quis hendrerit dolor magna. 
+                                    Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc.
+                                </p>
+                            </div>                   
+                        </sl-tab-panel>
                         
-                        <div id="Europe" class="tabcontent">
-                          
-                            <p>Under Construction.</p>
-                        </div>
+                        <sl-tab-panel name="africa" id="Africa" class="tabcontent">
+                            <div class="paragraph">
+                                <h3>Tellus cras adipiscing</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Fermentum et sollicitudin ac orci. Turpis egestas integer eget aliquet nibh praesent tristique. 
+                                    Nibh mauris cursus mattis molestie a iaculis at erat. Diam ut venenatis tellus in metus vulputate eu scelerisque. 
+                                    Est ultricies integer quis auctor elit sed vulputate mi sit.
+                                </p> 
+                            </div>                          
+                        </sl-tab-panel>
                         
-                        <div id="Carribean" class="tabcontent">
-                          
-                            <p>Under Construction.</p>
-                        </div> 
+                        <sl-tab-panel name="europe" id="Europe" class="tabcontent">
+                            <div class="paragraph">
+                                <h3>Phase faucibus scelerisque</h3>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Non odio euismod lacinia at quis risus sed vulputate odio. Dignissim suspendisse in est ante in. 
+                                    Ut diam quam nulla porttitor massa id neque aliquam. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. 
+                                    Ornare aenean euismod elementum nisi quis eleifend quam adipiscing.
+                                </p>
+                            </div>                           
+                        </sl-tab-panel>
                         
-                        <div id="Americas" class="tabcontent">
+                        <sl-tab-panel name="carribean" id="Carribean" class="tabcontent">
+                          <div class="paragraph">
+                              <h3>Laoreet non curabitur</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Scelerisque in dictum non consectetur a erat nam. 
+                                    Facilisis sed odio morbi quis. 
+                                    Posuere sollicitudin aliquam ultrices sagittis orci a. Convallis a cras semper auctor neque vitae.
+                                </p>
+                          </div>
+                           
+                        </sl-tab-panel> 
+                        
+                        <sl-tab-panel name="americas" id="Americas" class="tabcontent">
                             
                             <div class="writeup">
                                 <a target="_blank" href="https://www.megaconorlando.com/en/home.html">
@@ -484,12 +567,9 @@
                                     </p>
                                 </div>                            
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <script src="js/tabs.js"></script>    
-                        
-                
+                        </sl-tab-panel>
+                    </sl-tab-group>
+                </div>                                   
                 
             </section>
 
@@ -508,16 +588,34 @@
                           
                             <div class="slider">
                               <div class="info" style="background:#fbd88f;">
-                                    <h3>Art Tools Promotion here.</h3>                        
+                                    <h3>Art Tools Promotion here.</h3> 
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. 
+                                        Eget nunc lobortis mattis aliquam faucibus purus in.
+                                    </p>                       
                                 </div>
                               <div class="info" style="background:#fbd88f;">
                                     <h3>Art Tools promotion 2</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. 
+                                        Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit.
+                                    </p>
                                 </div>
                               <div class="info" style="background:#fbd88f;">
                                     <h3>Art Tools promotion 3</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Sed vulputate odio ut enim. Id diam vel quam elementum pulvinar.
+                                    </p>
                                 </div>
                               <div class="info" style="background:#fbd88f;">
                                     <h3>Art Tools promotion 4</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                        Sed vulputate odio ut enim. Id diam vel quam elementum pulvinar.
+                                    </p>
                                 </div>
                             </div>
                             
@@ -537,85 +635,149 @@
                           
                         </div>
                     </article>
-                    <div class="museum">
-                        <sl-button-group class="navFilter" id="productFilter">
-                            <sl-button  class="tabfilter tabfilterActive" size="large" onclick="filterSelection('all')" >All Products</sl-button>
-                            <sl-button class="tabfilter" size="large" onclick="filterSelection('canvasProducts')">Canvas</sl-button>
-                            <sl-button class="tabfilter" size="large" onclick="filterSelection('colouringMaterials')">Colouring materials</sl-button>
-                            <sl-button class="tabfilter" size="large" onclick="filterSelection('Digital')">Digital Products</sl-button>
-                            <sl-button class="tabfilter" size="large" onclick="filterSelection('Misc')">Miscellaneous Products</sl-button>
-                        </sl-button-group>
-                        
-                       
-                            <div class="museum">
-                                <sl-card class="productDiv Digital">
-                                           <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
-                                               <img slot="image" src="images/Wacom1Button.png" alt="Wacom 1 Tablet">                                                    
-                                           </a>
-                                           <div class="caption" slot="footer">
-                                               <cite>Wacom One Tablet</cite>                                  
-                                           </div>                                                                     
-                                </sl-card>
-                                <sl-card class="productDiv canvasProducts">
-                                           <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
-                                               <img slot="image" src="images/AcryllicPaper.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
-                                           </a>
-                                           <div class="caption" slot="footer">
-                                               <cite>
-                                                   System 3 Acryllic Paper
-                                                </cite>  
-                                               <br>
-                                               <p>by Daler Rowney Ltd.</p>
-                                            </div>
-                                </sl-card>
-                                <sl-card class="productDiv Misc">
-                                           <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
-                                               <img slot="image" src="images/KneadableEraserButton.png" alt="Daler Rowney Soft Putty Eraser">
-                                           </a>  
-                                           <div class="caption" slot="footer">
-                                               <cite>
-                                                   Daler Rowney Soft Putty Eraser
-                                               </cite>  
-                                               <br>
-                                               <p>by Daler Rowney Ltd.</p>
-                                            </div>           
-                                </sl-card>
+                    <sl-tab-group class="museum">
+                        <sl-tab slot="nav"  class="tabfilter" panel="allProd">All Products</sl-tab>
+                        <sl-tab slot="nav"  class="tabfilter" panel="canvas">Canvas</sl-tab>
+                        <sl-tab slot="nav"  class="tabfilter" panel="colouring">Colouring materials</sl-tab>
+                        <sl-tab slot="nav"  class="tabfilter" panel="digitalProd">Digital Products</sl-tab>
+                        <sl-tab slot="nav"  class="tabfilter" panel="miscProd">Miscellaneous Products</sl-tab>
+                                               
+                        <sl-tab-panel class="museum" name="allProd">
+                            <sl-card class="productDiv Digital">
+                                <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
+                                    <img slot="image" src="images/Wacom1Button.png" alt="Wacom 1 Tablet">                                                    
+                                </a>
+                                <div class="caption" slot="footer">
+                                    <cite>Wacom One Tablet</cite>                                  
+                                </div>                                                                     
+                            </sl-card>
+                            <sl-card class="productDiv canvasProducts">
+                                <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
+                                    <img slot="image" src="images/AcryllicPaper.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
+                                </a>
+                                <div class="caption" slot="footer">
+                                    <cite>
+                                        System 3 Acryllic Paper
+                                    </cite>  
+                                    <p>by Daler Rowney Ltd.</p>
+                                </div>
+                            </sl-card>
+                            <sl-card class="productDiv Misc">
+                                <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
+                                    <img slot="image" src="images/KneadableEraserButton.png" alt="Daler Rowney Soft Putty Eraser">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>
+                                        Daler Rowney Soft Putty Eraser
+                                    </cite>  
+                                    <p>by Daler Rowney Ltd.</p>
+                                </div>           
+                            </sl-card>
                                                                                                
-                                <sl-card class="productDiv colouringMaterials">
-                                    <a target="_blank" href="https://copic.jp/en/product/classic/">
-                                        <img slot="image" src="images/CopicMarkersButton.png" alt="Copic Markers Classic">
-                                    </a>  
-                                    <div class="caption" slot="footer">
-                                        <cite>Copic Markers Classic Set</cite>  
-                                        <br>
-                                       <p> by Copic</p>
-                                    </div>           
-                                </sl-card>
+                            <sl-card class="productDiv colouringMaterials">
+                                <a target="_blank" href="https://copic.jp/en/product/classic/">
+                                    <img slot="image" src="images/CopicMarkersButton.png" alt="Copic Markers Classic">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>Copic Markers Classic Set</cite>  
+                                    <p> by Copic</p>
+                                </div>           
+                            </sl-card>
                                 
-                                <sl-card class="productDiv Misc">
-                                    <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
-                                        <img slot="image" src="images/PencilExtender.jpg" alt="Derwent Pencil Extender">
-                                    </a>  
-                                    <div class="caption" slot="footer">
-                                        <cite>Derwent Pencil Extender</cite>  
-                                        <br>
-                                       <p> by Derwent - ACCO UK Ltd.</p>
-                                    </div>           
-                                </sl-card>
+                            <sl-card class="productDiv Misc">
+                                <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
+                                    <img slot="image" src="images/PencilExtender.jpg" alt="Derwent Pencil Extender">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>Derwent Pencil Extender</cite>  
+                                    <p> by Derwent - ACCO UK Ltd.</p>
+                                </div>           
+                            </sl-card>
 
-                                <sl-card class="productDiv Misc">
-                                    <a target="_blank" href="https://colorwheelco.com/products/">
-                                               <img src="images/ColorwheelButton.png" alt="Colour Wheel Pocket Guide">
-                                    </a>  
-                                    <div class="caption" slot="footer">
-                                               <cite>Colour Wheel Pocket Guide</cite>  
-                                               <br>
-                                            <p>by Colour Wheel Company </p>
-                                    </div>           
-                                </sl-card>
-                            </div>
-                                                                     
-                    </div>
+                            <sl-card class="productDiv Misc">
+                                <a target="_blank" href="https://colorwheelco.com/products/">
+                                    <img src="images/ColorwheelButton.png" alt="Colour Wheel Pocket Guide">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>Colour Wheel Pocket Guide</cite>  
+                                    <p>by Colour Wheel Company </p>
+                                </div>           
+                            </sl-card>
+                        </sl-tab-panel>
+                        
+                        <sl-tab-panel class="museum" name="canvas">
+                            <sl-card class="productDiv canvasProducts">
+                                <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
+                                    <img slot="image" src="images/AcryllicPaper.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
+                                </a>
+                                <div class="caption" slot="footer">
+                                    <cite>
+                                        System 3 Acryllic Paper
+                                    </cite>  
+                                    <p>by Daler Rowney Ltd.</p>
+                                </div>
+                            </sl-card>
+                        </sl-tab-panel>
+
+                        <sl-tab-panel class="museum" name="colouring">
+                            <sl-card class="productDiv colouringMaterials">
+                                <a target="_blank" href="https://copic.jp/en/product/classic/">
+                                    <img slot="image" src="images/CopicMarkersButton.png" alt="Copic Markers Classic">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>Copic Markers Classic Set</cite>  
+                                    <p> by Copic</p>
+                                </div>           
+                            </sl-card>
+                        </sl-tab-panel>
+
+                        <sl-tab-panel class="museum" name="digitalProd">
+                            <sl-card class="productDiv Digital">
+                                <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
+                                    <img slot="image" src="images/Wacom1Button.png" alt="Wacom 1 Tablet">                                                    
+                                </a>
+                                <div class="caption" slot="footer">
+                                    <cite>Wacom One Tablet</cite>                                  
+                                </div>                                                                     
+                            </sl-card>
+                        </sl-tab-panel>
+
+                        <sl-tab-panel class="museum" name="miscProd">
+                            <sl-card class="productDiv Misc">
+                                <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
+                                    <img slot="image" src="images/KneadableEraserButton.png" alt="Daler Rowney Soft Putty Eraser">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>
+                                        Daler Rowney Soft Putty Eraser
+                                    </cite>  
+                                    <p>by Daler Rowney Ltd.</p>
+                                </div>           
+                            </sl-card>
+
+                            <sl-card class="productDiv Misc">
+                                <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
+                                    <img slot="image" src="images/PencilExtender.jpg" alt="Derwent Pencil Extender">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>Derwent Pencil Extender</cite>  
+                                    <p> by Derwent - ACCO UK Ltd.</p>
+                                </div>           
+                            </sl-card>
+
+                            <sl-card class="productDiv Misc">
+                                <a target="_blank" href="https://colorwheelco.com/products/">
+                                    <img src="images/ColorwheelButton.png" alt="Colour Wheel Pocket Guide">
+                                </a>  
+                                <div class="caption" slot="footer">
+                                    <cite>Colour Wheel Pocket Guide</cite>  
+                                    <p>by Colour Wheel Company </p>
+                                </div>           
+                            </sl-card>
+
+                        </sl-tab-panel>
+
+                    </sl-tab-group>
                 </div>
                 
                 
