@@ -533,7 +533,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 @media only screen and (max-width: 1980px) { 
     h1 {
         text-align:left; 
-        transform:translate(-5%, -90%);
+        transform: translate(-3%,-60%);
     }
     .frame {
         width: 24%;
@@ -758,7 +758,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
 @media only screen and (max-width: 428px) { 
     h1 {
-        transform: translate(-5%, -22%);
+        transform: translate(-5%, -20%);
     }
 
      h3 span, h4 span, h5 span, h3, h4 {
@@ -848,11 +848,18 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 }
 
+@media only screen and (max-width: 384px) {
+    h1 {
+        transform: translate(-2%, -20%);
+    }
+}
+
+
 @media only screen and (max-width: 375px) {
 
     h1 {
         text-align: center;
-        transform: translate(-1%, -20%);
+        transform: translate(-1%, -25%);
     }
 
     
