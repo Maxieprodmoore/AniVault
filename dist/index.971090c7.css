@@ -755,6 +755,12 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         margin: 0 0.5%;
     }
 
+    .CSSgal .bullets{
+        padding-top: 3%;
+        transform: translateY(-70%);
+
+    }
+
 }
 
 @media only screen and (max-width: 810px) {
