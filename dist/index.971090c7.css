@@ -96,7 +96,7 @@ header {
 /* ==========NAVIGATION============= */
 
 /* Sticky Navigation Bar by Tutorial Republic
-https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-footer-using-css.php*/
+https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-f-using-css.php*/
 
 label, #burger {
     display: none; 
@@ -773,6 +773,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     #intro .frame{
         margin-bottom: -22%;
+    }
+
+    .frame{
+        margin-bottom: 2%;
     }
 }
 
