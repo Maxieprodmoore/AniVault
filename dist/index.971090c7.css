@@ -20,7 +20,9 @@ span {
 
 h1, h2, h3, h4, h5, h6, cite {
             font-family: "Lemonada";
-            text-align: center;    
+            text-align: center; 
+            margin-top: 1%;
+            margin-bottom: 0.25%;   
         }
 
 h2, h2 span, h3 span, h4 span, h5 span, h3, h4 {
@@ -293,25 +295,21 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 
 #s6:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
 
-#s7:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s7:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
 
-#s8:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s8:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
 
-#s9:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s9:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
 
-#s10:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s10:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
 
-#s11:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s11:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
 
-#s12:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s12:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
 
-#s13:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s13:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
 
-#s14:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
-
-#s15:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
-
-#s16:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s14:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
 
 /* More slides? Add here more rules */
 
@@ -335,25 +333,21 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 
 #s6:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
 
-#s7:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s7:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
 
-#s8:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s8:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
 
-#s9:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s9:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
 
-#s10:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s10:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
 
-#s11:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s11:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
 
-#s12:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s12:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
 
-#s13:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s13:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
 
-#s14:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
-
-#s15:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
-
-#s16:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s14:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
 
 /* More slides? Add here more rules */
 
@@ -371,25 +365,21 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 
 #s6:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
 
-#s7:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s7:target ~ .slider {transform: translateX(0%); -webkit-transform: translateX(0%);}
 
-#s8:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+#s8:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
 
-#s9:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s9:target ~ .slider {transform: translateX( -200%); -webkit-transform: translateX(-200%);}
 
-#s10:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s10:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
 
-#s11:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s11:target ~ .slider {transform: translateX(0%); -webkit-transform: translateX(0%);}
 
-#s12:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+#s12:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
 
-#s13:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s13:target ~ .slider {transform: translateX( -200%); -webkit-transform: translateX(-200%);}
 
-#s14:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
-
-#s15:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
-
-#s16:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+#s14:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
 
 /* More slides? Add here more rules */
 
@@ -530,7 +520,7 @@ a.filter {
     position: relative;
     margin:  0% 2%;
     padding: 0;
-    width: 100%;
+    width: 96%;
 }
 
 .museum::part(nav){
@@ -555,6 +545,23 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
 
 /* ==========SECTION 3 STYLING============= */
+
+.paragraph p {
+    font-size: inherit;
+}
+
+.writeup h3 {
+    margin: 0;
+}
+
+.writeup h5 {
+    margin-bottom: 1%;
+}
+
+.writeup div{
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 /* ==========SECTION 4 STYLING============= */
 
@@ -632,8 +639,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         margin: 0 10vw;
     } 
     .paragraph {
+        width: 58%;
         padding-left: 2%; 
         text-align: left; 
+        margin-right: 0;
     }
     .writeup {
         margin-top: 2%;
@@ -662,7 +671,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 @media only screen and (max-width: 1024px) {
     h1 {
         text-align:center;
-        transform: translate(-5%, -60%);
+        transform: translate(-5%, -20%);
     }
 
     .paragraph h3{
@@ -678,7 +687,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
     .topnav{
-        padding-top: 2.5%;
+        padding-top: 1%;
     }
 
     .CSSgal .prevNext a {
@@ -693,8 +702,14 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         line-height: 30px;
     }
     .navcontent {
-        width: 80vw;
+        width: 90vw;
+        margin: 0 5vw;
     }
+
+    nav a {
+        padding: 1% 2%;
+    }
+
     .frame {
         width: 48%;
     }
@@ -731,6 +746,34 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         font-size: 1.2rem;
     }
 
+    .writeup div, .writeup h5{
+        padding: 0 6.5%;
+    }
+
+    .productDiv{
+        width: 48%;
+        margin: 0 0.5%;
+    }
+
+}
+
+@media only screen and (max-width: 810px) {
+    h1 {
+        transform:translate(-5%, -30%);
+    }
+
+    .paragraph {
+        width: initial;
+    }
+
+    .info p {
+        padding: 0 6%;
+        text-align: left;
+    }
+
+    #intro .frame{
+        margin-bottom: -22%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -802,15 +845,20 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         width: 98%;
         margin: 1% 0 ;
     }
+
+    .writeup h5 {
+        text-align: left;
+    }
 }
 
 @media only screen and (max-width: 428px) { 
     h1 {
-        transform: translate(-5%, -50%);
+        transform: translate(-5%, -22%);
     }
 
      h3 span, h4 span, h5 span, h3, h4 {
         font-size: 1.3rem;
+        margin-top: 0;
     }
 
 
@@ -823,8 +871,9 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         font-size: 1.25rem;
     }
 
-    .CSSgal .slider h3{
+    .CSSgal .slider h3, .CSSgal .slider h2{
         font-size: 2rem;
+        margin-top: 0;
     }
 
     header {
@@ -832,8 +881,12 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
     .promopic {
         float: none;
-        height: 100%;
-        width: auto;
+        width: 100%;
+    }
+
+    .segment {
+        width: 98%;
+        margin: 0 1%;
     }
 
     .paragraph{
@@ -841,11 +894,19 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         margin: initial;
         padding-left: initial;
     }
+
     .frame{
-        height: 25%;
-        width: auto;
-        margin-right: initial;
+        width: 100%;
+        margin-right: 0;
         margin-bottom: 2%;
+    }
+
+    .frame a{
+        margin-bottom: 1%;
+    }
+
+    .centered {
+        margin-bottom: 0;
     }
 
     .filternav{
@@ -865,8 +926,20 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         width: 100%;
     }
 
-    .centered {
+    .slider .info{
+        padding: 5%;
+    }
+
+    .CSSgal .bullets {
+        transform: translateY(-50%);
+    }
+
+    .centered a {
         transform: translate(-50%, -180%);
+    }
+
+    .museum {
+        margin: 0 0.5%;
     }
 }
 
@@ -874,7 +947,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     h1 {
         text-align: center;
-        transform: translate(-5%, -60%);
+        transform: translate(-1%, -20%);
     }
 
     
@@ -884,7 +957,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
 
-    .centered {
+    .centered a {
         transform: translate(-50%, -160%);
     }
 
@@ -892,6 +965,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
 
 @media only screen and (max-width: 360px) { 
+
+    h1{
+        transform: translate(-2%, -20%);
+    }
 
     header {
         padding: 1%;
@@ -901,7 +978,12 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         width: 98vw;
         margin: 0 1vw;
     }
-    
+
+    .CSSgal .bullets {
+        transform: translateY(-70%);
+        margin-top: 5%;
+    }
+
     
 }
 :root,
