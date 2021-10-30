@@ -609,6 +609,12 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
    padding: 3% 0 2%; 
 }
 
+.museum .frame::after{
+    content: "";
+    clear: both;
+    display: inline;
+}
+
 /* ==========FOOTER STYLIING============= */
 
 .buttonb2top {
