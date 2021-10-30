@@ -425,6 +425,19 @@ a.filter {
     transform: translate(-50%, -150%);
 }
 
+centered::after {
+    clear: both;
+    content: "";
+    display: initial;
+}
+
+#intro .frame::after{
+    clear: both;
+    content: "";
+    display: initial;
+    margin: initial;
+}
+
 
 
 /* ==========SECTION 2 STYLING============= */
@@ -619,6 +632,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     .frame {
         width: 48%;
+        margin: 0 1% 2%;
     }
 
     .writeup {
@@ -687,9 +701,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         margin-bottom: -22%;
     }
 
-    .frame{
-        margin-bottom: 2%;
-    }
 }
 
 @media only screen and (max-width: 768px) {
