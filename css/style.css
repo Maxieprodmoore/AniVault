@@ -375,6 +375,7 @@ img {
         padding: 0.1%;
         margin: 0;
         font-size: 1.5rem;
+        text-align: center;
     }
 
     .caption h5{
@@ -382,9 +383,6 @@ img {
         margin-bottom: 0.25%;
     }
 
-    .caption p {
-        margin: 0;
-    }
 /*=====Videoclips=========*/
 .video {
     max-width: 100%;
@@ -896,7 +894,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 @media only screen and (max-width: 375px) {
 
     h1 {
-        text-align: center;
         transform: translate(-1%, -25%);
     }
 
