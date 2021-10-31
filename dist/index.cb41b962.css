@@ -536,6 +536,7 @@ centered::after {
 
 #intro .frame a img {
     filter: brightness(40.5%);
+    -webkit-filter: brightness(40.5%);
 }
 
 /* ==========SECTION 2 STYLING============= */
