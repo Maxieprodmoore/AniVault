@@ -13,7 +13,7 @@ a { text-decoration: none; color:black; }
 
 span {
             font-family: "Exo2Black";
-            color: rgb(59, 48, 16);
+            color: #3b3010;
             font-family: 'Exo 2', sans-serif;
         }
 
@@ -22,6 +22,10 @@ h1, h2, h3, h4, h5, h6, cite {
             text-align: center; 
             margin-top: 1%;
             margin-bottom: 0.25%;   
+        }
+
+.segment h2{
+            background-color: #f7ce76;
         }
 
 h2, h2 span, h3 span, h4 span, h5 span, h3, h4 {
@@ -49,10 +53,14 @@ h2 {
             text-shadow:2px 2px white;
         }
 
+.writeup h2{
+            background-color: initial;
+        }
+
 /* ============h4 = Filter buttons  ========== */
 
 a {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: bolder;
         }
 
@@ -526,6 +534,10 @@ centered::after {
     margin: initial;
 }
 
+#intro .frame a img {
+    filter: brightness(40.5%);
+}
+
 /* ==========SECTION 2 STYLING============= */
 
 .museum {
@@ -625,7 +637,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 .footer{
     width: 100vw;
     background-color: rgb(116, 131, 145);
-    padding: 1%;
+    padding: 2%;
 }
 
 /* ==========RESPONSIVE DESIGN============= */
@@ -771,7 +783,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     .productDiv{
         width: 48%;
-        margin: 0 0.5%;
+        margin: 0 0.5% 2%;
     }
 
     .CSSgal .bullets{
