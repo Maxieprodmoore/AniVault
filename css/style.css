@@ -398,7 +398,7 @@ label, #burger {
 article.mainblock {
     position: relative;
     top: 10%;
-    display: block;
+    display: flow-root;
     width: 95%;
     margin: 3% 2.5% 1.25%;
 }
@@ -412,10 +412,10 @@ article.mainblock {
     display: inline-block;
 }
 
-article.mainblock:after {
-    content: "";
-    display: table;
-    clear: both;
+#welcomeMsg h5 {
+    margin-left: 2%;
+    margin-top: 15%;
+    text-align: left;
 }
 
 a.filter {
@@ -455,6 +455,7 @@ centered::after {
     margin:  0% 2%;
     padding: 0;
     width: 96%;
+    display: table;
 }
 
 .museum::part(nav){
