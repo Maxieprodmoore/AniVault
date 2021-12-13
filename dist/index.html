@@ -1,0 +1,1307 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AniVault</title><meta name="author" content="Ho Bing Lin"><meta name="description" content="A Treasure vault of Anime & Creativity"><meta name="keywords" content="Anime,Resource,Anime Resource Website, Artist, resources"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.58/dist/themes/light.css"><link rel="stylesheet" href="/index.2b915d14.css"><script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.58/dist/shoelace.js"></script><script src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.58/dist/shoelace.js" nomodule="" defer></script><script type="module" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" nomodule="" defer></script><script>!function(){function t(t,o,r,e){Object.defineProperty(t,o,{get:r,set:e,enumerable:!0,configurable:!0})}function o(t,o){return o?null!==t.querySelector(`:scope > [slot="${o}"]`):[...t.childNodes].some((t=>{if(t.nodeType===t.TEXT_NODE&&""!==t.textContent.trim())return!0;if(t.nodeType===t.ELEMENT_NODE){if(!t.hasAttribute("slot"))return!0}return!1}))}var r,e,s,a,l=window.ShadowRoot&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,i=Symbol(),n=new Map,c=class{constructor(t,o){if(this._$cssResult$=!0,o!==i)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t}get styleSheet(){let t=n.get(this.cssText);return l&&void 0===t&&(n.set(this.cssText,t=new CSSStyleSheet),t.replaceSync(this.cssText)),t}toString(){return this.cssText}},d=t=>new c("string"==typeof t?t:t+"",i),u=(t,...o)=>{const r=1===t.length?t[0]:o.reduce(((o,r,e)=>o+(t=>{if(!0===t._$cssResult$)return t.cssText;if("number"==typeof t)return t;throw Error("Value passed to 'css' function must be a 'css' function result: "+t+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(r)+t[e+1]),t[0]);return new c(r,i)},b=l?t=>t:t=>t instanceof CSSStyleSheet?(t=>{let o="";for(const r of t.cssRules)o+=r.cssText;return d(o)})(t):t,h={toAttribute(t,o){switch(o){case Boolean:t=t?"":null;break;case Object:case Array:t=null==t?t:JSON.stringify(t)}return t},fromAttribute(t,o){let r=t;switch(o){case Boolean:r=null!==t;break;case Number:r=null===t?null:Number(t);break;case Object:case Array:try{r=JSON.parse(t)}catch(t){r=null}}return r}},p=(t,o)=>o!==t&&(o==o||t==t),g={attribute:!0,type:String,converter:h,reflect:!1,hasChanged:p},v=class extends HTMLElement{constructor(){super(),this._$Et=new Map,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Ei=null,this.o()}static addInitializer(t){var o;null!==(o=this.l)&&void 0!==o||(this.l=[]),this.l.push(t)}static get observedAttributes(){this.finalize();const t=[];return this.elementProperties.forEach(((o,r)=>{const e=this._$Eh(r,o);void 0!==e&&(this._$Eu.set(e,r),t.push(e))})),t}static createProperty(t,o=g){if(o.state&&(o.attribute=!1),this.finalize(),this.elementProperties.set(t,o),!o.noAccessor&&!this.prototype.hasOwnProperty(t)){const r="symbol"==typeof t?Symbol():"__"+t,e=this.getPropertyDescriptor(t,r,o);void 0!==e&&Object.defineProperty(this.prototype,t,e)}}static getPropertyDescriptor(t,o,r){return{get(){return this[o]},set(e){const s=this[t];this[o]=e,this.requestUpdate(t,s,r)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)||g}static finalize(){if(this.hasOwnProperty("finalized"))return!1;this.finalized=!0;const t=Object.getPrototypeOf(this);if(t.finalize(),this.elementProperties=new Map(t.elementProperties),this._$Eu=new Map,this.hasOwnProperty("properties")){const t=this.properties,o=[...Object.getOwnPropertyNames(t),...Object.getOwnPropertySymbols(t)];for(const r of o)this.createProperty(r,t[r])}return this.elementStyles=this.finalizeStyles(this.styles),!0}static finalizeStyles(t){const o=[];if(Array.isArray(t)){const r=new Set(t.flat(1/0).reverse());for(const t of r)o.unshift(b(t))}else void 0!==t&&o.push(b(t));return o}static _$Eh(t,o){const r=o.attribute;return!1===r?void 0:"string"==typeof r?r:"string"==typeof t?t.toLowerCase():void 0}o(){var t;this._$Ev=new Promise((t=>this.enableUpdating=t)),this._$AL=new Map,this._$Ep(),this.requestUpdate(),null===(t=this.constructor.l)||void 0===t||t.forEach((t=>t(this)))}addController(t){var o,r;(null!==(o=this._$Em)&&void 0!==o?o:this._$Em=[]).push(t),void 0!==this.renderRoot&&this.isConnected&&(null===(r=t.hostConnected)||void 0===r||r.call(t))}removeController(t){var o;null===(o=this._$Em)||void 0===o||o.splice(this._$Em.indexOf(t)>>>0,1)}_$Ep(){this.constructor.elementProperties.forEach(((t,o)=>{this.hasOwnProperty(o)&&(this._$Et.set(o,this[o]),delete this[o])}))}createRenderRoot(){var t;const o=null!==(t=this.shadowRoot)&&void 0!==t?t:this.attachShadow(this.constructor.shadowRootOptions);return r=o,e=this.constructor.elementStyles,l?r.adoptedStyleSheets=e.map((t=>t instanceof CSSStyleSheet?t:t.styleSheet)):e.forEach((t=>{const o=document.createElement("style"),e=window.litNonce;void 0!==e&&o.setAttribute("nonce",e),o.textContent=t.cssText,r.appendChild(o)})),o;var r,e}connectedCallback(){var t;void 0===this.renderRoot&&(this.renderRoot=this.createRenderRoot()),this.enableUpdating(!0),null===(t=this._$Em)||void 0===t||t.forEach((t=>{var o;return null===(o=t.hostConnected)||void 0===o?void 0:o.call(t)}))}enableUpdating(t){}disconnectedCallback(){var t;null===(t=this._$Em)||void 0===t||t.forEach((t=>{var o;return null===(o=t.hostDisconnected)||void 0===o?void 0:o.call(t)}))}attributeChangedCallback(t,o,r){this._$AK(t,r)}_$Eg(t,o,r=g){var e,s;const a=this.constructor._$Eh(t,r);if(void 0!==a&&!0===r.reflect){const l=(null!==(s=null===(e=r.converter)||void 0===e?void 0:e.toAttribute)&&void 0!==s?s:h.toAttribute)(o,r.type);this._$Ei=t,null==l?this.removeAttribute(a):this.setAttribute(a,l),this._$Ei=null}}_$AK(t,o){var r,e,s;const a=this.constructor,l=a._$Eu.get(t);if(void 0!==l&&this._$Ei!==l){const t=a.getPropertyOptions(l),i=t.converter,n=null!==(s=null!==(e=null===(r=i)||void 0===r?void 0:r.fromAttribute)&&void 0!==e?e:"function"==typeof i?i:null)&&void 0!==s?s:h.fromAttribute;this._$Ei=l,this[l]=n(o,t.type),this._$Ei=null}}requestUpdate(t,o,r){let e=!0;void 0!==t&&(((r=r||this.constructor.getPropertyOptions(t)).hasChanged||p)(this[t],o)?(this._$AL.has(t)||this._$AL.set(t,o),!0===r.reflect&&this._$Ei!==t&&(void 0===this._$ES&&(this._$ES=new Map),this._$ES.set(t,r))):e=!1),!this.isUpdatePending&&e&&(this._$Ev=this._$EC())}async _$EC(){this.isUpdatePending=!0;try{await this._$Ev}catch(t){Promise.reject(t)}const t=this.scheduleUpdate();return null!=t&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){var t;if(!this.isUpdatePending)return;this.hasUpdated,this._$Et&&(this._$Et.forEach(((t,o)=>this[o]=t)),this._$Et=void 0);let o=!1;const r=this._$AL;try{o=this.shouldUpdate(r),o?(this.willUpdate(r),null===(t=this._$Em)||void 0===t||t.forEach((t=>{var o;return null===(o=t.hostUpdate)||void 0===o?void 0:o.call(t)})),this.update(r)):this._$ET()}catch(t){throw o=!1,this._$ET(),t}o&&this._$AE(r)}willUpdate(t){}_$AE(t){var o;null===(o=this._$Em)||void 0===o||o.forEach((t=>{var o;return null===(o=t.hostUpdated)||void 0===o?void 0:o.call(t)})),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$ET(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$Ev}shouldUpdate(t){return!0}update(t){void 0!==this._$ES&&(this._$ES.forEach(((t,o)=>this._$Eg(o,this[o],t))),this._$ES=void 0),this._$ET()}updated(t){}firstUpdated(t){}};v.finalized=!0,v.elementProperties=new Map,v.elementStyles=[],v.shadowRootOptions={mode:"open"},null===(r=globalThis.reactiveElementPolyfillSupport)||void 0===r||r.call(globalThis,{ReactiveElement:v}),(null!==(e=globalThis.reactiveElementVersions)&&void 0!==e?e:globalThis.reactiveElementVersions=[]).push("1.0.0");var m=globalThis.trustedTypes,f=m?m.createPolicy("lit-html",{createHTML:t=>t}):void 0,_=`lit$${(Math.random()+"").slice(9)}$`,y="?"+_,w=`<${y}>`,$=document,x=(t="")=>$.createComment(t),C=t=>null===t||"object"!=typeof t&&"function"!=typeof t,A=Array.isArray,k=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,S=/-->/g,E=/>/g,T=/>|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,z=/'/g,P=/"/g,O=/^(?:script|style|textarea)$/i,L=t=>(o,...r)=>({_$litType$:t,strings:o,values:r}),M=L(1),B=(L(2),Symbol.for("lit-noChange")),H=Symbol.for("lit-nothing"),U=new WeakMap,N=$.createTreeWalker($,129,null,!1),R=class{constructor({strings:t,_$litType$:o},r){let e;this.parts=[];let s=0,a=0;const l=t.length-1,i=this.parts,[n,c]=((t,o)=>{const r=t.length-1,e=[];let s,a=2===o?"<svg>":"",l=k;for(let o=0;o<r;o++){const r=t[o];let i,n,c=-1,d=0;for(;d<r.length&&(l.lastIndex=d,n=l.exec(r),null!==n);)d=l.lastIndex,l===k?"!--"===n[1]?l=S:void 0!==n[1]?l=E:void 0!==n[2]?(O.test(n[2])&&(s=RegExp("</"+n[2],"g")),l=T):void 0!==n[3]&&(l=T):l===T?">"===n[0]?(l=null!=s?s:k,c=-1):void 0===n[1]?c=-2:(c=l.lastIndex-n[2].length,i=n[1],l=void 0===n[3]?T:'"'===n[3]?P:z):l===P||l===z?l=T:l===S||l===E?l=k:(l=T,s=void 0);const u=l===T&&t[o+1].startsWith("/>")?" ":"";a+=l===k?r+w:c>=0?(e.push(i),r.slice(0,c)+"$lit$"+r.slice(c)+_+u):r+_+(-2===c?(e.push(void 0),o):u)}const i=a+(t[r]||"<?>")+(2===o?"</svg>":"");return[void 0!==f?f.createHTML(i):i,e]})(t,o);if(this.el=R.createElement(n,r),N.currentNode=this.el.content,2===o){const t=this.el.content,o=t.firstChild;o.remove(),t.append(...o.childNodes)}for(;null!==(e=N.nextNode())&&i.length<l;){if(1===e.nodeType){if(e.hasAttributes()){const t=[];for(const o of e.getAttributeNames())if(o.endsWith("$lit$")||o.startsWith(_)){const r=c[a++];if(t.push(o),void 0!==r){const t=e.getAttribute(r.toLowerCase()+"$lit$").split(_),o=/([.?@])?(.*)/.exec(r);i.push({type:1,index:s,name:o[2],strings:t,ctor:"."===o[1]?q:"?"===o[1]?K:"@"===o[1]?G:V})}else i.push({type:6,index:s})}for(const o of t)e.removeAttribute(o)}if(O.test(e.tagName)){const t=e.textContent.split(_),o=t.length-1;if(o>0){e.textContent=m?m.emptyScript:"";for(let r=0;r<o;r++)e.append(t[r],x()),N.nextNode(),i.push({type:2,index:++s});e.append(t[o],x())}}}else if(8===e.nodeType)if(e.data===y)i.push({type:2,index:s});else{let t=-1;for(;-1!==(t=e.data.indexOf(_,t+1));)i.push({type:7,index:s}),t+=_.length-1}s++}}static createElement(t,o){const r=$.createElement("template");return r.innerHTML=t,r}};function I(t,o,r=t,e){var s,a,l,i;if(o===B)return o;let n=void 0!==e?null===(s=r._$Cl)||void 0===s?void 0:s[e]:r._$Cu;const c=C(o)?void 0:o._$litDirective$;return(null==n?void 0:n.constructor)!==c&&(null===(a=null==n?void 0:n._$AO)||void 0===a||a.call(n,!1),void 0===c?n=void 0:(n=new c(t),n._$AT(t,r,e)),void 0!==e?(null!==(l=(i=r)._$Cl)&&void 0!==l?l:i._$Cl=[])[e]=n:r._$Cu=n),void 0!==n&&(o=I(t,n._$AS(t,o.values),n,e)),o}var j,D,F,W=class{constructor(t,o,r,e){var s;this.type=2,this._$AH=H,this._$AN=void 0,this._$AA=t,this._$AB=o,this._$AM=r,this.options=e,this._$Cg=null===(s=null==e?void 0:e.isConnected)||void 0===s||s}get _$AU(){var t,o;return null!==(o=null===(t=this._$AM)||void 0===t?void 0:t._$AU)&&void 0!==o?o:this._$Cg}get parentNode(){let t=this._$AA.parentNode;const o=this._$AM;return void 0!==o&&11===t.nodeType&&(t=o.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,o=this){t=I(this,t,o),C(t)?t===H||null==t||""===t?(this._$AH!==H&&this._$AR(),this._$AH=H):t!==this._$AH&&t!==B&&this.$(t):void 0!==t._$litType$?this.T(t):void 0!==t.nodeType?this.S(t):(t=>{var o;return A(t)||"function"==typeof(null===(o=t)||void 0===o?void 0:o[Symbol.iterator])})(t)?this.M(t):this.$(t)}A(t,o=this._$AB){return this._$AA.parentNode.insertBefore(t,o)}S(t){this._$AH!==t&&(this._$AR(),this._$AH=this.A(t))}$(t){this._$AH!==H&&C(this._$AH)?this._$AA.nextSibling.data=t:this.S($.createTextNode(t)),this._$AH=t}T(t){var o;const{values:r,_$litType$:e}=t,s="number"==typeof e?this._$AC(t):(void 0===e.el&&(e.el=R.createElement(e.h,this.options)),e);if((null===(o=this._$AH)||void 0===o?void 0:o._$AD)===s)this._$AH.m(r);else{const t=new class{constructor(t,o){this.v=[],this._$AN=void 0,this._$AD=t,this._$AM=o}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}p(t){var o;const{el:{content:r},parts:e}=this._$AD,s=(null!==(o=null==t?void 0:t.creationScope)&&void 0!==o?o:$).importNode(r,!0);N.currentNode=s;let a=N.nextNode(),l=0,i=0,n=e[0];for(;void 0!==n;){if(l===n.index){let o;2===n.type?o=new W(a,a.nextSibling,this,t):1===n.type?o=new n.ctor(a,n.name,n.strings,this,t):6===n.type&&(o=new X(a,this,t)),this.v.push(o),n=e[++i]}l!==(null==n?void 0:n.index)&&(a=N.nextNode(),l++)}return s}m(t){let o=0;for(const r of this.v)void 0!==r&&(void 0!==r.strings?(r._$AI(t,r,o),o+=r.strings.length-2):r._$AI(t[o])),o++}}(s,this),o=t.p(this.options);t.m(r),this.S(o),this._$AH=t}}_$AC(t){let o=U.get(t.strings);return void 0===o&&U.set(t.strings,o=new R(t)),o}M(t){A(this._$AH)||(this._$AH=[],this._$AR());const o=this._$AH;let r,e=0;for(const s of t)e===o.length?o.push(r=new W(this.A(x()),this.A(x()),this,this.options)):r=o[e],r._$AI(s),e++;e<o.length&&(this._$AR(r&&r._$AB.nextSibling,e),o.length=e)}_$AR(t=this._$AA.nextSibling,o){var r;for(null===(r=this._$AP)||void 0===r||r.call(this,!1,!0,o);t&&t!==this._$AB;){const o=t.nextSibling;t.remove(),t=o}}setConnected(t){var o;void 0===this._$AM&&(this._$Cg=t,null===(o=this._$AP)||void 0===o||o.call(this,t))}},V=class{constructor(t,o,r,e,s){this.type=1,this._$AH=H,this._$AN=void 0,this.element=t,this.name=o,this._$AM=e,this.options=s,r.length>2||""!==r[0]||""!==r[1]?(this._$AH=Array(r.length-1).fill(new String),this.strings=r):this._$AH=H}get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}_$AI(t,o=this,r,e){const s=this.strings;let a=!1;if(void 0===s)t=I(this,t,o,0),a=!C(t)||t!==this._$AH&&t!==B,a&&(this._$AH=t);else{const e=t;let l,i;for(t=s[0],l=0;l<s.length-1;l++)i=I(this,e[r+l],o,l),i===B&&(i=this._$AH[l]),a||(a=!C(i)||i!==this._$AH[l]),i===H?t=H:t!==H&&(t+=(null!=i?i:"")+s[l+1]),this._$AH[l]=i}a&&!e&&this.k(t)}k(t){t===H?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,null!=t?t:"")}},q=class extends V{constructor(){super(...arguments),this.type=3}k(t){this.element[this.name]=t===H?void 0:t}},K=class extends V{constructor(){super(...arguments),this.type=4}k(t){t&&t!==H?this.element.setAttribute(this.name,""):this.element.removeAttribute(this.name)}},G=class extends V{constructor(t,o,r,e,s){super(t,o,r,e,s),this.type=5}_$AI(t,o=this){var r;if((t=null!==(r=I(this,t,o,0))&&void 0!==r?r:H)===B)return;const e=this._$AH,s=t===H&&e!==H||t.capture!==e.capture||t.once!==e.once||t.passive!==e.passive,a=t!==H&&(e===H||s);s&&this.element.removeEventListener(this.name,this,e),a&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){var o,r;"function"==typeof this._$AH?this._$AH.call(null!==(r=null===(o=this.options)||void 0===o?void 0:o.host)&&void 0!==r?r:this.element,t):this._$AH.handleEvent(t)}},X=class{constructor(t,o,r){this.element=t,this.type=6,this._$AN=void 0,this._$AM=o,this.options=r}get _$AU(){return this._$AM._$AU}_$AI(t){I(this,t)}};null===(s=globalThis.litHtmlPolyfillSupport)||void 0===s||s.call(globalThis,R,W),(null!==(a=globalThis.litHtmlVersions)&&void 0!==a?a:globalThis.litHtmlVersions=[]).push("2.0.0");var J=class extends v{constructor(){super(...arguments),this.renderOptions={host:this},this._$Dt=void 0}createRenderRoot(){var t,o;const r=super.createRenderRoot();return null!==(t=(o=this.renderOptions).renderBefore)&&void 0!==t||(o.renderBefore=r.firstChild),r}update(t){const o=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Dt=((t,o,r)=>{var e,s;const a=null!==(e=null==r?void 0:r.renderBefore)&&void 0!==e?e:o;let l=a._$litPart$;if(void 0===l){const t=null!==(s=null==r?void 0:r.renderBefore)&&void 0!==s?s:null;a._$litPart$=l=new W(o.insertBefore(x(),t),t,void 0,null!=r?r:{})}return l._$AI(t),l})(o,this.renderRoot,this.renderOptions)}connectedCallback(){var t;super.connectedCallback(),null===(t=this._$Dt)||void 0===t||t.setConnected(!0)}disconnectedCallback(){var t;super.disconnectedCallback(),null===(t=this._$Dt)||void 0===t||t.setConnected(!1)}render(){return B}};J.finalized=!0,J._$litElement$=!0,null===(j=globalThis.litElementHydrateSupport)||void 0===j||j.call(globalThis,{LitElement:J}),null===(D=globalThis.litElementPolyfillSupport)||void 0===D||D.call(globalThis,{LitElement:J}),(null!==(F=globalThis.litElementVersions)&&void 0!==F?F:globalThis.litElementVersions=[]).push("3.0.0");var Y=t=>null!=t?t:H,Z=(()=>{const t=document.createElement("style");let o;try{document.head.appendChild(t),t.sheet.insertRule(":focus-visible { color: inherit }"),o=!0}catch(t){o=!1}finally{t.remove()}return o})(),Q=d(Z?":focus-visible":":focus"),tt=1,ot=2,rt=t=>(...o)=>({_$litDirective$:t,values:o}),et=class{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,o,r){this._$Ct=t,this._$AM=o,this._$Ci=r}_$AS(t,o){return this.update(t,o)}update(t,o){return this.render(...o)}},st=rt(class extends et{constructor(t){var o;if(super(t),t.type!==tt||"class"!==t.name||(null===(o=t.strings)||void 0===o?void 0:o.length)>2)throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.")}render(t){return" "+Object.keys(t).filter((o=>t[o])).join(" ")+" "}update(t,[o]){var r,e;if(void 0===this.st){this.st=new Set,void 0!==t.strings&&(this.et=new Set(t.strings.join(" ").split(/\s/).filter((t=>""!==t))));for(const t in o)o[t]&&!(null===(r=this.et)||void 0===r?void 0:r.has(t))&&this.st.add(t);return this.render(o)}const s=t.element.classList;this.st.forEach((t=>{t in o||(s.remove(t),this.st.delete(t))}));for(const t in o){const r=!!o[t];r===this.st.has(t)||(null===(e=this.et)||void 0===e?void 0:e.has(t))||(r?(s.add(t),this.st.add(t)):(s.remove(t),this.st.delete(t)))}return B}});function at(t,o,r){const e=new CustomEvent(o,Object.assign({bubbles:!0,cancelable:!1,composed:!0,detail:{}},r));return t.dispatchEvent(e),e}var lt=u`
+  .sl-scroll-lock {
+    overflow: hidden !important;
+  }
+
+  .sl-toast-stack {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: var(--sl-z-index-toast);
+    width: 28rem;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  .sl-toast-stack sl-alert {
+    --box-shadow: var(--sl-shadow-large);
+    margin: var(--sl-spacing-medium);
+  }
+`,it=u`
+  :host {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  :host *,
+  :host *::before,
+  :host *::after {
+    box-sizing: inherit;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+`,nt=document.createElement("style");nt.textContent=lt.toString(),document.head.append(nt);var ct={};t(ct,"__spreadValues",(function(){return ft}),(function(t){return ft=t})),t(ct,"__spreadProps",(function(){return _t}),(function(t){return _t=t})),t(ct,"__decorateClass",(function(){return yt}),(function(t){return yt=t}));Object.create;var dt=Object.defineProperty,ut=Object.defineProperties,bt=Object.getOwnPropertyDescriptor,ht=Object.getOwnPropertyDescriptors,pt=(Object.getOwnPropertyNames,Object.getOwnPropertySymbols),gt=(Object.getPrototypeOf,Object.prototype.hasOwnProperty),vt=Object.prototype.propertyIsEnumerable,mt=(t,o,r)=>o in t?dt(t,o,{enumerable:!0,configurable:!0,writable:!0,value:r}):t[o]=r,ft=(t,o)=>{for(var r in o||(o={}))gt.call(o,r)&&mt(t,r,o[r]);if(pt)for(var r of pt(o))vt.call(o,r)&&mt(t,r,o[r]);return t},_t=(t,o)=>ut(t,ht(o)),yt=(t,o,r,e)=>{for(var s,a=e>1?void 0:e?bt(o,r):o,l=t.length-1;l>=0;l--)(s=t[l])&&(a=(e?s(o,r,a):s(a))||a);return e&&a&&dt(o,r,a),a},wt=t=>o=>{return"function"==typeof o?(r=t,e=o,window.customElements.define(r,e),e):((t,o)=>{const{kind:r,elements:e}=o;return{kind:r,elements:e,finisher(o){window.customElements.define(t,o)}}})(t,o);var r,e},$t=(t,o)=>"method"===o.kind&&o.descriptor&&!("value"in o.descriptor)?ct.__spreadProps(ct.__spreadValues({},o),{finisher(r){r.createProperty(o.key,t)}}):{kind:"field",key:Symbol(),placement:"own",descriptor:{},originalKey:o.key,initializer(){"function"==typeof o.initializer&&(this[o.key]=o.initializer.call(this))},finisher(r){r.createProperty(o.key,t)}};function xt(t){return(o,r)=>{return void 0!==r?(e=t,s=r,void o.constructor.createProperty(s,e)):$t(t,o);var e,s}}function Ct(t){return xt(ct.__spreadProps(ct.__spreadValues({},t),{state:!0}))}var At=({finisher:t,descriptor:o})=>(r,e)=>{var s;if(void 0===e){const e=null!==(s=r.originalKey)&&void 0!==s?s:r.key,a=null!=o?{kind:"method",placement:"prototype",key:e,descriptor:o(r.key)}:ct.__spreadProps(ct.__spreadValues({},r),{key:e});return null!=t&&(a.finisher=function(o){t(o,e)}),a}{const s=r.constructor;void 0!==o&&Object.defineProperty(r,e,o(e)),null==t||t(s,e)}};function kt(t,o){return At({descriptor:r=>{const e={get(){var o,r;return null!==(r=null===(o=this.renderRoot)||void 0===o?void 0:o.querySelector(t))&&void 0!==r?r:null},enumerable:!0,configurable:!0};if(o){const o="symbol"==typeof r?Symbol():"__"+r;e.get=function(){var r,e;return void 0===this[o]&&(this[o]=null!==(e=null===(r=this.renderRoot)||void 0===r?void 0:r.querySelector(t))&&void 0!==e?e:null),this[o]}}return e}})}var St=u`
+  ${it}
+
+  :host {
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    border-style: solid;
+    border-width: var(--sl-input-border-width);
+    font-family: var(--sl-input-font-family);
+    font-weight: var(--sl-font-weight-semibold);
+    text-decoration: none;
+    user-select: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 0;
+    transition: var(--sl-transition-fast) background-color, var(--sl-transition-fast) color,
+      var(--sl-transition-fast) border, var(--sl-transition-fast) box-shadow;
+    cursor: inherit;
+  }
+
+  .button::-moz-focus-inner {
+    border: 0;
+  }
+
+  .button:focus {
+    outline: none;
+  }
+
+  .button--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* When disabled, prevent mouse events from bubbling up */
+  .button--disabled * {
+    pointer-events: none;
+  }
+
+  /* Clicks on icons shouldn't prevent the button from gaining focus */
+  .button::slotted(sl-icon) {
+    pointer-events: none;
+  }
+
+  .button__prefix,
+  .button__suffix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .button__label ::slotted(sl-icon) {
+    vertical-align: -2px;
+  }
+
+  /*
+   * Standard buttons
+   */
+
+  /* Default */
+  .button--standard.button--default {
+    background-color: rgb(var(--sl-color-neutral-0));
+    border-color: rgb(var(--sl-color-neutral-300));
+    color: rgb(var(--sl-color-neutral-700));
+  }
+
+  .button--standard.button--default:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-primary-50));
+    border-color: rgb(var(--sl-color-primary-300));
+    color: rgb(var(--sl-color-primary-700));
+  }
+
+  .button--standard.button--default${Q}:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-primary-50));
+    border-color: rgb(var(--sl-color-primary-400));
+    color: rgb(var(--sl-color-primary-700));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-primary-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--standard.button--default:active:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-primary-100));
+    border-color: rgb(var(--sl-color-primary-400));
+    color: rgb(var(--sl-color-primary-700));
+  }
+
+  /* Primary */
+  .button--standard.button--primary {
+    background-color: rgb(var(--sl-color-primary-600));
+    border-color: rgb(var(--sl-color-primary-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--primary:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-primary-500));
+    border-color: rgb(var(--sl-color-primary-500));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--primary${Q}:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-primary-500));
+    border-color: rgb(var(--sl-color-primary-500));
+    color: rgb(var(--sl-color-neutral-0));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-primary-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--standard.button--primary:active:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-primary-600));
+    border-color: rgb(var(--sl-color-primary-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Success */
+  .button--standard.button--success {
+    background-color: rgb(var(--sl-color-success-600));
+    border-color: rgb(var(--sl-color-success-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--success:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-success-500));
+    border-color: rgb(var(--sl-color-success-500));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--success${Q}:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-success-600));
+    border-color: rgb(var(--sl-color-success-600));
+    color: rgb(var(--sl-color-neutral-0));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-success-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--standard.button--success:active:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-success-600));
+    border-color: rgb(var(--sl-color-success-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Neutral */
+  .button--standard.button--neutral {
+    background-color: rgb(var(--sl-color-neutral-600));
+    border-color: rgb(var(--sl-color-neutral-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--neutral:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-neutral-500));
+    border-color: rgb(var(--sl-color-neutral-500));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--neutral${Q}:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-neutral-500));
+    border-color: rgb(var(--sl-color-neutral-500));
+    color: rgb(var(--sl-color-neutral-0));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-neutral-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--standard.button--neutral:active:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-neutral-600));
+    border-color: rgb(var(--sl-color-neutral-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Warning */
+  .button--standard.button--warning {
+    background-color: rgb(var(--sl-color-warning-600));
+    border-color: rgb(var(--sl-color-warning-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+  .button--standard.button--warning:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-warning-500));
+    border-color: rgb(var(--sl-color-warning-500));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--warning${Q}:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-warning-500));
+    border-color: rgb(var(--sl-color-warning-500));
+    color: rgb(var(--sl-color-neutral-0));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-warning-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--standard.button--warning:active:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-warning-600));
+    border-color: rgb(var(--sl-color-warning-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Danger */
+  .button--standard.button--danger {
+    background-color: rgb(var(--sl-color-danger-600));
+    border-color: rgb(var(--sl-color-danger-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--danger:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-danger-500));
+    border-color: rgb(var(--sl-color-danger-500));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--standard.button--danger${Q}:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-danger-500));
+    border-color: rgb(var(--sl-color-danger-500));
+    color: rgb(var(--sl-color-neutral-0));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-danger-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--standard.button--danger:active:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-danger-600));
+    border-color: rgb(var(--sl-color-danger-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /*
+   * Outline buttons
+   */
+
+  .button--outline {
+    background: none;
+    border: solid 1px;
+  }
+
+  /* Default */
+  .button--outline.button--default {
+    border-color: rgb(var(--sl-color-neutral-300));
+    color: rgb(var(--sl-color-neutral-700));
+  }
+
+  .button--outline.button--default:hover:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-primary-600));
+    background-color: rgb(var(--sl-color-primary-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--outline.button--default${Q}:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-primary-500));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-primary-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--outline.button--default:active:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-primary-700));
+    background-color: rgb(var(--sl-color-primary-700));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Primary */
+  .button--outline.button--primary {
+    border-color: rgb(var(--sl-color-primary-600));
+    color: rgb(var(--sl-color-primary-600));
+  }
+
+  .button--outline.button--primary:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-primary-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--outline.button--primary${Q}:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-primary-500));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-primary-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--outline.button--primary:active:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-primary-700));
+    background-color: rgb(var(--sl-color-primary-700));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Success */
+  .button--outline.button--success {
+    border-color: rgb(var(--sl-color-success-600));
+    color: rgb(var(--sl-color-success-600));
+  }
+
+  .button--outline.button--success:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-success-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--outline.button--success${Q}:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-success-500));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-success-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--outline.button--success:active:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-success-700));
+    background-color: rgb(var(--sl-color-success-700));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Neutral */
+  .button--outline.button--neutral {
+    border-color: rgb(var(--sl-color-neutral-600));
+    color: rgb(var(--sl-color-neutral-600));
+  }
+
+  .button--outline.button--neutral:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-neutral-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--outline.button--neutral${Q}:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-neutral-500));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-neutral-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--outline.button--neutral:active:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-neutral-700));
+    background-color: rgb(var(--sl-color-neutral-700));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Warning */
+  .button--outline.button--warning {
+    border-color: rgb(var(--sl-color-warning-600));
+    color: rgb(var(--sl-color-warning-600));
+  }
+
+  .button--outline.button--warning:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-warning-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--outline.button--warning${Q}:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-warning-500));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-warning-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--outline.button--warning:active:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-warning-700));
+    background-color: rgb(var(--sl-color-warning-700));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /* Danger */
+  .button--outline.button--danger {
+    border-color: rgb(var(--sl-color-danger-600));
+    color: rgb(var(--sl-color-danger-600));
+  }
+
+  .button--outline.button--danger:hover:not(.button--disabled) {
+    background-color: rgb(var(--sl-color-danger-600));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  .button--outline.button--danger${Q}:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-danger-500));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-danger-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--outline.button--danger:active:not(.button--disabled) {
+    border-color: rgb(var(--sl-color-danger-700));
+    background-color: rgb(var(--sl-color-danger-700));
+    color: rgb(var(--sl-color-neutral-0));
+  }
+
+  /*
+   * Text buttons
+   */
+
+  .button--text {
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(var(--sl-color-primary-600));
+  }
+
+  .button--text:hover:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(var(--sl-color-primary-500));
+  }
+
+  .button--text${Q}:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(var(--sl-color-primary-500));
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) rgb(var(--sl-color-primary-500) / var(--sl-focus-ring-alpha));
+  }
+
+  .button--text:active:not(.button--disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: rgb(var(--sl-color-primary-700));
+  }
+
+  /*
+   * Size modifiers
+   */
+
+  .button--small {
+    font-size: var(--sl-button-font-size-small);
+    height: var(--sl-input-height-small);
+    line-height: calc(var(--sl-input-height-small) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-small);
+  }
+
+  .button--medium {
+    font-size: var(--sl-button-font-size-medium);
+    height: var(--sl-input-height-medium);
+    line-height: calc(var(--sl-input-height-medium) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-medium);
+  }
+
+  .button--large {
+    font-size: var(--sl-button-font-size-large);
+    height: var(--sl-input-height-large);
+    line-height: calc(var(--sl-input-height-large) - var(--sl-input-border-width) * 2);
+    border-radius: var(--sl-input-border-radius-large);
+  }
+
+  /*
+   * Pill modifier
+   */
+
+  .button--pill.button--small {
+    border-radius: var(--sl-input-height-small);
+  }
+
+  .button--pill.button--medium {
+    border-radius: var(--sl-input-height-medium);
+  }
+
+  .button--pill.button--large {
+    border-radius: var(--sl-input-height-large);
+  }
+
+  /*
+   * Circle modifier
+   */
+
+  .button--circle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .button--circle.button--small {
+    width: var(--sl-input-height-small);
+    border-radius: 50%;
+  }
+
+  .button--circle.button--medium {
+    width: var(--sl-input-height-medium);
+    border-radius: 50%;
+  }
+
+  .button--circle.button--large {
+    width: var(--sl-input-height-large);
+    border-radius: 50%;
+  }
+
+  .button--circle .button__prefix,
+  .button--circle .button__suffix,
+  .button--circle .button__caret {
+    display: none;
+  }
+
+  /*
+   * Caret modifier
+   */
+
+  .button--caret .button__suffix {
+    display: none;
+  }
+
+  .button--caret .button__caret {
+    display: flex;
+    align-items: center;
+  }
+
+  .button--caret .button__caret svg {
+    width: 1em;
+    height: 1em;
+  }
+
+  /*
+   * Loading modifier
+   */
+
+  .button--loading {
+    position: relative;
+    cursor: wait;
+  }
+
+  .button--loading .button__prefix,
+  .button--loading .button__label,
+  .button--loading .button__suffix,
+  .button--loading .button__caret {
+    visibility: hidden;
+  }
+
+  .button--loading sl-spinner {
+    --indicator-color: currentColor;
+    position: absolute;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.5em);
+  }
+
+  /*
+   * Badges
+   */
+
+  .button ::slotted(sl-badge) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%) translateX(50%);
+    pointer-events: none;
+  }
+
+  /*
+   * Button spacing
+   */
+
+  .button--has-label.button--small .button__label {
+    padding: 0 var(--sl-spacing-small);
+  }
+
+  .button--has-label.button--medium .button__label {
+    padding: 0 var(--sl-spacing-medium);
+  }
+
+  .button--has-label.button--large .button__label {
+    padding: 0 var(--sl-spacing-large);
+  }
+
+  .button--has-prefix.button--small {
+    padding-left: var(--sl-spacing-x-small);
+  }
+
+  .button--has-prefix.button--small .button__label {
+    padding-left: var(--sl-spacing-x-small);
+  }
+
+  .button--has-prefix.button--medium {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-prefix.button--medium .button__label {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-prefix.button--large {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-prefix.button--large .button__label {
+    padding-left: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--small,
+  .button--caret.button--small {
+    padding-right: var(--sl-spacing-x-small);
+  }
+
+  .button--has-suffix.button--small .button__label,
+  .button--caret.button--small .button__label {
+    padding-right: var(--sl-spacing-x-small);
+  }
+
+  .button--has-suffix.button--medium,
+  .button--caret.button--medium {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--medium .button__label,
+  .button--caret.button--medium .button__label {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--large,
+  .button--caret.button--large {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  .button--has-suffix.button--large .button__label,
+  .button--caret.button--large .button__label {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  /*
+   * Button groups support a variety of button types (e.g. buttons with tooltips, buttons as dropdown triggers, etc.).
+   * This means buttons aren't always direct descendants of the button group, thus we can't target them with the
+   * ::slotted selector. To work around this, the button group component does some magic to add these special classes to
+   * buttons and we style them here instead.
+   */
+
+  :host(.sl-button-group__button--first) .button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  :host(.sl-button-group__button--inner) .button {
+    border-radius: 0;
+  }
+
+  :host(.sl-button-group__button--last) .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /* All except the first */
+  :host(.sl-button-group__button:not(.sl-button-group__button--first)) {
+    margin-left: calc(-1 * var(--sl-input-border-width));
+  }
+
+  /* Add a visual separator between solid buttons */
+  :host(.sl-button-group__button:not(.sl-button-group__button--focus, .sl-button-group__button--first, [type='default']):not(:hover, :active, :focus))
+    .button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-left: solid 1px rgb(var(--sl-color-neutral-0) / 20%);
+  }
+
+  /* Bump focused buttons up so their focus ring isn't clipped */
+  :host(.sl-button-group__button--hover) {
+    z-index: 1;
+  }
+
+  :host(.sl-button-group__button--focus) {
+    z-index: 2;
+  }
+`,Et=class extends J{constructor(){super(...arguments),this.hasFocus=!1,this.hasLabel=!1,this.hasPrefix=!1,this.hasSuffix=!1,this.type="default",this.size="medium",this.caret=!1,this.disabled=!1,this.loading=!1,this.outline=!1,this.pill=!1,this.circle=!1,this.submit=!1}connectedCallback(){super.connectedCallback(),this.handleSlotChange()}click(){this.button.click()}focus(t){this.button.focus(t)}blur(){this.button.blur()}handleSlotChange(){this.hasLabel=o(this),this.hasPrefix=o(this,"prefix"),this.hasSuffix=o(this,"suffix")}handleBlur(){this.hasFocus=!1,at(this,"sl-blur")}handleFocus(){this.hasFocus=!0,at(this,"sl-focus")}handleClick(t){(this.disabled||this.loading)&&(t.preventDefault(),t.stopPropagation())}render(){const t=!!this.href,o=M`
+      <span part="prefix" class="button__prefix">
+        <slot @slotchange=${this.handleSlotChange} name="prefix"></slot>
+      </span>
+      <span part="label" class="button__label">
+        <slot @slotchange=${this.handleSlotChange}></slot>
+      </span>
+      <span part="suffix" class="button__suffix">
+        <slot @slotchange=${this.handleSlotChange} name="suffix"></slot>
+      </span>
+      ${this.caret?M`
+            <span part="caret" class="button__caret">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          `:""}
+      ${this.loading?M`<sl-spinner></sl-spinner>`:""}
+    `;return t?M`
+          <a
+            part="base"
+            class=${st({button:!0,"button--default":"default"===this.type,"button--primary":"primary"===this.type,"button--success":"success"===this.type,"button--neutral":"neutral"===this.type,"button--warning":"warning"===this.type,"button--danger":"danger"===this.type,"button--text":"text"===this.type,"button--small":"small"===this.size,"button--medium":"medium"===this.size,"button--large":"large"===this.size,"button--caret":this.caret,"button--circle":this.circle,"button--disabled":this.disabled,"button--focused":this.hasFocus,"button--loading":this.loading,"button--standard":!this.outline,"button--outline":this.outline,"button--pill":this.pill,"button--has-label":this.hasLabel,"button--has-prefix":this.hasPrefix,"button--has-suffix":this.hasSuffix})}
+            href=${Y(this.href)}
+            target=${Y(this.target)}
+            download=${Y(this.download)}
+            rel=${Y(this.target?"noreferrer noopener":void 0)}
+            role="button"
+            aria-disabled=${this.disabled?"true":"false"}
+            tabindex=${this.disabled?"-1":"0"}
+            @blur=${this.handleBlur}
+            @focus=${this.handleFocus}
+            @click=${this.handleClick}
+          >
+            ${o}
+          </a>
+        `:M`
+          <button
+            part="base"
+            class=${st({button:!0,"button--default":"default"===this.type,"button--primary":"primary"===this.type,"button--success":"success"===this.type,"button--neutral":"neutral"===this.type,"button--warning":"warning"===this.type,"button--danger":"danger"===this.type,"button--text":"text"===this.type,"button--small":"small"===this.size,"button--medium":"medium"===this.size,"button--large":"large"===this.size,"button--caret":this.caret,"button--circle":this.circle,"button--disabled":this.disabled,"button--focused":this.hasFocus,"button--loading":this.loading,"button--standard":!this.outline,"button--outline":this.outline,"button--pill":this.pill,"button--has-label":this.hasLabel,"button--has-prefix":this.hasPrefix,"button--has-suffix":this.hasSuffix})}
+            ?disabled=${this.disabled}
+            type=${this.submit?"submit":"button"}
+            name=${Y(this.name)}
+            value=${Y(this.value)}
+            @blur=${this.handleBlur}
+            @focus=${this.handleFocus}
+            @click=${this.handleClick}
+          >
+            ${o}
+          </button>
+        `}};Et.styles=St,ct.__decorateClass([kt(".button")],Et.prototype,"button",2),ct.__decorateClass([Ct()],Et.prototype,"hasFocus",2),ct.__decorateClass([Ct()],Et.prototype,"hasLabel",2),ct.__decorateClass([Ct()],Et.prototype,"hasPrefix",2),ct.__decorateClass([Ct()],Et.prototype,"hasSuffix",2),ct.__decorateClass([xt({reflect:!0})],Et.prototype,"type",2),ct.__decorateClass([xt({reflect:!0})],Et.prototype,"size",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Et.prototype,"caret",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Et.prototype,"disabled",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Et.prototype,"loading",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Et.prototype,"outline",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Et.prototype,"pill",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Et.prototype,"circle",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Et.prototype,"submit",2),ct.__decorateClass([xt()],Et.prototype,"name",2),ct.__decorateClass([xt()],Et.prototype,"value",2),ct.__decorateClass([xt()],Et.prototype,"href",2),ct.__decorateClass([xt()],Et.prototype,"target",2),ct.__decorateClass([xt()],Et.prototype,"download",2);Et=ct.__decorateClass([wt("sl-button")],Et);var Tt=u`
+  ${it}
+
+  :host {
+    --track-width: 2px;
+    --track-color: rgb(var(--sl-color-neutral-500) / 20%);
+    --indicator-color: rgb(var(--sl-color-primary-600));
+    --speed: 2.5s;
+
+    display: inline-flex;
+    width: 1em;
+    height: 1em;
+  }
+
+  .spinner {
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  .spinner__track,
+  .spinner__indicator {
+    fill: none;
+    stroke-width: var(--track-width);
+    r: calc(0.5em - var(--track-width) / 2);
+    cx: 0.5em;
+    cy: 0.5em;
+    transform-origin: 50% 50%;
+  }
+
+  .spinner__track {
+    stroke: var(--track-color);
+    transform-origin: 0% 0%;
+  }
+
+  .spinner__indicator {
+    stroke: var(--indicator-color);
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
+    animation: spin var(--speed) linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      stroke-dasharray: 0.2em 3em;
+      transform: rotate(0deg);
+    }
+
+    50% {
+      stroke-dasharray: 2.2em 3em;
+      transform: rotate(450deg);
+    }
+
+    100% {
+      stroke-dasharray: 0.2em 3em;
+      transform: rotate(1080deg);
+    }
+  }
+`,zt=class extends J{render(){return M`
+      <svg part="base" class="spinner" aria-busy="true" aria-live="polite">
+        <circle class="spinner__track"></circle>
+        <circle class="spinner__indicator"></circle>
+      </svg>
+    `}};zt.styles=Tt;zt=ct.__decorateClass([wt("sl-spinner")],zt);var Pt=u`
+  ${it}
+
+  :host {
+    --border-color: rgb(var(--sl-color-neutral-200));
+    --border-radius: var(--sl-border-radius-medium);
+    --border-width: 1px;
+    --padding: var(--sl-spacing-large);
+
+    display: inline-block;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(var(--sl-surface-base-alt));
+    box-shadow: var(--sl-shadow-x-small);
+    border: solid var(--border-width) var(--border-color);
+    border-radius: var(--border-radius);
+  }
+
+  .card__image {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    margin: calc(-1 * var(--border-width));
+    overflow: hidden;
+  }
+
+  .card__image ::slotted(img) {
+    display: block;
+    width: 100%;
+  }
+
+  .card:not(.card--has-image) .card__image {
+    display: none;
+  }
+
+  .card__header {
+    border-bottom: solid var(--border-width) var(--border-color);
+    padding: calc(var(--padding) / 2) var(--padding);
+  }
+
+  .card:not(.card--has-header) .card__header {
+    display: none;
+  }
+
+  .card__body {
+    padding: var(--padding);
+  }
+
+  .card--has-footer .card__footer {
+    border-top: solid var(--border-width) var(--border-color);
+    padding: var(--padding);
+  }
+
+  .card:not(.card--has-footer) .card__footer {
+    display: none;
+  }
+`,Ot=class extends J{constructor(){super(...arguments),this.hasFooter=!1,this.hasImage=!1,this.hasHeader=!1}handleSlotChange(){this.hasFooter=o(this,"footer"),this.hasImage=o(this,"image"),this.hasHeader=o(this,"header")}render(){return M`
+      <div
+        part="base"
+        class=${st({card:!0,"card--has-footer":this.hasFooter,"card--has-image":this.hasImage,"card--has-header":this.hasHeader})}
+      >
+        <div part="image" class="card__image">
+          <slot name="image" @slotchange=${this.handleSlotChange}></slot>
+        </div>
+
+        <div part="header" class="card__header">
+          <slot name="header" @slotchange=${this.handleSlotChange}></slot>
+        </div>
+
+        <div part="body" class="card__body">
+          <slot></slot>
+        </div>
+
+        <div part="footer" class="card__footer">
+          <slot name="footer" @slotchange=${this.handleSlotChange}></slot>
+        </div>
+      </div>
+    `}};Ot.styles=Pt,ct.__decorateClass([Ct()],Ot.prototype,"hasFooter",2),ct.__decorateClass([Ct()],Ot.prototype,"hasImage",2),ct.__decorateClass([Ct()],Ot.prototype,"hasHeader",2);Ot=ct.__decorateClass([wt("sl-card")],Ot);function Lt(t,o){return{top:Math.round(t.getBoundingClientRect().top-o.getBoundingClientRect().top),left:Math.round(t.getBoundingClientRect().left-o.getBoundingClientRect().left)}}new Set;function Mt(t,o,r="vertical",e="smooth"){const s=Lt(t,o),a=s.top+o.scrollTop,l=s.left+o.scrollLeft,i=o.scrollLeft,n=o.scrollLeft+o.offsetWidth,c=o.scrollTop,d=o.scrollTop+o.offsetHeight;"horizontal"!==r&&"both"!==r||(l<i?o.scrollTo({left:l,behavior:e}):l+t.clientWidth>n&&o.scrollTo({left:l-o.offsetWidth+t.clientWidth,behavior:e})),"vertical"!==r&&"both"!==r||(a<c?o.scrollTo({top:a,behavior:e}):a+t.clientHeight>d&&o.scrollTo({top:a-o.offsetHeight+t.clientHeight,behavior:e}))}function Bt(t,o){return(r,e)=>{const{update:s}=r;o=Object.assign({waitUntilFirstUpdate:!1},o),r.update=function(r){if(r.has(t)){const s=r.get(t),a=this[t];s!==a&&((null==o?void 0:o.waitUntilFirstUpdate)&&!this.hasUpdated||this[e].call(this,s,a))}s.call(this,r)}}}var Ht=u`
+  ${it}
+
+  :host {
+    --track-color: rgb(var(--sl-color-neutral-200));
+    --indicator-color: rgb(var(--sl-color-primary-600));
+
+    display: block;
+  }
+
+  .tab-group {
+    display: flex;
+    border: solid 1px transparent;
+    border-radius: 0;
+  }
+
+  .tab-group .tab-group__tabs {
+    display: flex;
+    position: relative;
+  }
+
+  .tab-group .tab-group__indicator {
+    position: absolute;
+    left: 0;
+    transition: var(--sl-transition-fast) transform ease, var(--sl-transition-fast) width ease;
+  }
+
+  .tab-group--has-scroll-controls .tab-group__nav-container {
+    position: relative;
+    padding: 0 var(--sl-spacing-x-large);
+  }
+
+  .tab-group__scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: var(--sl-spacing-x-large);
+  }
+
+  .tab-group__scroll-button--start {
+    left: 0;
+  }
+
+  .tab-group__scroll-button--end {
+    right: 0;
+  }
+
+  /*
+   * Top
+   */
+
+  .tab-group--top {
+    flex-direction: column;
+  }
+
+  .tab-group--top .tab-group__nav-container {
+    order: 1;
+  }
+
+  .tab-group--top .tab-group__nav {
+    display: flex;
+    overflow-x: auto;
+
+    /* Hide scrollbar in Firefox */
+    scrollbar-width: none;
+  }
+
+  /* Hide scrollbar in Chrome/Safari */
+  .tab-group--top .tab-group__nav::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .tab-group--top .tab-group__tabs {
+    flex: 1 1 auto;
+    position: relative;
+    flex-direction: row;
+    border-bottom: solid 2px var(--track-color);
+  }
+
+  .tab-group--top .tab-group__indicator {
+    bottom: -2px;
+    border-bottom: solid 2px var(--indicator-color);
+  }
+
+  .tab-group--top .tab-group__body {
+    order: 2;
+  }
+
+  .tab-group--top ::slotted(sl-tab-panel) {
+    --padding: var(--sl-spacing-medium) 0;
+  }
+
+  /*
+   * Bottom
+   */
+
+  .tab-group--bottom {
+    flex-direction: column;
+  }
+
+  .tab-group--bottom .tab-group__nav-container {
+    order: 2;
+  }
+
+  .tab-group--bottom .tab-group__nav {
+    display: flex;
+    overflow-x: auto;
+
+    /* Hide scrollbar in Firefox */
+    scrollbar-width: none;
+  }
+
+  /* Hide scrollbar in Chrome/Safari */
+  .tab-group--bottom .tab-group__nav::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .tab-group--bottom .tab-group__tabs {
+    flex: 1 1 auto;
+    position: relative;
+    flex-direction: row;
+    border-top: solid 2px var(--track-color);
+  }
+
+  .tab-group--bottom .tab-group__indicator {
+    top: calc(-1 * 2px);
+    border-top: solid 2px var(--indicator-color);
+  }
+
+  .tab-group--bottom .tab-group__body {
+    order: 1;
+  }
+
+  .tab-group--bottom ::slotted(sl-tab-panel) {
+    --padding: var(--sl-spacing-medium) 0;
+  }
+
+  /*
+   * Start
+   */
+
+  .tab-group--start {
+    flex-direction: row;
+  }
+
+  .tab-group--start .tab-group__nav-container {
+    order: 1;
+  }
+
+  .tab-group--start .tab-group__tabs {
+    flex: 0 0 auto;
+    flex-direction: column;
+    border-right: solid 2px var(--track-color);
+  }
+
+  .tab-group--start .tab-group__indicator {
+    right: calc(-1 * 2px);
+    border-right: solid 2px var(--indicator-color);
+  }
+
+  .tab-group--start .tab-group__body {
+    flex: 1 1 auto;
+    order: 2;
+  }
+
+  .tab-group--start ::slotted(sl-tab-panel) {
+    --padding: 0 var(--sl-spacing-medium);
+  }
+
+  /*
+   * End
+   */
+
+  .tab-group--end {
+    flex-direction: row;
+  }
+
+  .tab-group--end .tab-group__nav-container {
+    order: 2;
+  }
+
+  .tab-group--end .tab-group__tabs {
+    flex: 0 0 auto;
+    flex-direction: column;
+    border-left: solid 2px var(--track-color);
+  }
+
+  .tab-group--end .tab-group__indicator {
+    left: calc(-1 * 2px);
+    border-left: solid 2px var(--indicator-color);
+  }
+
+  .tab-group--end .tab-group__body {
+    flex: 1 1 auto;
+    order: 1;
+  }
+
+  .tab-group--end ::slotted(sl-tab-panel) {
+    --padding: 0 var(--sl-spacing-medium);
+  }
+`,Ut=class extends J{constructor(){super(...arguments),this.tabs=[],this.panels=[],this.hasScrollControls=!1,this.placement="top",this.activation="auto",this.noScrollControls=!1}connectedCallback(){super.connectedCallback(),this.resizeObserver=new ResizeObserver((()=>{this.preventIndicatorTransition(),this.repositionIndicator(),this.updateScrollControls()})),this.mutationObserver=new MutationObserver((t=>{t.some((t=>!["aria-labelledby","aria-controls"].includes(t.attributeName)))&&setTimeout((()=>this.setAriaLabels())),t.some((t=>"disabled"===t.attributeName))&&this.syncTabsAndPanels()})),this.updateComplete.then((()=>{this.syncTabsAndPanels(),this.mutationObserver.observe(this,{attributes:!0,childList:!0,subtree:!0}),this.resizeObserver.observe(this.nav);new IntersectionObserver(((t,o)=>{t[0].intersectionRatio>0&&(this.setAriaLabels(),this.setActiveTab(this.getActiveTab()||this.tabs[0],{emitEvents:!1}),o.unobserve(t[0].target))})).observe(this.tabGroup)}))}disconnectedCallback(){this.mutationObserver.disconnect(),this.resizeObserver.unobserve(this.nav)}show(t){const o=this.tabs.find((o=>o.panel===t));o&&this.setActiveTab(o,{scrollBehavior:"smooth"})}getAllTabs(t=!1){return[...this.shadowRoot.querySelector('slot[name="nav"]').assignedElements()].filter((o=>t?"sl-tab"===o.tagName.toLowerCase():"sl-tab"===o.tagName.toLowerCase()&&!o.disabled))}getAllPanels(){return[...this.body.querySelector("slot").assignedElements()].filter((t=>"sl-tab-panel"===t.tagName.toLowerCase()))}getActiveTab(){return this.tabs.find((t=>t.active))}handleClick(t){const o=t.target.closest("sl-tab");(null==o?void 0:o.closest("sl-tab-group"))===this&&o&&this.setActiveTab(o,{scrollBehavior:"smooth"})}handleKeyDown(t){const o=t.target.closest("sl-tab");if((null==o?void 0:o.closest("sl-tab-group"))===this&&(["Enter"," "].includes(t.key)&&o&&(this.setActiveTab(o,{scrollBehavior:"smooth"}),t.preventDefault()),["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","Home","End"].includes(t.key))){const o=document.activeElement;if(o&&"sl-tab"===o.tagName.toLowerCase()){let r=this.tabs.indexOf(o);"Home"===t.key?r=0:"End"===t.key?r=this.tabs.length-1:["top","bottom"].includes(this.placement)&&"ArrowLeft"===t.key||["start","end"].includes(this.placement)&&"ArrowUp"===t.key?r=Math.max(0,r-1):(["top","bottom"].includes(this.placement)&&"ArrowRight"===t.key||["start","end"].includes(this.placement)&&"ArrowDown"===t.key)&&(r=Math.min(this.tabs.length-1,r+1)),this.tabs[r].focus({preventScroll:!0}),"auto"===this.activation&&this.setActiveTab(this.tabs[r],{scrollBehavior:"smooth"}),["top","bottom"].includes(this.placement)&&Mt(this.tabs[r],this.nav,"horizontal"),t.preventDefault()}}}handleScrollToStart(){this.nav.scroll({left:this.nav.scrollLeft-this.nav.clientWidth,behavior:"smooth"})}handleScrollToEnd(){this.nav.scroll({left:this.nav.scrollLeft+this.nav.clientWidth,behavior:"smooth"})}updateScrollControls(){this.nav&&(this.noScrollControls?this.hasScrollControls=!1:this.hasScrollControls=["top","bottom"].includes(this.placement)&&this.nav.scrollWidth>this.nav.clientWidth)}setActiveTab(t,o){if(o=Object.assign({emitEvents:!0,scrollBehavior:"auto"},o),t&&t!==this.activeTab&&!t.disabled){const r=this.activeTab;this.activeTab=t,this.tabs.map((t=>t.active=t===this.activeTab)),this.panels.map((t=>t.active=t.name===this.activeTab.panel)),this.syncIndicator(),["top","bottom"].includes(this.placement)&&Mt(this.activeTab,this.nav,"horizontal",o.scrollBehavior),o.emitEvents&&(r&&at(this,"sl-tab-hide",{detail:{name:r.panel}}),at(this,"sl-tab-show",{detail:{name:this.activeTab.panel}}))}}setAriaLabels(){this.tabs.map((t=>{const o=this.panels.find((o=>o.name===t.panel));o&&(t.setAttribute("aria-controls",o.getAttribute("id")),o.setAttribute("aria-labelledby",t.getAttribute("id")))}))}syncIndicator(){if(this.indicator){if(!this.getActiveTab())return void(this.indicator.style.display="none");this.indicator.style.display="block",this.repositionIndicator()}}repositionIndicator(){const t=this.getActiveTab();if(!t)return;const o=t.clientWidth,r=t.clientHeight,e=Lt(t,this.nav),s=e.top+this.nav.scrollTop,a=e.left+this.nav.scrollLeft;switch(this.placement){case"top":case"bottom":this.indicator.style.width=`${o}px`,this.indicator.style.height="auto",this.indicator.style.transform=`translateX(${a}px)`;break;case"start":case"end":this.indicator.style.width="auto",this.indicator.style.height=`${r}px`,this.indicator.style.transform=`translateY(${s}px)`}}preventIndicatorTransition(){const t=this.indicator.style.transition;this.indicator.style.transition="none",requestAnimationFrame((()=>{this.indicator.style.transition=t}))}syncTabsAndPanels(){this.tabs=this.getAllTabs(),this.panels=this.getAllPanels(),this.syncIndicator()}render(){return M`
+      <div
+        part="base"
+        class=${st({"tab-group":!0,"tab-group--top":"top"===this.placement,"tab-group--bottom":"bottom"===this.placement,"tab-group--start":"start"===this.placement,"tab-group--end":"end"===this.placement,"tab-group--has-scroll-controls":this.hasScrollControls})}
+        @click=${this.handleClick}
+        @keydown=${this.handleKeyDown}
+      >
+        <div class="tab-group__nav-container">
+          ${this.hasScrollControls?M`
+                <sl-icon-button
+                  class="tab-group__scroll-button tab-group__scroll-button--start"
+                  exportparts="base:scroll-button"
+                  name="chevron-left"
+                  library="system"
+                  @click=${this.handleScrollToStart}
+                ></sl-icon-button>
+              `:""}
+
+          <div part="nav" class="tab-group__nav">
+            <div part="tabs" class="tab-group__tabs" role="tablist">
+              <div part="active-tab-indicator" class="tab-group__indicator"></div>
+              <slot name="nav" @slotchange=${this.syncTabsAndPanels}></slot>
+            </div>
+          </div>
+
+          ${this.hasScrollControls?M`
+                <sl-icon-button
+                  class="tab-group__scroll-button tab-group__scroll-button--end"
+                  exportparts="base:scroll-button"
+                  name="chevron-right"
+                  library="system"
+                  @click=${this.handleScrollToEnd}
+                ></sl-icon-button>
+              `:""}
+        </div>
+
+        <div part="body" class="tab-group__body">
+          <slot @slotchange=${this.syncTabsAndPanels}></slot>
+        </div>
+      </div>
+    `}};Ut.styles=Ht,ct.__decorateClass([kt(".tab-group")],Ut.prototype,"tabGroup",2),ct.__decorateClass([kt(".tab-group__body")],Ut.prototype,"body",2),ct.__decorateClass([kt(".tab-group__nav")],Ut.prototype,"nav",2),ct.__decorateClass([kt(".tab-group__indicator")],Ut.prototype,"indicator",2),ct.__decorateClass([Ct()],Ut.prototype,"hasScrollControls",2),ct.__decorateClass([xt()],Ut.prototype,"placement",2),ct.__decorateClass([xt()],Ut.prototype,"activation",2),ct.__decorateClass([xt({attribute:"no-scroll-controls",type:Boolean})],Ut.prototype,"noScrollControls",2),ct.__decorateClass([Bt("noScrollControls")],Ut.prototype,"updateScrollControls",1),ct.__decorateClass([Bt("placement")],Ut.prototype,"syncIndicator",1);Ut=ct.__decorateClass([wt("sl-tab-group")],Ut);var Nt=u`
+  ${it}
+
+  :host {
+    display: inline-block;
+  }
+
+  .icon-button {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: var(--sl-border-radius-medium);
+    font-size: inherit;
+    color: rgb(var(--sl-color-neutral-600));
+    padding: var(--sl-spacing-x-small);
+    cursor: pointer;
+    transition: var(--sl-transition-medium) color;
+    -webkit-appearance: none;
+  }
+
+  .icon-button:hover:not(.icon-button--disabled),
+  .icon-button:focus:not(.icon-button--disabled) {
+    color: rgb(var(--sl-color-primary-600));
+  }
+
+  .icon-button:active:not(.icon-button--disabled) {
+    color: rgb(var(--sl-color-primary-700));
+  }
+
+  .icon-button:focus {
+    outline: none;
+  }
+
+  .icon-button--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .icon-button${Q} {
+    box-shadow: var(--sl-focus-ring);
+  }
+`,Rt=class extends J{constructor(){super(...arguments),this.label="",this.disabled=!1}render(){const t=!!this.href,o=M`
+      <sl-icon
+        name=${Y(this.name)}
+        library=${Y(this.library)}
+        src=${Y(this.src)}
+        aria-hidden="true"
+      ></sl-icon>
+    `;return t?M`
+          <a
+            part="base"
+            class="icon-button"
+            href=${Y(this.href)}
+            target=${Y(this.target)}
+            download=${Y(this.download)}
+            rel=${Y(this.target?"noreferrer noopener":void 0)}
+            role="button"
+            aria-disabled=${this.disabled?"true":"false"}
+            aria-label="${this.label}"
+            tabindex=${this.disabled?"-1":"0"}
+          >
+            ${o}
+          </a>
+        `:M`
+          <button
+            part="base"
+            class=${st({"icon-button":!0,"icon-button--disabled":this.disabled})}
+            ?disabled=${this.disabled}
+            type="button"
+            aria-label=${this.label}
+          >
+            ${o}
+          </button>
+        `}};Rt.styles=Nt,ct.__decorateClass([kt("button")],Rt.prototype,"button",2),ct.__decorateClass([xt()],Rt.prototype,"name",2),ct.__decorateClass([xt()],Rt.prototype,"library",2),ct.__decorateClass([xt()],Rt.prototype,"src",2),ct.__decorateClass([xt()],Rt.prototype,"href",2),ct.__decorateClass([xt()],Rt.prototype,"target",2),ct.__decorateClass([xt()],Rt.prototype,"download",2),ct.__decorateClass([xt()],Rt.prototype,"label",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],Rt.prototype,"disabled",2);Rt=ct.__decorateClass([wt("sl-icon-button")],Rt);var It={check:'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">\n      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>\n    </svg>\n  ',"chevron-down":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">\n      <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>\n    </svg>\n  ',"chevron-left":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">\n      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>\n    </svg>\n  ',"chevron-right":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">\n      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>\n    </svg>\n  ',eye:'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">\n      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>\n      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>\n    </svg>\n  ',"eye-slash":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">\n      <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>\n      <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>\n      <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>\n    </svg>\n  ',"grip-vertical":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grip-vertical" viewBox="0 0 16 16">\n      <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>\n    </svg>\n  ',"person-fill":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">\n      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>\n    </svg>\n  ',"star-fill":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">\n      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>\n    </svg>\n  ',x:'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">\n      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\n    </svg>\n  ',"x-circle":'\n    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">\n      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>\n      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>\n    </svg>\n  '},jt={name:"system",resolver:t=>It[t]?`data:image/svg+xml,${encodeURIComponent(It[t])}`:""},Dt="";function Ft(t){Dt=t}var Wt=[...document.getElementsByTagName("script")],Vt=Wt.find((t=>t.hasAttribute("data-shoelace")));if(Vt)Ft(Vt.getAttribute("data-shoelace"));else{const t=Wt.find((t=>/shoelace(\.min)?\.js$/.test(t.src)));let o="";t&&(o=t.getAttribute("src")),Ft(o.split("/").slice(0,-1).join("/"))}var qt=[{name:"default",resolver:t=>`${Dt.replace(/\/$/,"")}/assets/icons/${t}.svg`},jt],Kt=[];function Gt(t){return qt.filter((o=>o.name===t))[0]}var Xt=new Map,Jt=class extends et{constructor(t){if(super(t),this.it=H,t.type!==ot)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(t){if(t===H||null==t)return this.vt=void 0,this.it=t;if(t===B)return t;if("string"!=typeof t)throw Error(this.constructor.directiveName+"() called with a non-string value");if(t===this.it)return this.vt;this.it=t;const o=[t];return o.raw=o,this.vt={_$litType$:this.constructor.resultType,strings:o,values:[]}}};Jt.directiveName="unsafeHTML",Jt.resultType=1;rt(Jt);var Yt=class extends Jt{};Yt.directiveName="unsafeSVG",Yt.resultType=2;var Zt=rt(Yt),Qt=u`
+  ${it}
+
+  :host {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    contain: strict;
+    box-sizing: content-box !important;
+  }
+
+  .icon,
+  svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+`,to=new DOMParser,oo=class extends J{constructor(){super(...arguments),this.svg="",this.library="default"}connectedCallback(){var t;super.connectedCallback(),t=this,Kt.push(t)}firstUpdated(){this.setIcon()}disconnectedCallback(){var t;super.disconnectedCallback(),t=this,Kt=Kt.filter((o=>o!==t))}getLabel(){let t="";return this.label?t=this.label:this.name?t=this.name.replace(/-/g," "):this.src&&(t=this.src.replace(/.*\//,"").replace(/-/g," ").replace(/\.svg/i,"")),t}getUrl(){const t=Gt(this.library);return this.name&&t?t.resolver(this.name):this.src}redraw(){this.setIcon()}async setIcon(){const t=Gt(this.library),o=this.getUrl();if(o)try{const r=await(t=>{if(Xt.has(t))return Xt.get(t);{const o=fetch(t).then((async t=>{if(t.ok){const o=document.createElement("div");o.innerHTML=await t.text();const r=o.firstElementChild;return{ok:t.ok,status:t.status,svg:r&&"svg"===r.tagName.toLowerCase()?r.outerHTML:""}}return{ok:t.ok,status:t.status,svg:null}}));return Xt.set(t,o),o}})(o);if(o!==this.getUrl())return;if(r.ok){const o=to.parseFromString(r.svg,"text/html").body.querySelector("svg");o?(t&&t.mutator&&t.mutator(o),this.svg=o.outerHTML,at(this,"sl-load")):(this.svg="",at(this,"sl-error",{detail:{status:r.status}}))}else this.svg="",at(this,"sl-error",{detail:{status:r.status}})}catch(t){at(this,"sl-error",{detail:{status:-1}})}else this.svg&&(this.svg="")}handleChange(){this.setIcon()}render(){return M` <div part="base" class="icon" role="img" aria-label=${this.getLabel()}>${Zt(this.svg)}</div>`}};oo.styles=Qt,ct.__decorateClass([Ct()],oo.prototype,"svg",2),ct.__decorateClass([xt()],oo.prototype,"name",2),ct.__decorateClass([xt()],oo.prototype,"src",2),ct.__decorateClass([xt()],oo.prototype,"label",2),ct.__decorateClass([xt()],oo.prototype,"library",2),ct.__decorateClass([Bt("name"),Bt("src"),Bt("library")],oo.prototype,"setIcon",1);oo=ct.__decorateClass([wt("sl-icon")],oo);var ro=u`
+  ${it}
+
+  :host {
+    display: inline-block;
+  }
+
+  .tab {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--sl-font-sans);
+    font-size: var(--sl-font-size-small);
+    font-weight: var(--sl-font-weight-semibold);
+    border-radius: var(--sl-border-radius-medium);
+    color: rgb(var(--sl-color-neutral-600));
+    padding: var(--sl-spacing-medium) var(--sl-spacing-large);
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    transition: var(--transition-speed) box-shadow, var(--transition-speed) color;
+  }
+
+  .tab:hover:not(.tab--disabled) {
+    color: rgb(var(--sl-color-primary-600));
+  }
+
+  .tab:focus {
+    outline: none;
+  }
+
+  .tab${Q}:not(.tab--disabled) {
+    color: rgb(var(--sl-color-primary-600));
+    box-shadow: inset var(--sl-focus-ring);
+  }
+
+  .tab.tab--active:not(.tab--disabled) {
+    color: rgb(var(--sl-color-primary-600));
+  }
+
+  .tab.tab--closable {
+    padding-right: var(--sl-spacing-small);
+  }
+
+  .tab.tab--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .tab__close-button {
+    font-size: var(--sl-font-size-large);
+    margin-left: var(--sl-spacing-2x-small);
+  }
+
+  .tab__close-button::part(base) {
+    padding: var(--sl-spacing-3x-small);
+  }
+`,eo=0,so=class extends J{constructor(){super(...arguments),this.componentId="tab-"+ ++eo,this.panel="",this.active=!1,this.closable=!1,this.disabled=!1}focus(t){this.tab.focus(t)}blur(){this.tab.blur()}handleCloseClick(){at(this,"sl-close")}render(){return this.id=this.id||this.componentId,M`
+      <div
+        part="base"
+        class=${st({tab:!0,"tab--active":this.active,"tab--closable":this.closable,"tab--disabled":this.disabled})}
+        role="tab"
+        aria-disabled=${this.disabled?"true":"false"}
+        aria-selected=${this.active?"true":"false"}
+        tabindex=${this.disabled||!this.active?"-1":"0"}
+      >
+        <slot></slot>
+        ${this.closable?M`
+              <sl-icon-button
+                name="x"
+                library="system"
+                exportparts="base:close-button"
+                class="tab__close-button"
+                @click=${this.handleCloseClick}
+                tabindex="-1"
+                aria-hidden="true"
+              ></sl-icon-button>
+            `:""}
+      </div>
+    `}};so.styles=ro,ct.__decorateClass([kt(".tab")],so.prototype,"tab",2),ct.__decorateClass([xt()],so.prototype,"panel",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],so.prototype,"active",2),ct.__decorateClass([xt({type:Boolean})],so.prototype,"closable",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],so.prototype,"disabled",2);so=ct.__decorateClass([wt("sl-tab")],so);var ao=u`
+  ${it}
+
+  :host {
+    --padding: 0;
+
+    display: block;
+  }
+
+  .tab-panel {
+    border: solid 1px transparent;
+    padding: var(--padding);
+  }
+`,lo=0,io=class extends J{constructor(){super(...arguments),this.componentId="tab-panel-"+ ++lo,this.name="",this.active=!1}connectedCallback(){super.connectedCallback(),this.id=this.id||this.componentId}render(){return this.style.display=this.active?"block":"none",M`
+      <div
+        part="base"
+        class="tab-panel"
+        role="tabpanel"
+        aria-selected=${this.active?"true":"false"}
+        aria-hidden=${this.active?"false":"true"}
+      >
+        <slot></slot>
+      </div>
+    `}};io.styles=ao,ct.__decorateClass([xt()],io.prototype,"name",2),ct.__decorateClass([xt({type:Boolean,reflect:!0})],io.prototype,"active",2);io=ct.__decorateClass([wt("sl-tab-panel")],io);Ft("/dist/shoelace")}();</script><script src="/index.f3383801.js"></script></head><body>  <header> <div class="segment"> <h1>A<span>ni</span>V<span>ault</span></h1> </div> </header>   <div class="topnav"> <div class="navcontent"> <nav> <label for="burger">MENU</label> <input id="burger" type="checkbox"> <a href="#home">Home</a> <a href="#keyarts">Key Arts</a> <a href="#userscreations">Users' Creations</a> <a href="#newsnevents">News and Events</a> <a href="#toolkits">Toolkits</a> </nav> </div> </div>   <section id="home" class="clearfix content"> <div class="segment"> <article class="mainblock"> <div class="writeup"> <img class="promopic" src="/OnePeace-wallpapers.5ccdc15b.jpg" alt="AniVerse Welcome image"> <h5> Welcome to AniVault, A treasure trove of Anime and Creativity. <br> Whether you’re here just to look at the Posters of your favourite anime, illustrations of your favourite characters, or you’re an aspiring artist looking for inspiration, enjoy your time here! </h5> </div> </article> <div class="museum" id="intro"> <div class="frame"> <a href="#keyarts"> <img src="/SAO-vr_button.d55066a1.png" alt="Key Arts"> <div class="centered"> <a class="filter" href="#keyarts">Key Arts </a> </div> </a> </div> <div class="frame"> <a href="#userscreations"> <img src="/man-painting_button.560dc919.png" alt="Users' Creations"> </a> <div class="centered"> <a class="filter" href="#userscreations">Users' Creations</a> </div> </div> <div class="frame"> <a href="#newsnevents"> <img src="/DB-cosplay_button.3227d3db.png" alt="News and Events"> </a> <div class="centered"> <a class="filter" href="#newsnevents">News and Events</a> </div> </div> <div class="frame"> <a href="#toolkits"> <img src="/ArtTools_button.ee504739.png" alt="Toolkits"> </a> <div class="centered"> <a class="filter" href="#toolkits">Toolkits</a> </div> </div> </div> </div> </section>  <section id="keyarts" class="clearfix content"> <div class="segment"> <h2>K<span class="hd2">ey</span> A<span class="hd2">rts</span></h2> <div class="museum"> <article class="mainblock"> <div class="CSSgal">  <s id="s1"></s> <s id="s2"></s> <s id="s3"></s> <s id="s4"></s> <div class="slider"> <div class="info" style="background:#fbd88f;"> <div class="writeup"> <h2>Professional Art Studio of the month:</h2> <h3>Collateral Damage Studios (CDS)</h3> <p> Collateral Damage Studios is a group of art enthusiasts who debuted on the Singapore illustration scene in 2007. Inspired by pop culture, CDS aims to promote local creative talents, produce high quality illustrations, and have plenty of fun. <br> Actively engaging with international doujin communities, they work closely with companies and agencies to create concept art and branding visuals. <br> Reflecting on their origins in Kaleidoscope, Collateral Damage Studios advise and support student initiatives, such as Extravaganza, to provide aspiring Singaporean artists with platforms to debut. </p> <p> For some examples of their work, check out their website <a target="_blank" href="https://www.collateralds.com/portfolio/">here</a>. </p> </div> </div> <div class="info" style="background:#fbd88f;"> <div class="writeup"> <h3>Anime (Artist/Studio) 2</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer vitae justo eget magna fermentum iaculis. Turpis cursus in hac habitasse platea dictumst quisque sagittis purus. Et magnis dis parturient montes nascetur ridiculus. Tempor orci eu lobortis elementum nibh tellus. Laoreet sit amet cursus sit amet. Sapien eget mi proin sed libero enim sed faucibus. Ipsum a arcu cursus vitae congue mauris rhoncus. Lectus urna duis convallis convallis tellus id interdum velit. Morbi tempus iaculis urna id volutpat. Cras fermentum odio eu feugiat pretium nibh. In aliquam sem fringilla ut morbi tincidunt augue interdum. </p> </div> </div> <div class="info" style="background:#fbd88f;"> <div class="writeup"> <h3>Anime (Artist/Studio) 3</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget aliquet nibh praesent tristique magna sit amet purus gravida. Cras pulvinar mattis nunc sed. In ante metus dictum at tempor. Euismod nisi porta lorem mollis aliquam ut. Lorem sed risus ultricies tristique nulla aliquet enim. Lorem sed risus ultricies tristique nulla. Ultrices in iaculis nunc sed augue. Gravida dictum fusce ut placerat orci nulla. Nibh tellus molestie nunc non blandit massa enim nec dui. Nam libero justo laoreet sit amet. Ut morbi tincidunt augue interdum. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Arcu odio ut sem nulla pharetra diam sit amet nisl. </p> </div> </div> <div class="info" style="background:#fbd88f;"> <div class="writeup"> <h3>Anime (Artist/Studio) 4</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas quis ipsum suspendisse ultrices. Imperdiet proin fermentum leo vel orci porta. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Aliquam nulla facilisi cras fermentum odio eu. Nunc aliquet bibendum enim facilisis gravida. Lobortis scelerisque fermentum dui faucibus in ornare. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Quam pellentesque nec nam aliquam sem et. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Tellus at urna condimentum mattis. Enim tortor at auctor urna nunc id cursus. </p> </div> </div> </div> <div class="prevNext"> <div><a href="#s4"></a><a href="#s2"></a></div> <div><a href="#s1"></a><a href="#s3"></a></div> <div><a href="#s2"></a><a href="#s4"></a></div> <div><a href="#s3"></a><a href="#s1"></a></div> </div> <div class="bullets"> <a href="#s1"></a> <a href="#s2"></a> <a href="#s3"></a> <a href="#s4"></a> </div> </div> </article> <div class="museum"> <sl-card class="frame"> <a target="_blank" href="https://lemonwire.com/2018/06/12/exploring-soundtracks-cowboy-bebop/"> <img slot="image" src="/cowboy-bebop-Art.40fc6bb7.jpg" alt="Cowboy Bebop TV Series Art"> </a> <div class="caption" slot="footer"> <h5>Cowboy Bebop (1996) Complete series cover art</h5> <p> by Sunrise </p> </div> </sl-card> <sl-card class="frame"> <a target="_blank" href="https://twitter.com/johnsama"> <img slot="image" src="/Kirito_ACD_1.8e40dd36.png" alt="Kirito Kazuto Kirigaya Character Design Sheet"> </a> <div slot="footer" class="caption"> <h5>Kirito Character Design Sheet (Aincrad Arc)</h5> <p> by Shingo Adachi </p> </div> </sl-card> <sl-card class="frame"> <a target="_blank" href="https://web.archive.org/web/20110722072635/http://www.megaman-ntwarrior.com/"> <img slot="image" src="/MegaMan_NT_Warrior_-_Sketch_-1.d1049e19.jpg" alt="Mega Man NT Warrior Character lineup"> </a> <div slot="footer" class="caption"> <h5>MegaMan NT Warrior Character Lineup Sketch</h5> <p> by Mitsuru Ishihara </p> </div> </sl-card> <sl-card class="frame"> <a target="_blank" href="https://wallpapercave.com/genei-ryodan-wallpapers"> <img slot="image" src="/HunterxHunter.8ce1b7c1.jpg" alt="Hunter X Hunter Wallpaper"> </a> <div slot="footer" class="caption"> <h5>Hunter X Hunter</h5> <p> by Yoshihiro Togashi </p> </div> </sl-card> </div> </div> </div> </section>  <section id="userscreations" class="clearfix content"> <div class="segment"> <h2>U<span class="hd2">sers'</span> C<span class="hd2">reations</span></h2> <article class="mainblock"> <div class="CSSgal">  <s id="s5"></s> <s id="s6"></s> <div class="slider"> <div class="info" style="background:#fbd88f;"> <div class="writeup"> <h3>Artist of the month</h3> <div class="frame"> <img class="promopic" src="/sammily_profilePic.141e935f.jpeg" alt="Sammiliy profile picture"> </div> <div class="paragraph"> <p> Heyo! My name's Samantha and I'm a 2D animator and Illustrator based in Singapore! I draw lots of fanart of my favourite shows and video games as well as original art. I can be found on <a href="https://mobile.twitter.com/sammi_limyy/">Twitter</a>, <a href="https://sammilimyy.tumblr.com/">Tumblr</a>, <a href="https://www.instagram.com/sammilimyy/">Instagram</a> and <a href="https://ko-fi.com/samanthalim">Ko-fi.com</a>. Thank you! </p> </div> </div> </div> <div class="info" style="background:#fbd88f;"> <div class="writeup"> <h5>3 most popular Images that define her this month:</h5> <div> <sl-card class="frame"> <a target="_blank" href="https://mobile.twitter.com/sammi_limyy/status/1448332311460679682"> <img slot="image" src="/pit-pitto-sora_Sammiliy.9e2afc56.jpg" alt="Pit, Dark Pit and Pit’s twin (Sora)??"> </a> </sl-card> <sl-card class="frame"> <a target="_blank" href="https://mobile.twitter.com/sammi_limyy/status/1448147262572355591"> <img slot="image" src="/commission-LadyBianca92_Sammiliy.557bb869.png" alt="commission for LadyBianca92 by Sammiliy"> </a> </sl-card> <sl-card class="frame"> <a target="_blank" href="https://sammilimyy.tumblr.com/post/664310778688585728/sora-is-finally-here"> <img slot="image" src="/sora-in-smash-Sammiliy.ec4289f9.jpg" alt="Picture celebrating Sora being playable in Smash"> </a> </sl-card> </div> </div> </div> </div> <div class="prevNext"> <div><a href="#s6"></a><a href="#s6"></a></div> <div><a href="#s5"></a><a href="#s5"></a></div> </div> <div class="bullets"> <a href="#s5"></a> <a href="#s6"></a> </div> </div> </article> <div class="museum"> <sl-card class="frame"> <a target="_blank" href="https://twitter.com/Wia_vi/status/1266887260923785218"> <img slot="image" src="/Lauriam&Strelitzia_Photo.b2609a57.png" alt="Young Lauriam & Strelitzia Photo"> </a> <div class="caption" slot="footer"> <h5>Lauriam & Strelitzia</h5> <p>by Wia_Vi</p> </div> </sl-card> <sl-card class="frame"> <a target="_blank" href="https://www.deviantart.com/han960691/art/Bond-between-us-Monster-Hunter-Stories-686959756"> <img slot="image" src="/bond_between_us.12086e17.jpg" alt="Monster Hunter Stories Bond Between Us"> </a> <div class="caption" slot="footer"> <h5>Bonds between Us (Rider & Monstie)</h5> <p>by Han960691</p> </div> </sl-card> <sl-card class="frame"> <a target="_blank" href="http://fav.me/d7xxad6"> <img slot="image" src="/_exe_tn.a9bc4c58.png" alt=".EXE Hikari Brothers"> </a> <div class="caption" slot="footer"> <h5>EXE Brothers</h5> <p>by UltimatemaverickX</p> </div> </sl-card> <sl-card class="frame"> <a target="_blank" href="https://twitter.com/Maxieprodmoore/status/1190628356473016320"> <img slot="image" src="/InktoberDay25_Player-WEB.da39d70e.png" alt="Inktober2018Day25_Kingdom Hearts Union Cross Player"> </a> <div class="caption" slot="footer"> <h5>KHUX Avatar</h5> <p>by Maxieprodmoore</p> </div> </sl-card> </div> </div> </section>  <section id="newsnevents" class="clearfix content"> <div class="segment"> <h2>N<span class="hd2">ews</span> <span class="hd2">and</span> E<span class="hd2">vents</span> </h2> <article class="mainblock"> <div class="CSSgal">  <s id="s7"></s> <s id="s8"></s> <s id="s9"></s> <s id="s10"></s> <div class="slider"> <div class="info" style="background:#fbd88f;"> <h3>Latest Updates:</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor elit sed vulputate mi sit. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci a scelerisque purus semper. Felis donec et odio pellentesque diam. Nibh ipsum consequat nisl vel pretium lectus quam. Sed enim ut sem viverra. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Pulvinar pellentesque habitant morbi tristique senectus et. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Dictum varius duis at consectetur. Est sit amet facilisis magna. Et tortor at risus viverra. Lectus magna fringilla urna porttitor rhoncus. Eget nullam non nisi est sit. Faucibus turpis in eu mi bibendum neque egestas congue. </p> </div> <div class="info" style="background:#b06f6b;"> <h3>CoVid-19 Information</h3> <p> Dear Visitor, Due to the CoVid-19 Situation, It is with regret that I must inform you all that most Physical Events have been cancelled, if not, Postponed. <br> While Safety Restrictions may have been eased in your respective Event's countries, I urge you to check for any updates on the situation. <br> In the meantime, remember to wash your hands, wear favemasks, adhere to Social Distancing measures, Health guidelines, etc. Most importantly, stay safe. <br> Till Next time! </p> </div> <div class="info" style="background:#fbd88f;"> <h3>News/Events update 1</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tempus iaculis urna id volutpat. Pulvinar mattis nunc sed blandit libero volutpat sed. Consectetur a erat nam at lectus. Eu sem integer vitae justo eget. In hac habitasse platea dictumst quisque. </p> </div> <div class="info" style="background:#fbd88f;"> <h3>News/Events update 2</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Quis imperdiet massa tincidunt nunc pulvinar sapien. Donec et odio pellentesque diam volutpat. Tristique senectus et netus et malesuada. Massa vitae tortor condimentum lacinia quis. </p> </div> </div> <div class="prevNext"> <div><a href="#s10"></a><a href="#s8"></a></div> <div><a href="#s7"></a><a href="#s9"></a></div> <div><a href="#s8"></a><a href="#s10"></a></div> <div><a href="#s9"></a><a href="#s7"></a></div> </div> <div class="bullets"> <a href="#s7"></a> <a href="#s8"></a> <a href="#s9"></a> <a href="#s10"></a> </div> </div> </article> <sl-tab-group class="museum"> <sl-tab slot="nav" panel="africa" class="tablink">The Africas</sl-tab> <sl-tab slot="nav" panel="americas" class="tablink" active="">The Americas</sl-tab> <sl-tab slot="nav" panel="asia" class="tablink">Asia-Pacific</sl-tab> <sl-tab slot="nav" panel="europe" class="tablink">European Union</sl-tab> <sl-tab slot="nav" panel="carribean" class="tablink">The Carribeans</sl-tab> <sl-tab-panel name="asia" id="Asia" class="tabcontent"> <div class="writeup"> <img class="promopic" src="/placeimg_600_600_tower.9f6cc660.jpg" alt="placeimg_600_600_tower"> <div class="paragraph"> <h3>Laoreet non curabitur</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Scelerisque in dictum non consectetur a erat nam. Facilisis sed odio morbi quis. Posuere sollicitudin aliquam ultrices sagittis orci a. Convallis a cras semper auctor neque vitae. </p> </div> </div> </sl-tab-panel> <sl-tab-panel name="africa" id="Africa" class="tabcontent"> <div class="writeup"> <img class="promopic" src="/placeimg_600_600_building(1).f9a08fdd.jpg" alt="placeimg_600_600_building(1)"> <div class="paragraph"> <h3>Laoreet non curabitur</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Scelerisque in dictum non consectetur a erat nam. Facilisis sed odio morbi quis. Posuere sollicitudin aliquam ultrices sagittis orci a. Convallis a cras semper auctor neque vitae. </p> </div> </div> </sl-tab-panel> <sl-tab-panel name="europe" id="Europe" class="tabcontent"> <div class="writeup"> <img class="promopic" src="/placeimg_600_600_arch.02302f3e.jpg" alt="Europe Arch"> <div class="paragraph"> <h3>Laoreet non curabitur</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Scelerisque in dictum non consectetur a erat nam. Facilisis sed odio morbi quis. Posuere sollicitudin aliquam ultrices sagittis orci a. Convallis a cras semper auctor neque vitae. </p> </div> </div> </sl-tab-panel> <sl-tab-panel name="carribean" id="Carribean" class="tabcontent"> <div class="writeup"> <img class="promopic" src="/placeimg_600_600_lift.9505e0ab.jpg" alt="placeimg_600_600_lift"> <div class="paragraph"> <h3>Laoreet non curabitur</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Scelerisque in dictum non consectetur a erat nam. Facilisis sed odio morbi quis. Posuere sollicitudin aliquam ultrices sagittis orci a. Convallis a cras semper auctor neque vitae. </p> </div> </div> </sl-tab-panel> <sl-tab-panel name="americas" id="Americas" class="tabcontent"> <div class="writeup"> <a target="_blank" href="https://www.megaconorlando.com/en/home.html"> <img class="promopic" src="/Website-Button(MegaCon).55f98c73.png" alt="MegaCon 2020 Web Button"> </a> <div class="paragraph"> <h3>CoVid-19 Announcement</h3> <p> Due to CoVid19, MegaCon Orlando 2020 as a whole would be cancelled. <br> However, don't worry, it is still around in alimited capacity as MegaCon Orlando: Limited Edition. <br> MEGACON Orlando: LIMITED EDITION will take place on Halloween weekend from October 30-November 1, 2020 at the Orange County Convention Center. <br> It will have all the all the excitement of our regular event, but will be incredibly exclusive. <br> In order to ensure a safe experience for our fans, this event will be limited to 25,000 tickets and once they’re gone, they’re gone. For more information about the event, check their official website <a target="_blank" href="https://www.megaconorlando.com/en/home.html">here.</a> </p> </div> </div> <div class="writeup"> <a target="_blank" href="https://mizucon.com/"> <img class="promopic" src="/MizuCon2020-button.bc36cac5.png" alt="MizuConnect 2020 Web Button"> </a> <div class="paragraph"> <p> Ahoy there! <br> This is Mizucon! We are a diverse, fun-loving community, and we are beyond excited to have you aboard. Mermaids, swords, fire dancing, workshops, panels and, of course, all the anime are all waiting for you at our 2020 event in late August at the Hilton Blue Lagoon Miami Airport Hotel. </p> </div> </div> </sl-tab-panel> </sl-tab-group> </div> </section>  <section id="toolkits" class="clearfix content"> <div class="segment"> <h2>T<span class="hd2">ool</span>k<span class="hd2">its</span></h2> <article class="mainblock"> <div class="CSSgal">  <s id="s11"></s> <s id="s12"></s> <s id="s13"></s> <s id="s14"></s> <div class="slider"> <div class="info" style="background:#fbd88f;"> <h3>Art Tools Promotion here.</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Eget nunc lobortis mattis aliquam faucibus purus in. </p> </div> <div class="info" style="background:#fbd88f;"> <h3>Art Tools promotion 2</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit. </p> </div> <div class="info" style="background:#fbd88f;"> <h3>Art Tools promotion 3</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate odio ut enim. Id diam vel quam elementum pulvinar. </p> </div> <div class="info" style="background:#fbd88f;"> <h3>Art Tools promotion 4</h3> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed vulputate odio ut enim. Id diam vel quam elementum pulvinar. </p> </div> </div> <div class="prevNext"> <div><a href="#s14"></a><a href="#s12"></a></div> <div><a href="#s11"></a><a href="#s13"></a></div> <div><a href="#s12"></a><a href="#s14"></a></div> <div><a href="#s13"></a><a href="#s11"></a></div> </div> <div class="bullets"> <a href="#s11"></a> <a href="#s12"></a> <a href="#s13"></a> <a href="#s14"></a> </div> </div> </article> <sl-tab-group class="museum"> <sl-tab slot="nav" class="tabfilter" panel="allProd">All Products</sl-tab> <sl-tab slot="nav" class="tabfilter" panel="canvas">Canvas</sl-tab> <sl-tab slot="nav" class="tabfilter" panel="colouring">Colouring materials</sl-tab> <sl-tab slot="nav" class="tabfilter" panel="digitalProd">Digital Products</sl-tab> <sl-tab slot="nav" class="tabfilter" panel="miscProd">Miscellaneous Products</sl-tab> <sl-tab-panel class="museum" name="allProd"> <sl-card class="Digital productDiv"> <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet"> <img slot="image" src="/Wacom1Button.a65eb7a5.png" alt="Wacom 1 Tablet"> </a> <div class="caption" slot="footer"> <h5>Wacom One Tablet </h5> <p>by Wacom Co., Ltd.</p> </div> </sl-card> <sl-card class="canvasProducts productDiv"> <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/"> <img slot="image" src="/AcryllicPaper.531eecad.jpg" alt="Daler Rowney System 3 Acrylic Paper"> </a> <div class="caption" slot="footer"> <h5> System 3 Acryllic Paper </h5> <p>by Daler Rowney Ltd.</p> </div> </sl-card> <sl-card class="Misc productDiv"> <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4"> <img slot="image" src="/KneadableEraserButton.e07d2fb6.png" alt="Daler Rowney Soft Putty Eraser"> </a> <div class="caption" slot="footer"> <h5> Daler Rowney Soft Putty Eraser </h5> <p>by Daler Rowney Ltd.</p> </div> </sl-card> <sl-card class="colouringMaterials productDiv"> <a target="_blank" href="https://copic.jp/en/product/classic/"> <img slot="image" src="/CopicMarkersButton.a16079f4.png" alt="Copic Markers Classic"> </a> <div class="caption" slot="footer"> <h5>Copic Markers Classic Set</h5> <p> by Copic</p> </div> </sl-card> <sl-card class="Misc productDiv"> <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders"> <img slot="image" src="/derwent-pencil-extenders.00074286.jpg" alt="Derwent Pencil Extender"> </a> <div class="caption" slot="footer"> <h5>Derwent Pencil Extender</h5> <p> by Derwent - ACCO UK Ltd.</p> </div> </sl-card> <sl-card class="Misc productDiv"> <a target="_blank" href="https://colorwheelco.com/products/"> <img src="/ColorwheelButton.8faec894.png" alt="Colour Wheel Pocket Guide"> </a> <div class="caption" slot="footer"> <h5>Colour Wheel Pocket Guide</h5> <p>by Colour Wheel Company </p> </div> </sl-card> </sl-tab-panel> <sl-tab-panel class="museum" name="canvas"> <sl-card class="canvasProducts productDiv"> <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/"> <img slot="image" src="/AcryllicPaper.531eecad.jpg" alt="Daler Rowney System 3 Acrylic Paper"> </a> <div class="caption" slot="footer"> <h5> System 3 Acryllic Paper </h5> <p>by Daler Rowney Ltd.</p> </div> </sl-card> </sl-tab-panel> <sl-tab-panel class="museum" name="colouring"> <sl-card class="colouringMaterials productDiv"> <a target="_blank" href="https://copic.jp/en/product/classic/"> <img slot="image" src="/CopicMarkersButton.a16079f4.png" alt="Copic Markers Classic"> </a> <div class="caption" slot="footer"> <h5>Copic Markers Classic Set</h5> <p> by Copic</p> </div> </sl-card> </sl-tab-panel> <sl-tab-panel class="museum" name="digitalProd"> <sl-card class="Digital productDiv"> <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet"> <img slot="image" src="/Wacom1Button.a65eb7a5.png" alt="Wacom 1 Tablet"> </a> <div class="caption" slot="footer"> <h5>Wacom One Tablet </h5> <p>by Wacom Co., Ltd.</p> </div> </sl-card> </sl-tab-panel> <sl-tab-panel class="museum" name="miscProd"> <sl-card class="Misc productDiv"> <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4"> <img slot="image" src="/KneadableEraserButton.e07d2fb6.png" alt="Daler Rowney Soft Putty Eraser"> </a> <div class="caption" slot="footer"> <h5> Daler Rowney Soft Putty Eraser </h5> <p>by Daler Rowney Ltd.</p> </div> </sl-card> <sl-card class="Misc productDiv"> <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders"> <img slot="image" src="/derwent-pencil-extenders.00074286.jpg" alt="Derwent Pencil Extender"> </a> <div class="caption" slot="footer"> <h5>Derwent Pencil Extender</h5> <p> by Derwent - ACCO UK Ltd.</p> </div> </sl-card> <sl-card class="Misc productDiv"> <a target="_blank" href="https://colorwheelco.com/products/"> <img src="/ColorwheelButton.8faec894.png" alt="Colour Wheel Pocket Guide"> </a> <div class="caption" slot="footer"> <h5>Colour Wheel Pocket Guide</h5> <p>by Colour Wheel Company </p> </div> </sl-card> </sl-tab-panel> </sl-tab-group> </div> </section>   <div class="footer"> <p> This website has been created as part of an assignment in an approved course of study for Curtin University and contains copyright material not created by the author. All copyright material used remains copyright of the respective owners and has been used here pursuant to Section 40 of the Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without consent of the original copyright owners. See code comments for references. </p> </div>   <script src="/index.be052c7c.js"></script> </body></html>

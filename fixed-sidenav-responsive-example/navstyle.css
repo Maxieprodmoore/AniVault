@@ -1,0 +1,79 @@
+/* General styling */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;    
+}
+h2 {
+  text-align: center;
+}
+
+nav{
+    padding: 15px;
+    border: solid #d4d2d2 3px;
+    background-color: #fdd13e;
+    width: fit-content;
+    position: fixed;  
+    top:0;
+    left:0;          
+}
+nav ul {
+    margin: 0;
+    padding:0;
+}
+nav ul li {
+    list-style: none;    
+    padding: 20px;
+    margin:0;  
+    background-color: #f0f8ff;
+    border-bottom: solid 2px #000000; 
+}
+nav ul li:hover{
+    background-color: #929292;
+}
+.content {
+  width: 100vw;
+  height:100vh;
+  border-top: solid #000000 1px;
+}
+section:nth-child(even) {
+  background-color: #fff6cd;
+}
+/* General styling end */
+
+label, #burger {
+    display: none; /* hide button until 768px #burger is never displayed it's just a checkbox "hack" */
+  }
+  
+@media only screen and (max-width: 768px) {
+    label {
+      display: block;  /* turn on button */
+      padding: 10px;
+    }
+    
+    nav ul {
+      display: none; /* hide menu items */      
+    }
+  
+    nav input:checked ~ ul { /* the crux of it all! when input checkbox is "checked" reveal menu items*/
+      display: block;
+      margin: 0;
+      padding:0;
+      width: 92vw;
+    }
+  
+    nav ul li {
+      display:block;/* nav buttons top to bottom */
+      width:85vw;
+      margin:0;
+      padding:20px 0px 20px 20px;           
+    }
+    
+    
+  }
