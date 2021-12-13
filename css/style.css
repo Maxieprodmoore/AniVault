@@ -360,7 +360,6 @@ img {
     width: 600px;
     max-width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
 .gallery div {display: block;}
@@ -378,7 +377,7 @@ img {
         text-align: center;
     }
 
-    .caption h5{
+    .caption h5, .caption p{
         margin-top: 0;
         margin-bottom: 0.25%;
     }
@@ -495,6 +494,24 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 .writeup div{
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.frameImg{
+    float: left;
+    width: 24%;
+    margin-right: 1%;
+    text-align: center;
+    
+}
+
+.frame [slot = "image"], .frameImg [slot = "image"], .productDiv [slot = "image"] {
+    height: 450px;
+    object-fit: contain;
+}
+
+.frame [slot = "footer"], .frameImg [slot = "footer"], .productDiv [slot = "footer"] {
+    height: 175px;
+    padding: 1%;
 }
 
 /* ==========SECTION 4 STYLING============= */
