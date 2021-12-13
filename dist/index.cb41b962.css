@@ -761,6 +761,11 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         margin: 0 1% 2%;
     }
 
+    .frameImg {
+        width: 48%;
+        margin: 0 1% 2%;
+    }
+
     .writeup {
         position: relative;
         display: inline-block;
@@ -808,11 +813,16 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     }
 
-}
-
-@media only screen and (max-width: 810px) {
     h1 {
         transform:translate(-5%, -30%);
+    }
+
+    img {
+        width: 100%;
+    }
+
+    #welcomeMsg h5 {
+        margin-left: 0;
     }
 
     .paragraph {
@@ -826,6 +836,19 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     #intro .frame{
         margin-bottom: -22%;
+    }
+
+    .frame [slot="footer"], .frameImg [slot="footer"], .productDiv [slot="footer"] {
+        height: 125px;
+        padding: 0;
+    }
+
+    #keyarts .segment .museum, #newsnevents .segment .museum, #toolkits .segment .museum  {
+        display: block;
+    }
+
+    #keyarts .segment .museum .frame {
+        width: 100%;
     }
 
 }
@@ -950,6 +973,12 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
     .frame{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2%;
+    }
+
+    .frameImg {
         width: 100%;
         margin-right: 0;
         margin-bottom: 2%;
