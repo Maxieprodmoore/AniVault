@@ -452,7 +452,6 @@ img {
 
 .frame [slot="footer"], .frameImg [slot="footer"], .productDiv [slot="footer"], .frame [slot = "image"], .frameImg [slot = "image"], .productDiv [slot = "image"]{
     max-height: 100vh;
-    max-width: 100vw;
 }
 
 /*====Picture description======*/
