@@ -1090,6 +1090,11 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             transform: translateY(-120%);
         }
 
+        .CSSgal .prevNext a {
+            width: 50px;
+            height: 50px;
+        }
+
         .centered a {
             transform: translate(-50%, -180%);
         }

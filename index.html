@@ -10,7 +10,6 @@
         <meta name="description" content="A Treasure vault of Anime & Creativity">
         <meta name="keywords" content="Anime,Resource,Anime Resource Website, Artist, resources">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.62/dist/themes/light.css">
-        <link rel="stylesheet" href="@splidejs/splide/dist/css/splide.min.css">
         <link rel="stylesheet" href="css/style.css">         
         <!--<link rel="icon" href="place-your-tab-icon-here">-->
         <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.62/dist/shoelace.js"></script>
@@ -25,12 +24,6 @@
                 import '@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js';
                 import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
                 setBasePath('/dist/shoelace');
-            //---------------------------Splide items-------------------------//
-                import Splide from '@splidejs/splide';
-                document.addEventListener( 'DOMContentLoaded', function() {
-                    var splide = new Splide( '.splide' );
-                    splide.mount();
-                } );
 
         </script>
         <script src="js/jquery.js"></script>     
@@ -213,16 +206,7 @@
                                 </div>
                               
                             </div>
-                            <div class="splide" id="artStudioSlide">
-                                <div class="splide__track">
-                                      <ul class="splide__list">
-                                          <li class="splide__slide">Slide 01</li>
-                                          <li class="splide__slide">Slide 02</li>
-                                          <li class="splide__slide">Slide 03</li>
-                                          <li class="splide__slide">Slide 04</li>
-                                      </ul>
-                                </div>
-                            </div>
+                
                         </article>
                         <div class="museum">
                             <sl-card class="frame">
@@ -473,16 +457,7 @@
                             </div>
                           
                         </div>
-                        <div class="splide" id="newsEventsSlides">
-                            <div class="splide__track">
-                                  <ul class="splide__list">
-                                      <li class="splide__slide">Slide 01</li>
-                                      <li class="splide__slide">Slide 02</li>
-                                      <li class="splide__slide">Slide 03</li>
-                                      <li class="splide__slide">Slide 04</li>
-                                  </ul>
-                            </div>
-                        </div>
+                        
                     </article>
                     <sl-tab-group class="museum">
                         <sl-tab slot="nav" panel="africa" class="tablink">The Africas</sl-tab>
@@ -650,16 +625,7 @@
                             </div>
                           
                         </div>
-                        <div class="splide" id="artToolsSlide">
-                            <div class="splide__track">
-                                  <ul class="splide__list">
-                                      <li class="splide__slide">Slide 01</li>
-                                      <li class="splide__slide">Slide 02</li>
-                                      <li class="splide__slide">Slide 03</li>
-                                      <li class="splide__slide">Slide 04</li>
-                                  </ul>
-                            </div>
-                          </div>
+                        
                     </article>
                     <sl-tab-group class="museum">
                         <sl-tab slot="nav"  class="tabfilter" panel="allProd">All Products</sl-tab>
