@@ -435,17 +435,18 @@ article.mainblock {
     text-align: left;
 }
 
-a.filter {
+p.filter {
     font-family: "Lemonada";
     text-align: center;
     color: white;
+    font-size: 2rem;
 }
 .centered {
     position: relative;
     width: 100%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -150%);
+    transform: translate(-50%, -300%);
 }
 
 centered::after {
@@ -1042,7 +1043,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         .frame [slot="footer"], .frameImg [slot="footer"], .productDiv [slot="footer"] {
-            height: 175px;
+            height: initial;
         }
     }
 
