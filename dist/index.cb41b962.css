@@ -1102,6 +1102,14 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
 @media only screen and (max-width: 720px) {
+        header {
+            height: 10vh;
+        }
+
+        h1 {
+            transform: translate(-5%, -35%);
+        }
+
         #intro .frame {
             margin-bottom: -13%;
         }
