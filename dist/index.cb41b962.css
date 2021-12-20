@@ -863,6 +863,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             height: 1400px;
         }
 
+        #artToolsPromo .info {
+            height: 250px;
+        }
+
         .userHighlight [slot="image"] {
             margin: -20%;
         }
@@ -1116,6 +1120,14 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         #fanArtistSlide .info{
             height: 1600px;
         }
+
+        #newsEventsUpdate .info {
+            height: 550px;
+        }
+
+        #artToolsPromo .info {
+            height: 350px;
+        }
     }
 
 @media only screen and (max-width: 425px) {
@@ -1136,6 +1148,14 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         .frame [slot="footer"], .frameImg [slot="footer"], .productDiv [slot="footer"] {
             height: initial;
         }
+
+        #newsEventsUpdate .info {
+            height: 600px;
+        }
+
+        #artToolsPromo .info {
+            height: 380px;
+        }
     }
 
 @media only screen and (max-width: 390px) {
@@ -1146,6 +1166,14 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         .frame [slot="image"], .frameImg [slot="image"], .productDiv [slot="image"] {
             margin: -7%;
         }
+
+        #newsEventsUpdate .info {
+            height: 700px;
+        }
+
+        #artToolsPromo .info {
+            height: 350px;
+        }
     }
 
 @media only screen and (max-width: 384px) {
@@ -1155,6 +1183,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         .userHighlight [slot="image"] {
             height: 400px;
+        }
+
+        #newsEventsUpdate .info {
+            height: 700px;
         }
     }
 
@@ -1180,6 +1212,9 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             height: 1380px;
         }
 
+        #artToolsPromo .info {
+            height: 330px;
+        }
         
     }
 
@@ -1201,6 +1236,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         .CSSgal .bullets {
             transform: translateY(-160%);
             margin-top: 5%;
+        }
+
+        #newsEventsUpdate .info {
+            height: 720px;
         }
 
         
