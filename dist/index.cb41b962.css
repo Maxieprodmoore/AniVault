@@ -1394,7 +1394,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
 @media only screen and (max-width: 384px) {
         h1 {
-            transform: translate(-2%, -20%);
+            transform: translate(-2%, -30%);
         }
 
         .userHighlight [slot="image"] {
@@ -1402,14 +1402,16 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         #newsEventsUpdate .info {
-            height: 700px;
+            height: 580px;
         }
 
         #fanArtistSlide .info {
-            height: 1350px;
+            height: 1330px;
         }
 
-
+        #artToolsPromo .info {
+            height: 400px;
+        }
     }
 
 @media only screen and (max-width: 375px) {
