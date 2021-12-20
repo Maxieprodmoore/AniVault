@@ -1110,6 +1110,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             transform: translate(-50%, -175%);
         }
 
+        .centered, #usersCreationsBtn {
+            transform: translate(-50%, -275%);
+        }
+
         .productDiv {
             margin: 0 0.5% 3%;
         }
@@ -1123,7 +1127,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         #newsEventsUpdate .info {
-            height: 480px;
+            height: 450px;
         }
 
         #artToolsPromo .info {
@@ -1132,6 +1136,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         #fanArtistSlide .info .frame{
             width: 98%;
+        }
+
+        .frame [slot="footer"], .frameImg [slot="footer"], .productDiv [slot="footer"] {
+            height: 120px;
         }
     }
 
