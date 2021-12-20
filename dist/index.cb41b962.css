@@ -1039,13 +1039,38 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
 @media only screen and (max-width: 800px){
+        #intro .frame{
+            margin-bottom: -12%;
+        }
+
+        .centered {
+            transform: translate(-50%,-300%);
+        }
+
+        #newsneventsBtn, #usersCreationsBtn {
+            transform: translate(-50%,-300%);
+        }
+
         .info {
             height: 680px;
             padding: 2% 10%;
         }
 
+        #keyartsPromo .info {
+            height: 820px;
+            max-height: initial;
+        }
+
         #fanArtistSlide .info{
             height: 950px;
+        }
+
+        #newsEventsUpdate .info {
+            height: 400px;
+        }
+
+        #artToolsPromo .info {
+            height: 360px;
         }
 
         .CSSgal .bullets {
