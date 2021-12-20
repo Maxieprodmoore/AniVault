@@ -1016,7 +1016,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         h1 {
-            transform: translate(-5%, -35%);
+            transform: translate(-5%, -10%);
         }
 
         #intro .frame {
@@ -1088,7 +1088,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     @media only screen and (max-width: 428px) { 
         h1 {
-            transform: translate(-5%, -20%);
+            transform: translate(-5%, -30%);
         }
 
         h3 span, h4 span, h5 span, h3, h4 {
@@ -1130,13 +1130,17 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             padding-left: initial;
         }
 
+        #intro .frame {
+            margin-bottom: -20%;
+        }
+
         .frame, .frameImg, .userHighlight{
             width: 100%;
             margin-right: 0;
-            margin-bottom: 2%;
+            margin-bottom: 4%;
         }
 
-        .centered, #intro .frame a #newsneventsBtn {
+        .centered, #usersCreationsBtn, #intro .frame a #newsneventsBtn {
             transform: translate(-50%, -350%);
         }
 
@@ -1186,6 +1190,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin: 0 0.5%;
         }
 
+        #keyartsPromo .info {
+            height: 850px;
+        }
+
         .userHighlight [slot="image"] {
             height: 500px;
         }
@@ -1196,15 +1204,25 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         #fanArtistSlide .info{
-            height: 1600px;
+            height: 1580px;
         }
 
         #newsEventsUpdate .info {
-            height: 550px;
+            height: 500px;
+            padding: 0 10%;
         }
 
         #artToolsPromo .info {
-            height: 350px;
+            height: 330px;
+            padding: 0 11%;
+        }
+
+        .productDiv {
+            margin: 3% 0;
+        }
+
+        .frame [slot="footer"], .frameImg [slot="footer"], .productDiv [slot="footer"] {
+            height: initial;
         }
     }
 
@@ -1214,25 +1232,41 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
     }
 
+    @media only screen and (max-width: 414px) {
+        #newsEventsUpdate .info, #artToolsPromo .info {
+            padding: 2% 12%;
+        }
+
+        #fanArtistSlide .info {
+            height: 1600px;
+            padding: 2% 15%;
+        }
+
+        #newsEventsUpdate .info {
+            height: 530px;
+        }
+
+    }
+
     @media only screen and (max-width: 412px) {
         .frame, .frameImg, .userHighlight {
-            margin-bottom: 10%;
+            margin-bottom: 5%;
         }
 
         .userHighlight [slot="image"] {
             margin: -25%;
         }
 
-        .frame [slot="footer"], .frameImg [slot="footer"], .productDiv [slot="footer"] {
-            height: initial;
-        }
-
         #newsEventsUpdate .info {
-            height: 600px;
+            height: 550px;
         }
 
         #artToolsPromo .info {
-            height: 380px;
+            height: 330px;
+        }
+
+        #fanArtistSlide .info {
+            height: 1550px;
         }
     }
 
@@ -1245,12 +1279,16 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin: -7%;
         }
 
+        #keyartsPromo .info {
+            height: 875px;
+        }
+
         #newsEventsUpdate .info {
-            height: 680px;
+            height: 550px;
         }
 
         #artToolsPromo .info {
-            height: 420px;
+            height: 360px;
         }
 
         .centered, #intro .frame a #newsneventsBtn {
@@ -1284,12 +1322,17 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
 
     @media only screen and (max-width: 375px) {
-
-        h1 {
-            transform: translate(-1%, -25%);
+        header {
+            height: 12vh;
         }
 
-        
+        h1 {
+            transform: translate(-1%, -28%);
+        }
+
+        #welcomeMsg h5 {
+            margin-top: 2%;
+        }
 
         .info{
             height: 1000px;
@@ -1301,17 +1344,29 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             transform: translate(-50%, -160%);
         }
 
+        #keyartsPromo .info {
+            height: 900px;
+        }
+
         #fanArtistSlide .info {
-            height: 1380px;
+            height: 1320px;
+        }
+
+        #newsEventsUpdate .info {
+            height: 600px;
         }
 
         #artToolsPromo .info {
-            height: 330px;
+            height: 420px;
         }
         
     }
 
     @media only screen and (max-width: 360px) { 
+        header {
+            padding: 2% 0;
+            height: 15vh;
+        }
 
         h1{
             transform: translate(-2%, -20%);
@@ -1331,8 +1386,19 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin-top: 5%;
         }
 
+        #keyartsPromo .info {
+            height: 1080px;
+            padding: 0 18%;
+        }
+
+        #fanArtistSlide .info {
+            height: 1360px;
+            padding: 0 18%;
+        }
+
         #newsEventsUpdate .info {
-            height: 720px;
+            height: 700px;
+            padding: 0 15%;
         }
 
         
