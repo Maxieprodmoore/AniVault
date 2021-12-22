@@ -513,6 +513,10 @@ article.mainblock {
     display: inline-block;
 }
 
+#home .segment article.mainblock {
+    margin: 0 2.5% 1.25%;
+}
+
 #welcomeMsg h5 {
     margin-left: 2%;
     margin-top: 15%;
@@ -762,7 +766,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         h1 {
             text-align: left;
-            transform: translate(-3%,-50%);
+            transform: translate(-3%,-55%);
         }
 
         .navcontent {
@@ -796,6 +800,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         #artToolsPromo .info {
             padding: 2% 8%;
+            height: 220px;
         }
 
         .productDiv {
@@ -821,9 +826,42 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             padding: 5% 10%;
         }
 
+        .navcontent {
+            width: 80vw;
+            margin: 0 10vw;
+        }
+
+        .writeup {
+            margin-top: 0;
+        }
+
+        #intro .frame {
+            margin-bottom: -10%;
+        }
+
+        .centered {
+            transform: translate(-50%, -350%);
+        }
+
+        #usersCreationsBtn, #newsneventsBtn {
+            transform: translate(-50%, -375%);
+        }
+
+        #keyartsPromo .info {
+            height: 660px;
+        }
+
         #fanArtistSlide .info {
             height: 1100px;
             max-height: initial;
+        }
+
+        #newsEventsUpdate .info {
+            height: 325px;
+        }
+
+        #artToolsPromo .info {
+            height: 345px;
         }
 
         .frame, .frameImg, .userHighlight {
@@ -843,6 +881,15 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             padding: 0;
             width: 100%;
         }
+
+        .userHighlight [slot="footer"], .frame [slot="footer"], .frameImg [slot="footer"] {
+            height: 125px;
+        }
+
+        .productDiv [slot="footer"]{
+            height: 270px;
+        }
+
     }
 
 @media only screen and (max-width: 1024px) {
@@ -962,6 +1009,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
 @media only screen and (max-width: 810px) {
+        h1 {
+            transform: translate(-5%, -45%);
+        }
+
         h4.tagline{
             transform: initial;
             padding: 0;
@@ -1002,10 +1053,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             padding-top: 0;
             transform: translateY(-120%);
 
-        }
-
-        h1 {
-            transform:translate(-5%, -30%);
         }
 
         img {
@@ -1089,6 +1136,9 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
 @media only screen and (max-width: 768px) {
+        h1 {
+            transform: translate(-5%, -47%);
+        }
 
         .paragraph{
             margin: 0 1% 0 0;
@@ -1142,7 +1192,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         h1 {
-            transform: translate(-5%, -35%);
+            transform: translate(-5%, -45%);
         }
 
         #intro .frame {
@@ -1155,6 +1205,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         .centered, #usersCreationsBtn {
             transform: translate(-50%, -275%);
+        }
+
+        #home .segment article.mainblock {
+            margin: -10% 2.5% 1.25%;
         }
 
         .productDiv {
@@ -1216,7 +1270,9 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 @media only screen and (max-width: 428px) { 
         header {
             height: 10vh;
+            padding: 2%;
         }
+
 
         h1 {
             transform: translate(-5%, -30%);
@@ -1242,9 +1298,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin-top: 0;
         }
 
-        header {
-            padding: 2%;
+        #home .segment article.mainblock {
+            margin: 3.5% 2.5% 1.25%;
         }
+
         .promopic {
             float: none;
             width: 100%;
@@ -1380,8 +1437,13 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
 @media only screen and (max-width: 412px) {
+        
         .frame, .frameImg, .userHighlight {
             margin-bottom: 5%;
+        }
+
+        #welcomeMsg h5 {
+            margin-top: 0%;
         }
 
         .userHighlight [slot="image"] {
