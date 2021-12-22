@@ -665,6 +665,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
     @media only screen and (max-width: 1280px) {
+        header {
+            height: 18vh;
+        }
+
         h1 {
             text-align: left;
             transform: translate(-3%,-50%);
@@ -749,9 +753,13 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
     @media only screen and (max-width: 1024px) {
+        header {
+            height: 10vh;
+        }
+
         h1 {
             text-align:center;
-            transform: translate(-5%, -20%);
+            transform: translate(-5%, -45%);
         }
 
         .paragraph h3{
@@ -855,9 +863,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin: 0 5vw;
         }
 
-        header {
-            height: 15vh;
-        }
+        
         
         .tabcontent {
             width: 100%;
@@ -952,6 +958,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin-bottom: -12%;
         }
 
+        h1  {
+            transform: translate(-5%, -38%);
+        }
+
         .centered {
             transform: translate(-50%,-300%);
         }
@@ -988,6 +998,9 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
     @media only screen and (max-width: 768px) {
+        h1 {
+            transform: translate(-5%, -47%);
+        }
 
         .paragraph{
             margin: 0 1% 0 0;
@@ -1037,11 +1050,11 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
     @media only screen and (max-width: 720px) {
         header {
-            height: 10vh;
+            height: 8vh;
         }
 
         h1 {
-            transform: translate(-5%, -10%);
+            transform: translate(-5%, -35%);
         }
 
         #intro .frame {
@@ -1112,6 +1125,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     }
 
     @media only screen and (max-width: 428px) { 
+        header {
+            height: 10vh;
+        }
+
         h1 {
             transform: translate(-5%, -30%);
         }
@@ -1354,7 +1371,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         h1 {
-            transform: translate(-1%, -28%);
+            transform: translate(-1%, -30%);
         }
 
         #welcomeMsg h5 {
