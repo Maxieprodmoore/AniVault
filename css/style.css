@@ -23,8 +23,20 @@ a { text-decoration: none; color:black; }
             background-color: #f7ce76;
         }
 
-        h2, h2 span, h3 span, h4 span, h5 span, h3, h4 {
+        h2, h2 span {
+            font-size: 4rem;
+        }
+
+        h3, h3 span {
             font-size: 3.2rem;
+        }
+
+        h4, h4 span{
+            font-size: 2.4rem;
+        }
+
+        h5, h5 span{
+            font-size: 2rem;
         }
 
         p, a {
@@ -177,7 +189,7 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
     display: flow-root;
 }
 
-.info h2, .info h3, .info h5, .info p {
+.info h2, .info h3, .info h4, .info h5, .info p {
     margin-top: 0;
 }
 
@@ -189,7 +201,7 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 	white-space: normal;
 	vertical-align: top;
 	width: 100%;
-	background: none 50% no-repeat;
+	background:#ccaed8 50% no-repeat;
 	background-size: cover;
 }
 
@@ -439,19 +451,6 @@ article.mainblock {
     text-align: left;
 }
 
-p.filter {
-    font-family: "Lemonada";
-    text-align: center;
-    color: white;
-    font-size: 2rem;
-}
-.centered {
-    position: relative;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -300%);
-}
 
 centered::after {
     clear: both;
@@ -464,11 +463,6 @@ centered::after {
     content: "";
     display: initial;
     margin: initial;
-}
-
-#intro .frame a img {
-    filter: brightness(40.5%);
-    -webkit-filter: brightness(40.5%);
 }
 
 /* ==========SECTION 2 STYLING============= */
@@ -669,6 +663,24 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
     }
 
+    @media only screen and (max-width: 1366px) {
+        #keyartsPromo .info {
+            height: 630px;
+        }
+
+        .frame [slot="footer"] {
+            height: 260px;
+        }
+
+        .frameImg [slot="footer"], .userHighlight [slot="footer"] {
+            height: 210px;
+        }
+
+        .productDiv [slot="footer"]{
+            height: 200px;
+        }
+    }
+
     @media only screen and (max-width: 1280px) {
         header {
             height: 18vh;
@@ -684,13 +696,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin: 0 15vw;
         }
 
-        .centered {
-            transform: translate(-50%, -250%);
-        }
-
-        #usersCreationsBtn, #newsneventsBtn{
-            transform: translate(-50%, -150%);
-        }
 
         #newsEventsUpdate .info {
             padding: 2% 8%;
@@ -745,14 +750,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         #intro .frame {
             margin-bottom: -10%;
-        }
-
-        .centered {
-            transform: translate(-50%, -350%);
-        }
-
-        #usersCreationsBtn, #newsneventsBtn {
-            transform: translate(-50%, -375%);
         }
 
         #keyartsPromo .info {
@@ -1010,14 +1007,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             transform: translate(-5%, -38%);
         }
 
-        .centered {
-            transform: translate(-50%,-300%);
-        }
-
-        #newsneventsBtn, #usersCreationsBtn {
-            transform: translate(-50%,-300%);
-        }
-
         .info {
             height: 680px;
             padding: 2% 10%;
@@ -1109,13 +1098,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             margin-bottom: -13%;
         }
 
-        #intro .frame a #newsneventsBtn {
-            transform: translate(-50%, -175%);
-        }
-
-        .centered, #usersCreationsBtn {
-            transform: translate(-50%, -275%);
-        }
 
         #home .segment article.mainblock {
             margin: -10% 2.5% 1.25%;
@@ -1235,10 +1217,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             width: 100%;
             margin-right: 0;
             margin-bottom: 4%;
-        }
-
-        .centered, #usersCreationsBtn, #intro .frame a #newsneventsBtn {
-            transform: translate(-50%, -350%);
         }
 
         .frame a{
@@ -1393,10 +1371,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             height: 360px;
         }
 
-        .centered, #intro .frame a #newsneventsBtn {
-            transform: translate(-50%, -330%);
-        }
-
         .productDiv {
             margin: 0 0 5%;
         }
@@ -1443,10 +1417,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             padding: 3% ;
         }
 
-
-        .centered a {
-            transform: translate(-50%, -160%);
-        }
 
         #keyartsPromo .info {
             height: 900px;
