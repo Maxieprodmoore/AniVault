@@ -222,7 +222,7 @@ https://codepen.io/rokobuljan/pen/XXzqKQ
 	white-space: normal;
 	vertical-align: top;
 	width: 100%;
-	background:#ccaed8 50% no-repeat;
+	background:#b9a9be 50% no-repeat;
 	background-size: cover;
 }
 
@@ -569,7 +569,7 @@ centered::after {
 }
 
 #keyartsPromo .info {
-    height: 450px;
+    height: 600px;
 }
 
 /*Gallery Layout by W3 Schools - Mixed Layout
@@ -666,6 +666,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
 
 #Asia, #Africa, #Europe, #Carribean, #Americas, .museum::part(body) {background-color:white;}
+
+#newsnevents .segment .museum .tabcontent .writeup .paragraph {
+    padding-top: 6%;
+}
 
 /* ==========SECTION 5 STYLING============= */
 
