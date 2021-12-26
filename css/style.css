@@ -92,7 +92,7 @@ html {
 header {
     margin: 0;
     width: 100vw;
-    height: 20vh;
+    height: 10vh;
     position: relative;
     background-color: rgb(116, 131, 145);
 }
@@ -485,7 +485,7 @@ centered::after {
 }
 
 #keyartsPromo .info {
-    height: 520px;
+    height: 600px;
 }
 
 /*Gallery Layout by W3 Schools - Mixed Layout
@@ -512,6 +512,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
 
 /* ==========SECTION 3 STYLING============= */
+#userscreations .segment h2 {
+    background-color: #e48f5c;
+}
+
 .paragraph p {
     font-size: inherit;
 }
@@ -570,6 +574,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
   
   /* Style the tab content */
+  #newsnevents  .segment h2 {
+        background-color: #ecdfc1;
+    }
+
 .tabcontent {
     --padding: 2% ;
     text-align: left;
@@ -587,6 +595,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 }
 
 /* ==========SECTION 5 STYLING============= */
+#toolkits .segment h2 {
+    background-color: #e46c50;
+}
+
 .productDiv {
     width: 22%;
     margin: 0 1.35% 2%;
