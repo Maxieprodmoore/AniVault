@@ -780,7 +780,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
 @media only screen and (max-width: 1366px) {
         #keyartsPromo .info {
-            height: 630px;
+            height: 680px;
         }
 
         .frame [slot="footer"] {
@@ -793,6 +793,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         .productDiv [slot="footer"]{
             height: 200px;
+        }
+
+        .caption h5 {
+            font-size: 1.35rem;
         }
     }
 
