@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A site for Anime fans all over the world!",
   "source": "./index.html",
-  "browserslist": [
-    "since 2017-06"
-  ],
   "scripts": {
     "start": "parcel serve ./index.html",
     "build": "parcel build ./index.html"
