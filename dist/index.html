@@ -9,10 +9,8 @@
         <meta name="author" content="Ho Bing Lin">
         <meta name="description" content="A Treasure vault of Anime & Creativity">
         <meta name="keywords" content="Anime,Resource,Anime Resource Website, Artist, resources">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.62/dist/themes/light.css">
-        <link rel="stylesheet" href="/index.cb41b962.css">         
+        <link rel="stylesheet" href="/index.b2625c6b.css">         
         <!--<link rel="icon" href="place-your-tab-icon-here">-->
-        <script src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.62/dist/shoelace.js" defer=""></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" defer=""></script> 
         <script>// modules are defined as an array
 // [ module function, map of requires ]
@@ -22,7 +20,7 @@
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
 
-(function(modules, entry, mainEntry, parcelRequireName, globalName) {
+(function (modules, entry, mainEntry, parcelRequireName, globalName) {
   /* eslint-disable no-undef */
   var globalObject =
     typeof globalThis !== 'undefined'
@@ -96,11 +94,13 @@
     return cache[name].exports;
 
     function localRequire(x) {
-      return newRequire(localRequire.resolve(x));
+      var res = localRequire.resolve(x);
+      return res === false ? {} : newRequire(res);
     }
 
     function resolve(x) {
-      return modules[name][1][x] || x;
+      var id = modules[name][1][x];
+      return id != null ? id : x;
     }
   }
 
@@ -115,9 +115,9 @@
   newRequire.modules = modules;
   newRequire.cache = cache;
   newRequire.parent = previousRequire;
-  newRequire.register = function(id, exports) {
+  newRequire.register = function (id, exports) {
     modules[id] = [
-      function(require, module) {
+      function (require, module) {
         module.exports = exports;
       },
       {},
@@ -125,7 +125,7 @@
   };
 
   Object.defineProperty(newRequire, 'root', {
-    get: function() {
+    get: function () {
       return globalObject[parcelRequireName];
     },
   });
@@ -147,7 +147,7 @@
 
       // RequireJS
     } else if (typeof define === 'function' && define.amd) {
-      define(function() {
+      define(function () {
         return mainExports;
       });
 
@@ -156,16 +156,28 @@
       this[globalName] = mainExports;
     }
   }
-})({"kTfeW":[function(require,module,exports) {
+})({"jFmbJ":[function(require,module,exports) {
+"use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "1da28df253fcc598";
-"use strict";
+var HMR_ENV_HASH = "d6ea1d42532a7575";
+module.bundle.HMR_BUNDLE_ID = "fab65cb714394f48";
+function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
 function _createForOfIteratorHelper(o, allowArrayLike) {
-    var it;
-    if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+    if (!it) {
         if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
             if (it) o = it;
             var i = 0;
@@ -193,7 +205,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
     var normalCompletion = true, didErr = false, err;
     return {
         s: function s() {
-            it = o[Symbol.iterator]();
+            it = it.call(o);
         },
         n: function n() {
             var step = it.next();
@@ -422,6 +434,16 @@ function hmrApply(bundle, asset) {
     else if (asset.type === 'js') {
         var deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
         if (deps) {
+            if (modules[asset.id]) {
+                // Remove dependencies that are removed and will become orphaned.
+                // This is necessary so that if the asset is added back again, the cache is gone, and we prevent a full page reload.
+                var oldDeps = modules[asset.id][1];
+                for(var dep in oldDeps)if (!deps[dep] || deps[dep] !== oldDeps[dep]) {
+                    var id = oldDeps[dep];
+                    var parents = getParents(module.bundle.root, id);
+                    if (parents.length === 1) hmrDelete(module.bundle.root, id);
+                }
+            }
             var fn = new Function('require', 'module', 'exports', asset.output);
             modules[asset.id] = [
                 fn,
@@ -430,7 +452,48 @@ function hmrApply(bundle, asset) {
         } else if (bundle.parent) hmrApply(bundle.parent, asset);
     }
 }
+function hmrDelete(bundle, id1) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (modules[id1]) {
+        // Collect dependencies that will become orphaned when this module is deleted.
+        var deps = modules[id1][1];
+        var orphans = [];
+        for(var dep in deps){
+            var parents = getParents(module.bundle.root, deps[dep]);
+            if (parents.length === 1) orphans.push(deps[dep]);
+        } // Delete the module. This must be done before deleting dependencies in case of circular dependencies.
+        delete modules[id1];
+        delete bundle.cache[id1]; // Now delete the orphans.
+        orphans.forEach(function(id) {
+            hmrDelete(module.bundle.root, id);
+        });
+    } else if (bundle.parent) hmrDelete(bundle.parent, id1);
+}
 function hmrAcceptCheck(bundle, id, depsByBundle) {
+    if (hmrAcceptCheckOne(bundle, id, depsByBundle)) return true;
+     // Traverse parents breadth first. All possible ancestries must accept the HMR update, or we'll reload.
+    var parents = getParents(module.bundle.root, id);
+    var accepted = false;
+    while(parents.length > 0){
+        var v = parents.shift();
+        var a = hmrAcceptCheckOne(v[0], v[1], null);
+        if (a) // If this parent accepts, stop traversing upward, but still consider siblings.
+        accepted = true;
+        else {
+            // Otherwise, queue the parents in the next level upward.
+            var p = getParents(module.bundle.root, v[1]);
+            if (p.length === 0) {
+                // If there are no parents, then we've reached an entry without accepting. Reload.
+                accepted = false;
+                break;
+            }
+            parents.push.apply(parents, _toConsumableArray(p));
+        }
+    }
+    return accepted;
+}
+function hmrAcceptCheckOne(bundle, id, depsByBundle) {
     var modules = bundle.modules;
     if (!modules) return;
     if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
@@ -446,12 +509,7 @@ function hmrAcceptCheck(bundle, id, depsByBundle) {
         bundle,
         id
     ]);
-    if (cached && cached.hot && cached.hot._acceptCallbacks.length) return true;
-    var parents = getParents(module.bundle.root, id); // If no parents, the asset is new. Prevent reloading the page.
-    if (!parents.length) return true;
-    return parents.some(function(v) {
-        return hmrAcceptCheck(v[0], v[1], null);
-    });
+    if (!cached || cached.hot && cached.hot._acceptCallbacks.length) return true;
 }
 function hmrAcceptRun(bundle, id) {
     var cached = bundle.cache[id];
@@ -474,7 +532,7 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"8f2ku":[function(require,module,exports) {
+},{}],"gkecv":[function(require,module,exports) {
 //-------------------Shoelace module----------------------//
 var _lightCss = require("@shoelace-style/shoelace/dist/themes/light.css");
 var _buttonJs = require("@shoelace-style/shoelace/dist/components/button/button.js");
@@ -483,9 +541,9 @@ var _tabGroupJs = require("@shoelace-style/shoelace/dist/components/tab-group/ta
 var _tabJs = require("@shoelace-style/shoelace/dist/components/tab/tab.js");
 var _tabPanelJs = require("@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js");
 var _basePathJs = require("@shoelace-style/shoelace/dist/utilities/base-path.js");
-_basePathJs.setBasePath('/dist/shoelace');
+_basePathJs.setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.64/dist/');
 
-},{"@shoelace-style/shoelace/dist/themes/light.css":"kNIVk","@shoelace-style/shoelace/dist/components/button/button.js":"dJo7P","@shoelace-style/shoelace/dist/components/card/card.js":"i0N7x","@shoelace-style/shoelace/dist/components/tab-group/tab-group.js":"KEItE","@shoelace-style/shoelace/dist/components/tab/tab.js":"85yVv","@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js":"7GFDx","@shoelace-style/shoelace/dist/utilities/base-path.js":"dMfIw"}],"kNIVk":[function() {},{}],"dJo7P":[function(require,module,exports) {
+},{"@shoelace-style/shoelace/dist/themes/light.css":"jjR64","@shoelace-style/shoelace/dist/components/button/button.js":"9AbKL","@shoelace-style/shoelace/dist/components/card/card.js":"in7RN","@shoelace-style/shoelace/dist/components/tab-group/tab-group.js":"3V6Ki","@shoelace-style/shoelace/dist/components/tab/tab.js":"hsPiV","@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js":"7mIsr","@shoelace-style/shoelace/dist/utilities/base-path.js":"67MCn"}],"jjR64":[function() {},{}],"9AbKL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_chunk2H57JAHYJs.SlButton
@@ -505,7 +563,7 @@ var _chunkIFFIK3XEJs = require("../../chunks/chunk.IFFIK3XE.js");
 var _chunkZ47RPZTXJs = require("../../chunks/chunk.Z47RPZTX.js");
 var _chunkJHDFAWWCJs = require("../../chunks/chunk.JHDFAWWC.js");
 
-},{"../../chunks/chunk.2H57JAHY.js":"gtnWA","../../chunks/chunk.7F2TDATE.js":"6bvHr","../../chunks/chunk.JP46US5J.js":"igwUG","../../chunks/chunk.IBDZI3K2.js":"eLeU6","../../chunks/chunk.XQZ43V2C.js":"gdvzt","../../chunks/chunk.4ILOKGDJ.js":"cS2YN","../../chunks/chunk.ZTYIYTKR.js":"848e9","../../chunks/chunk.CTBLW2HK.js":"8JPTy","../../chunks/chunk.E2OEF7AF.js":"17JSq","../../chunks/chunk.I4TE3TJV.js":"9KUzU","../../chunks/chunk.POKKIWRQ.js":"7bvWH","../../chunks/chunk.IFFIK3XE.js":"42uTv","../../chunks/chunk.Z47RPZTX.js":"j5Haq","../../chunks/chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"gtnWA":[function(require,module,exports) {
+},{"../../chunks/chunk.2H57JAHY.js":"9TMJC","../../chunks/chunk.7F2TDATE.js":"gzG4T","../../chunks/chunk.JP46US5J.js":"baeqU","../../chunks/chunk.IBDZI3K2.js":"8YuTP","../../chunks/chunk.XQZ43V2C.js":"6EMY9","../../chunks/chunk.4ILOKGDJ.js":"4SH2Y","../../chunks/chunk.ZTYIYTKR.js":"3TdRG","../../chunks/chunk.CTBLW2HK.js":"67xnS","../../chunks/chunk.E2OEF7AF.js":"ewkiY","../../chunks/chunk.I4TE3TJV.js":"i4CGq","../../chunks/chunk.POKKIWRQ.js":"cCsFp","../../chunks/chunk.IFFIK3XE.js":"gngQm","../../chunks/chunk.Z47RPZTX.js":"id6er","../../chunks/chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9TMJC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SlButton", ()=>SlButton
@@ -763,7 +821,7 @@ SlButton = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-button")
 ], SlButton);
 
-},{"./chunk.IBDZI3K2.js":"eLeU6","./chunk.XQZ43V2C.js":"gdvzt","./chunk.4ILOKGDJ.js":"cS2YN","./chunk.CTBLW2HK.js":"8JPTy","./chunk.I4TE3TJV.js":"9KUzU","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"eLeU6":[function(require,module,exports) {
+},{"./chunk.IBDZI3K2.js":"8YuTP","./chunk.XQZ43V2C.js":"6EMY9","./chunk.4ILOKGDJ.js":"4SH2Y","./chunk.CTBLW2HK.js":"67xnS","./chunk.I4TE3TJV.js":"i4CGq","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8YuTP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getTextContent", ()=>getTextContent
@@ -797,7 +855,7 @@ function hasSlot(el, name) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -827,7 +885,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"gdvzt":[function(require,module,exports) {
+},{}],"6EMY9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "button_styles_default", ()=>button_styles_default
@@ -1473,7 +1531,7 @@ var button_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.ZTYIYTKR.js":"848e9","./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"848e9":[function(require,module,exports) {
+},{"./chunk.ZTYIYTKR.js":"3TdRG","./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3TdRG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "hasFocusVisible", ()=>hasFocusVisible
@@ -1498,7 +1556,7 @@ var hasFocusVisible = (()=>{
 })();
 var focusVisibleSelector = _chunkZ47RPZTXJs.o(hasFocusVisible ? ":focus-visible" : ":focus");
 
-},{"./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"j5Haq":[function(require,module,exports) {
+},{"./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"id6er":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "o", ()=>o
@@ -2138,7 +2196,7 @@ n4 == null || n4({
 });
 ((o4 = globalThis.litElementVersions) !== null && o4 !== void 0 ? o4 : globalThis.litElementVersions = []).push("3.0.2");
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"42uTv":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gngQm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "component_styles_default", ()=>component_styles_default
@@ -2187,7 +2245,7 @@ var style = document.createElement("style");
 style.textContent = utility_styles_default.toString();
 document.head.append(style);
 
-},{"./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"cS2YN":[function(require,module,exports) {
+},{"./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4SH2Y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "o", ()=>o
@@ -2213,22 +2271,22 @@ var o = _chunkE2OEF7AFJs.e(class extends _chunkE2OEF7AFJs.i {
         if (this.st === void 0) {
             this.st = new Set(), i2.strings !== void 0 && (this.et = new Set(i2.strings.join(" ").split(/\s/).filter((t2)=>t2 !== ""
             )));
-            for(const t2 in s)s[t2] && !((r = this.et) === null || r === void 0 ? void 0 : r.has(t2)) && this.st.add(t2);
+            for(const t21 in s)s[t21] && !((r = this.et) === null || r === void 0 ? void 0 : r.has(t21)) && this.st.add(t21);
             return this.render(s);
         }
         const e2 = i2.element.classList;
         this.st.forEach((t2)=>{
             t2 in s || (e2.remove(t2), this.st.delete(t2));
         });
-        for(const t2 in s){
-            const i3 = !!s[t2];
-            i3 === this.st.has(t2) || ((o2 = this.et) === null || o2 === void 0 ? void 0 : o2.has(t2)) || (i3 ? (e2.add(t2), this.st.add(t2)) : (e2.remove(t2), this.st.delete(t2)));
+        for(const t22 in s){
+            const i3 = !!s[t22];
+            i3 === this.st.has(t22) || ((o2 = this.et) === null || o2 === void 0 ? void 0 : o2.has(t22)) || (i3 ? (e2.add(t22), this.st.add(t22)) : (e2.remove(t22), this.st.delete(t22)));
         }
         return _chunkZ47RPZTXJs.b;
     }
 });
 
-},{"./chunk.E2OEF7AF.js":"17JSq","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"17JSq":[function(require,module,exports) {
+},{"./chunk.E2OEF7AF.js":"ewkiY","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ewkiY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "t", ()=>t
@@ -2272,7 +2330,7 @@ var i = class {
     }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"8JPTy":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"67xnS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "l", ()=>l
@@ -2286,7 +2344,7 @@ var _chunkZ47RPZTXJs = require("./chunk.Z47RPZTX.js");
 var l = (l2)=>l2 != null ? l2 : _chunkZ47RPZTXJs.T
 ;
 
-},{"./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"9KUzU":[function(require,module,exports) {
+},{"./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"i4CGq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "emit", ()=>emit
@@ -2317,7 +2375,7 @@ function waitForEvent(el, eventName) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"7bvWH":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cCsFp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "n", ()=>n
@@ -2442,7 +2500,7 @@ function e2(e3) {
     });
 }
 
-},{"./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"elBqi":[function(require,module,exports) {
+},{"./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ew7r":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "__spreadValues", ()=>__spreadValues
@@ -2489,7 +2547,7 @@ var __markAsModule = (target)=>__defProp(target, "__esModule", {
     })
 ;
 var __commonJS = (cb, mod)=>function __require() {
-        return mod || cb[Object.keys(cb)[0]]((mod = {
+        return mod || (0, cb[Object.keys(cb)[0]])((mod = {
             exports: {
             }
         }).exports, mod), mod.exports;
@@ -2530,7 +2588,7 @@ var __decorateClass = (decorators, target, key, kind)=>{
     return result;
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"6bvHr":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gzG4T":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SlSpinner", ()=>SlSpinner
@@ -2555,7 +2613,7 @@ SlSpinner = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-spinner")
 ], SlSpinner);
 
-},{"./chunk.JP46US5J.js":"igwUG","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"igwUG":[function(require,module,exports) {
+},{"./chunk.JP46US5J.js":"baeqU","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"baeqU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "spinner_styles_default", ()=>spinner_styles_default
@@ -2624,7 +2682,7 @@ var spinner_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"i0N7x":[function(require,module,exports) {
+},{"./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"in7RN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_chunkD2KQZSRLJs.SlCard
@@ -2639,7 +2697,7 @@ var _chunkIFFIK3XEJs = require("../../chunks/chunk.IFFIK3XE.js");
 var _chunkZ47RPZTXJs = require("../../chunks/chunk.Z47RPZTX.js");
 var _chunkJHDFAWWCJs = require("../../chunks/chunk.JHDFAWWC.js");
 
-},{"../../chunks/chunk.D2KQZSRL.js":"jUfyj","../../chunks/chunk.KUZUR5F3.js":"iPzE2","../../chunks/chunk.IBDZI3K2.js":"eLeU6","../../chunks/chunk.4ILOKGDJ.js":"cS2YN","../../chunks/chunk.E2OEF7AF.js":"17JSq","../../chunks/chunk.POKKIWRQ.js":"7bvWH","../../chunks/chunk.IFFIK3XE.js":"42uTv","../../chunks/chunk.Z47RPZTX.js":"j5Haq","../../chunks/chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"jUfyj":[function(require,module,exports) {
+},{"../../chunks/chunk.D2KQZSRL.js":"1lXm7","../../chunks/chunk.KUZUR5F3.js":"9SSzI","../../chunks/chunk.IBDZI3K2.js":"8YuTP","../../chunks/chunk.4ILOKGDJ.js":"4SH2Y","../../chunks/chunk.E2OEF7AF.js":"ewkiY","../../chunks/chunk.POKKIWRQ.js":"cCsFp","../../chunks/chunk.IFFIK3XE.js":"gngQm","../../chunks/chunk.Z47RPZTX.js":"id6er","../../chunks/chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1lXm7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SlCard", ()=>SlCard
@@ -2707,7 +2765,7 @@ SlCard = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-card")
 ], SlCard);
 
-},{"./chunk.KUZUR5F3.js":"iPzE2","./chunk.IBDZI3K2.js":"eLeU6","./chunk.4ILOKGDJ.js":"cS2YN","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"iPzE2":[function(require,module,exports) {
+},{"./chunk.KUZUR5F3.js":"9SSzI","./chunk.IBDZI3K2.js":"8YuTP","./chunk.4ILOKGDJ.js":"4SH2Y","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9SSzI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "card_styles_default", ()=>card_styles_default
@@ -2775,7 +2833,7 @@ var card_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"KEItE":[function(require,module,exports) {
+},{"./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3V6Ki":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_chunkSVOJLDPHJs.SlTabGroup
@@ -2804,7 +2862,7 @@ var _chunkIFFIK3XEJs = require("../../chunks/chunk.IFFIK3XE.js");
 var _chunkZ47RPZTXJs = require("../../chunks/chunk.Z47RPZTX.js");
 var _chunkJHDFAWWCJs = require("../../chunks/chunk.JHDFAWWC.js");
 
-},{"../../chunks/chunk.SVOJLDPH.js":"fIrXj","../../chunks/chunk.56YL35AB.js":"67TBN","../../chunks/chunk.L2FOHD47.js":"iSIfk","../../chunks/chunk.XAZN5AQ5.js":"aM2md","../../chunks/chunk.CWKYZQN6.js":"ae5aY","../../chunks/chunk.LIMM7H4R.js":"4Ic93","../../chunks/chunk.4ILOKGDJ.js":"cS2YN","../../chunks/chunk.ZTYIYTKR.js":"848e9","../../chunks/chunk.TKFMKHNZ.js":"1g6cL","../../chunks/chunk.CQCPZXUT.js":"eokn6","../../chunks/chunk.L4IDTG64.js":"9nxUr","../../chunks/chunk.C7PPQWMA.js":"1Jqrr","../../chunks/chunk.NFF2HMIT.js":"bm6Aa","../../chunks/chunk.HEOUBJ7T.js":"7Edws","../../chunks/chunk.ARRH633M.js":"fAQVY","../../chunks/chunk.CTBLW2HK.js":"8JPTy","../../chunks/chunk.E2OEF7AF.js":"17JSq","../../chunks/chunk.BD26TKS4.js":"ipINT","../../chunks/chunk.I4TE3TJV.js":"9KUzU","../../chunks/chunk.POKKIWRQ.js":"7bvWH","../../chunks/chunk.IFFIK3XE.js":"42uTv","../../chunks/chunk.Z47RPZTX.js":"j5Haq","../../chunks/chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"fIrXj":[function(require,module,exports) {
+},{"../../chunks/chunk.SVOJLDPH.js":"3MH5U","../../chunks/chunk.56YL35AB.js":"7O7Lo","../../chunks/chunk.L2FOHD47.js":"heLvq","../../chunks/chunk.XAZN5AQ5.js":"8NNxC","../../chunks/chunk.CWKYZQN6.js":"jK5ry","../../chunks/chunk.LIMM7H4R.js":"4hRMe","../../chunks/chunk.4ILOKGDJ.js":"4SH2Y","../../chunks/chunk.ZTYIYTKR.js":"3TdRG","../../chunks/chunk.TKFMKHNZ.js":"67gYh","../../chunks/chunk.CQCPZXUT.js":"ddN0d","../../chunks/chunk.L4IDTG64.js":"5bB1j","../../chunks/chunk.C7PPQWMA.js":"szhSB","../../chunks/chunk.NFF2HMIT.js":"fX0do","../../chunks/chunk.HEOUBJ7T.js":"3YVet","../../chunks/chunk.ARRH633M.js":"cuKNs","../../chunks/chunk.CTBLW2HK.js":"67xnS","../../chunks/chunk.E2OEF7AF.js":"ewkiY","../../chunks/chunk.BD26TKS4.js":"1j2NX","../../chunks/chunk.I4TE3TJV.js":"i4CGq","../../chunks/chunk.POKKIWRQ.js":"cCsFp","../../chunks/chunk.IFFIK3XE.js":"gngQm","../../chunks/chunk.Z47RPZTX.js":"id6er","../../chunks/chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3MH5U":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SlTabGroup", ()=>SlTabGroup
@@ -3166,7 +3224,7 @@ SlTabGroup = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-tab-group")
 ], SlTabGroup);
 
-},{"./chunk.56YL35AB.js":"67TBN","./chunk.L2FOHD47.js":"iSIfk","./chunk.XAZN5AQ5.js":"aM2md","./chunk.4ILOKGDJ.js":"cS2YN","./chunk.BD26TKS4.js":"ipINT","./chunk.I4TE3TJV.js":"9KUzU","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"67TBN":[function(require,module,exports) {
+},{"./chunk.56YL35AB.js":"7O7Lo","./chunk.L2FOHD47.js":"heLvq","./chunk.XAZN5AQ5.js":"8NNxC","./chunk.4ILOKGDJ.js":"4SH2Y","./chunk.BD26TKS4.js":"1j2NX","./chunk.I4TE3TJV.js":"i4CGq","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7O7Lo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "tab_group_styles_default", ()=>tab_group_styles_default
@@ -3381,7 +3439,7 @@ var tab_group_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"iSIfk":[function(require,module,exports) {
+},{"./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"heLvq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "en_default", ()=>en_default
@@ -3495,7 +3553,7 @@ var translation = {
 registerTranslation(translation);
 var en_default = translation;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"aM2md":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8NNxC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getOffset", ()=>getOffset
@@ -3553,7 +3611,7 @@ function scrollIntoView(element, container, direction = "vertical", behavior = "
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ipINT":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1j2NX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "watch", ()=>watch
@@ -3578,7 +3636,7 @@ function watch(propName, options) {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ae5aY":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jK5ry":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SlIconButton", ()=>SlIconButton
@@ -3672,7 +3730,7 @@ SlIconButton = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-icon-button")
 ], SlIconButton);
 
-},{"./chunk.LIMM7H4R.js":"4Ic93","./chunk.4ILOKGDJ.js":"cS2YN","./chunk.CTBLW2HK.js":"8JPTy","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"4Ic93":[function(require,module,exports) {
+},{"./chunk.LIMM7H4R.js":"4hRMe","./chunk.4ILOKGDJ.js":"4SH2Y","./chunk.CTBLW2HK.js":"67xnS","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4hRMe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "icon_button_styles_default", ()=>icon_button_styles_default
@@ -3726,7 +3784,7 @@ var icon_button_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.ZTYIYTKR.js":"848e9","./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1g6cL":[function(require,module,exports) {
+},{"./chunk.ZTYIYTKR.js":"3TdRG","./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"67gYh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "o", ()=>o
@@ -3881,7 +3939,7 @@ SlIcon = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-icon")
 ], SlIcon);
 
-},{"./chunk.CQCPZXUT.js":"eokn6","./chunk.L4IDTG64.js":"9nxUr","./chunk.ARRH633M.js":"fAQVY","./chunk.CTBLW2HK.js":"8JPTy","./chunk.E2OEF7AF.js":"17JSq","./chunk.BD26TKS4.js":"ipINT","./chunk.I4TE3TJV.js":"9KUzU","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"eokn6":[function(require,module,exports) {
+},{"./chunk.CQCPZXUT.js":"ddN0d","./chunk.L4IDTG64.js":"5bB1j","./chunk.ARRH633M.js":"cuKNs","./chunk.CTBLW2HK.js":"67xnS","./chunk.E2OEF7AF.js":"ewkiY","./chunk.BD26TKS4.js":"1j2NX","./chunk.I4TE3TJV.js":"i4CGq","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ddN0d":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "icon_styles_default", ()=>icon_styles_default
@@ -3908,7 +3966,7 @@ var icon_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"9nxUr":[function(require,module,exports) {
+},{"./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5bB1j":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "watchIcon", ()=>watchIcon
@@ -3924,7 +3982,10 @@ parcelHelpers.export(exports, "unregisterIconLibrary", ()=>unregisterIconLibrary
 var _chunkC7PPQWMAJs = require("./chunk.C7PPQWMA.js");
 var _chunkHEOUBJ7TJs = require("./chunk.HEOUBJ7T.js");
 // src/components/icon/library.ts
-var registry = [_chunkC7PPQWMAJs.library_default_default, _chunkHEOUBJ7TJs.library_system_default];
+var registry = [
+    _chunkC7PPQWMAJs.library_default_default,
+    _chunkHEOUBJ7TJs.library_system_default
+];
 var watchedIcons = [];
 function watchIcon(icon) {
     watchedIcons.push(icon);
@@ -3953,7 +4014,7 @@ function unregisterIconLibrary(name) {
     );
 }
 
-},{"./chunk.C7PPQWMA.js":"1Jqrr","./chunk.HEOUBJ7T.js":"7Edws","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1Jqrr":[function(require,module,exports) {
+},{"./chunk.C7PPQWMA.js":"szhSB","./chunk.HEOUBJ7T.js":"3YVet","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"szhSB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "library_default_default", ()=>library_default_default
@@ -3966,7 +4027,7 @@ var library = {
 };
 var library_default_default = library;
 
-},{"./chunk.NFF2HMIT.js":"bm6Aa","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"bm6Aa":[function(require,module,exports) {
+},{"./chunk.NFF2HMIT.js":"fX0do","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fX0do":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setBasePath", ()=>setBasePath
@@ -3995,7 +4056,7 @@ else {
     setBasePath(path.split("/").slice(0, -1).join("/"));
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"7Edws":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3YVet":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "library_system_default", ()=>library_system_default
@@ -4085,7 +4146,7 @@ var systemLibrary = {
 };
 var library_system_default = systemLibrary;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"fAQVY":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cuKNs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "requestIcon", ()=>requestIcon
@@ -4116,7 +4177,7 @@ var requestIcon = (url)=>{
     }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"85yVv":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hsPiV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_chunkT72BTNPOJs.SlTab
@@ -4144,7 +4205,7 @@ var _chunkIFFIK3XEJs = require("../../chunks/chunk.IFFIK3XE.js");
 var _chunkZ47RPZTXJs = require("../../chunks/chunk.Z47RPZTX.js");
 var _chunkJHDFAWWCJs = require("../../chunks/chunk.JHDFAWWC.js");
 
-},{"../../chunks/chunk.T72BTNPO.js":"3VyUO","../../chunks/chunk.OSEG6RSO.js":"9T8aI","../../chunks/chunk.L2FOHD47.js":"iSIfk","../../chunks/chunk.CWKYZQN6.js":"ae5aY","../../chunks/chunk.LIMM7H4R.js":"4Ic93","../../chunks/chunk.4ILOKGDJ.js":"cS2YN","../../chunks/chunk.ZTYIYTKR.js":"848e9","../../chunks/chunk.TKFMKHNZ.js":"1g6cL","../../chunks/chunk.CQCPZXUT.js":"eokn6","../../chunks/chunk.L4IDTG64.js":"9nxUr","../../chunks/chunk.C7PPQWMA.js":"1Jqrr","../../chunks/chunk.NFF2HMIT.js":"bm6Aa","../../chunks/chunk.HEOUBJ7T.js":"7Edws","../../chunks/chunk.ARRH633M.js":"fAQVY","../../chunks/chunk.CTBLW2HK.js":"8JPTy","../../chunks/chunk.E2OEF7AF.js":"17JSq","../../chunks/chunk.BD26TKS4.js":"ipINT","../../chunks/chunk.I4TE3TJV.js":"9KUzU","../../chunks/chunk.POKKIWRQ.js":"7bvWH","../../chunks/chunk.IFFIK3XE.js":"42uTv","../../chunks/chunk.Z47RPZTX.js":"j5Haq","../../chunks/chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"3VyUO":[function(require,module,exports) {
+},{"../../chunks/chunk.T72BTNPO.js":"dNwdO","../../chunks/chunk.OSEG6RSO.js":"l5VNe","../../chunks/chunk.L2FOHD47.js":"heLvq","../../chunks/chunk.CWKYZQN6.js":"jK5ry","../../chunks/chunk.LIMM7H4R.js":"4hRMe","../../chunks/chunk.4ILOKGDJ.js":"4SH2Y","../../chunks/chunk.ZTYIYTKR.js":"3TdRG","../../chunks/chunk.TKFMKHNZ.js":"67gYh","../../chunks/chunk.CQCPZXUT.js":"ddN0d","../../chunks/chunk.L4IDTG64.js":"5bB1j","../../chunks/chunk.C7PPQWMA.js":"szhSB","../../chunks/chunk.NFF2HMIT.js":"fX0do","../../chunks/chunk.HEOUBJ7T.js":"3YVet","../../chunks/chunk.ARRH633M.js":"cuKNs","../../chunks/chunk.CTBLW2HK.js":"67xnS","../../chunks/chunk.E2OEF7AF.js":"ewkiY","../../chunks/chunk.BD26TKS4.js":"1j2NX","../../chunks/chunk.I4TE3TJV.js":"i4CGq","../../chunks/chunk.POKKIWRQ.js":"cCsFp","../../chunks/chunk.IFFIK3XE.js":"gngQm","../../chunks/chunk.Z47RPZTX.js":"id6er","../../chunks/chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dNwdO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SlTab", ()=>SlTab
@@ -4242,7 +4303,7 @@ SlTab = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-tab")
 ], SlTab);
 
-},{"./chunk.OSEG6RSO.js":"9T8aI","./chunk.L2FOHD47.js":"iSIfk","./chunk.4ILOKGDJ.js":"cS2YN","./chunk.I4TE3TJV.js":"9KUzU","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"9T8aI":[function(require,module,exports) {
+},{"./chunk.OSEG6RSO.js":"l5VNe","./chunk.L2FOHD47.js":"heLvq","./chunk.4ILOKGDJ.js":"4SH2Y","./chunk.I4TE3TJV.js":"i4CGq","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l5VNe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "tab_styles_default", ()=>tab_styles_default
@@ -4309,7 +4370,7 @@ var tab_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.ZTYIYTKR.js":"848e9","./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"7GFDx":[function(require,module,exports) {
+},{"./chunk.ZTYIYTKR.js":"3TdRG","./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7mIsr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>_chunkDCZCKKIRJs.SlTabPanel
@@ -4321,7 +4382,7 @@ var _chunkIFFIK3XEJs = require("../../chunks/chunk.IFFIK3XE.js");
 var _chunkZ47RPZTXJs = require("../../chunks/chunk.Z47RPZTX.js");
 var _chunkJHDFAWWCJs = require("../../chunks/chunk.JHDFAWWC.js");
 
-},{"../../chunks/chunk.DCZCKKIR.js":"9JhCT","../../chunks/chunk.KC3PXSRK.js":"1AsxX","../../chunks/chunk.POKKIWRQ.js":"7bvWH","../../chunks/chunk.IFFIK3XE.js":"42uTv","../../chunks/chunk.Z47RPZTX.js":"j5Haq","../../chunks/chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"9JhCT":[function(require,module,exports) {
+},{"../../chunks/chunk.DCZCKKIR.js":"4ZlxL","../../chunks/chunk.KC3PXSRK.js":"9WDmv","../../chunks/chunk.POKKIWRQ.js":"cCsFp","../../chunks/chunk.IFFIK3XE.js":"gngQm","../../chunks/chunk.Z47RPZTX.js":"id6er","../../chunks/chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4ZlxL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SlTabPanel", ()=>SlTabPanel
@@ -4368,7 +4429,7 @@ SlTabPanel = _chunkJHDFAWWCJs.__decorateClass([
     _chunkPOKKIWRQJs.n("sl-tab-panel")
 ], SlTabPanel);
 
-},{"./chunk.KC3PXSRK.js":"1AsxX","./chunk.POKKIWRQ.js":"7bvWH","./chunk.Z47RPZTX.js":"j5Haq","./chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1AsxX":[function(require,module,exports) {
+},{"./chunk.KC3PXSRK.js":"9WDmv","./chunk.POKKIWRQ.js":"cCsFp","./chunk.Z47RPZTX.js":"id6er","./chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9WDmv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "tab_panel_styles_default", ()=>tab_panel_styles_default
@@ -4391,7 +4452,7 @@ var tab_panel_styles_default = _chunkZ47RPZTXJs.r`
   }
 `;
 
-},{"./chunk.IFFIK3XE.js":"42uTv","./chunk.Z47RPZTX.js":"j5Haq","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"dMfIw":[function(require,module,exports) {
+},{"./chunk.IFFIK3XE.js":"gngQm","./chunk.Z47RPZTX.js":"id6er","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"67MCn":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getBasePath", ()=>_chunkNFF2HMITJs.getBasePath
@@ -4401,10 +4462,10 @@ parcelHelpers.export(exports, "setBasePath", ()=>_chunkNFF2HMITJs.setBasePath
 var _chunkNFF2HMITJs = require("../chunks/chunk.NFF2HMIT.js");
 var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
 
-},{"../chunks/chunk.NFF2HMIT.js":"bm6Aa","../chunks/chunk.JHDFAWWC.js":"elBqi","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["kTfeW","8f2ku"], "8f2ku", "parcelRequirefa3a")
+},{"../chunks/chunk.NFF2HMIT.js":"fX0do","../chunks/chunk.JHDFAWWC.js":"5ew7r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["jFmbJ","gkecv"], "gkecv", "parcelRequirefa3a")
 
 </script>
-        <script src="/index.41006a61.js"></script>     
+        <script src="/index.1388de8a.js"></script>     
     </head>
     <body>
         
@@ -4447,7 +4508,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                 <div class="segment">
                     <article class="mainblock">
                         <div class="writeup" id="welcomeMsg">
-                            <img class="promopic" src="/OnePeace-wallpaper_WEB.e89ecdf4.png" alt="AniVerse Welcome image">                    
+                            <img class="promopic" src="/OnePeace-wallpaper_WEB.47cb2340.png" alt="AniVerse Welcome image">                    
                                 <h5>
                                     Welcome to AniVault, A treasure trove of Anime and Creativity. <br> 
                                     Whether you’re here just to look at the Posters of your favourite anime, illustrations of your favourite characters, 
@@ -4458,25 +4519,25 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                     <div class="museum" id="intro">
                         <div class="frame">
                             <a href="#keyarts">
-                                <img src="/keyArtsBtn.1314e598.png" alt="Key Arts">
+                                <img src="/keyArtsBtn.ec053146.png" alt="Key Arts">
                             </a>                           
                                                                                
                         </div> 
                         <div class="frame"> 
                             <a href="#userscreations">
-                                <img src="/usersCreationsBtn.d36ad0f2.png" alt="Users' Creations">
+                                <img src="/usersCreationsBtn.5c78bc4f.png" alt="Users' Creations">
                             </a>                                                      
                                                                                
                         </div>  
                         <div class="frame"> 
                             <a href="#newsnevents">
-                                <img src="/news&EventsBtn.d8b7ba62.png" alt="News and Events">
+                                <img src="/news&EventsBtn.164a3bdb.png" alt="News and Events">
                             </a>                                                       
                                                                                
                         </div>  
                         <div class="frame"> 
                             <a href="#toolkits">
-                                <img src="/ArtTools_button.cc3b1c97.png" alt="Toolkits">
+                                <img src="/ArtTools_button.3ce7b8fd.png" alt="Toolkits">
                             </a>                                                      
                                                                                
                         </div>                                                                                                                              
@@ -4581,7 +4642,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             <sl-card class="frame">
                                 
                                 <a target="_blank" href="https://lemonwire.com/2018/06/12/exploring-soundtracks-cowboy-bebop/">
-                                    <img slot="image" src="/cowboy-bebop-Art.abda2ebe.jpg" alt="Cowboy Bebop TV Series Art">                                                    
+                                    <img slot="image" src="/cowboy-bebop-Art.baa7cc4f.jpg" alt="Cowboy Bebop TV Series Art">                                                    
                                 </a>
                                 <div class="caption" slot="footer">
                                     <h5>Cowboy Bebop: The Complete series cover art</h5>  
@@ -4593,7 +4654,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             </sl-card>
                             <sl-card class="frame">
                                 <a target="_blank" href="https://twitter.com/johnsama">
-                                    <img slot="image" src="/Kirito_ACD_1.dc10c628.png" alt="Kirito Kazuto Kirigaya Character Design Sheet">                                            
+                                    <img slot="image" src="/Kirito_ACD_1.978740bd.png" alt="Kirito Kazuto Kirigaya Character Design Sheet">                                            
                                 </a>
                                 <div slot="footer" class="caption">
                                     <h5>Kirito Character Design Sheet (Aincrad Arc)</h5>  
@@ -4604,7 +4665,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             </sl-card>
                             <sl-card class="frame">                            
                                 <a target="_blank" href="https://web.archive.org/web/20110722072635/http://www.megaman-ntwarrior.com/">
-                                    <img slot="image" src="/MegaMan_NT_Warrior_-_Sketch_-1.5561787c.jpg" alt="Mega Man NT Warrior Character lineup">
+                                    <img slot="image" src="/MegaMan_NT_Warrior_-_Sketch_-1.29cfeba9.jpg" alt="Mega Man NT Warrior Character lineup">
                                 </a>  
                                 <div slot="footer" class="caption">
                                     <h5>MegaMan NT Warrior Character Lineup</h5>  
@@ -4617,7 +4678,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                                                                                            
                             <sl-card class="frame">                                   
                                 <a target="_blank" href="https://wallpapercave.com/genei-ryodan-wallpapers">
-                                    <img slot="image" src="/HunterxHunter.455a6446.jpg" alt="Hunter X Hunter Wallpaper">
+                                    <img slot="image" src="/HunterxHunter.cd485824.jpg" alt="Hunter X Hunter Wallpaper">
                                 </a>  
                                 <div slot="footer" class="caption">
                                     <h5>Hunter X Hunter</h5>  
@@ -4649,7 +4710,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                               <div class="info">
                                     <h3>Artist of the month</h3>
                                     <div class="frame">
-                                        <img class="promopic" src="/sammily_profilePic.b6bf256c.jpeg" alt="Sammiliy profile picture">
+                                        <img class="promopic" src="/sammily_profilePic.9b2aa3ac.jpeg" alt="Sammiliy profile picture">
                                     </div>                                        
                                     <div class="paragraph">
                                         <p>
@@ -4666,20 +4727,20 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                                     <div>
                                         <sl-card class="userHighlight">
                                             <a target="_blank" href="https://mobile.twitter.com/sammi_limyy/status/1448332311460679682">
-                                                <img slot="image" src="/pit-pitto-sora_Sammiliy.14c1b328.jpg" alt="Pit, Dark Pit and Pit’s twin (Sora)??">
+                                                <img slot="image" src="/pit-pitto-sora_Sammiliy.fbbebc24.jpg" alt="Pit, Dark Pit and Pit’s twin (Sora)??">
                                             </a>        
                                         </sl-card>
 
                                         <sl-card class="userHighlight">
                                             <a target="_blank" href="https://mobile.twitter.com/sammi_limyy/status/1422172830771318785">
-                                                <img slot="image" src="/commission-LadyBianca92_Sammiliy.5737d192.png" alt="commission for LadyBianca92 by Sammiliy">                                                    
+                                                <img slot="image" src="/commission-LadyBianca92_Sammiliy.942db325.png" alt="commission for LadyBianca92 by Sammiliy">                                                    
                                             </a>
                                                             
                                         </sl-card>
                                                                                                     
                                         <sl-card class="userHighlight">
                                             <a target="_blank" href="https://sammilimyy.tumblr.com/post/664310778688585728/sora-is-finally-here">
-                                                <img slot="image" src="/sora-in-smash-Sammiliy.5aeea89e.jpg" alt="Picture celebrating Sora being playable in Smash">
+                                                <img slot="image" src="/sora-in-smash-Sammiliy.0196a86d.jpg" alt="Picture celebrating Sora being playable in Smash">
                                             </a>  
 
                                         </sl-card> 
@@ -4706,7 +4767,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                          
                             <sl-card class="frameImg">
                                     <a target="_blank" href="https://twitter.com/Wia_vi/status/1266887260923785218">
-                                        <img slot="image" src="/Lauriam&Strelitzia_Photo.b0182d89.png" alt="Young Lauriam & Strelitzia Photo">
+                                        <img slot="image" src="/Lauriam&Strelitzia_Photo.3eb3d093.png" alt="Young Lauriam & Strelitzia Photo">
                                     </a>  
                                     <div class="caption" slot="footer">
                                         <h5>Lauriam & Strelitzia</h5>  
@@ -4716,7 +4777,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                                                                                         
                             <sl-card class="frameImg">
                                 <a target="_blank" href="https://www.deviantart.com/han960691/art/Bond-between-us-Monster-Hunter-Stories-686959756">
-                                    <img slot="image" src="/bond_between_us.0bfcc7cf.jpg" alt="Monster Hunter Stories Bond Between Us">
+                                    <img slot="image" src="/bond_between_us.7eb8cc75.jpg" alt="Monster Hunter Stories Bond Between Us">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>Bonds between Us (Rider & Monstie)</h5>  
@@ -4725,7 +4786,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             </sl-card> 
                             <sl-card class="frameImg">
                                 <a target="_blank" href="http://fav.me/d7xxad6">
-                                    <img slot="image" src="/_exe_tn.20bb3f5b.png" alt=".EXE Hikari Brothers">                                                    
+                                    <img slot="image" src="/_exe_tn.82ee0da3.png" alt=".EXE Hikari Brothers">                                                    
                                 </a>
                                 <div class="caption" slot="footer">
                                     <h5>EXE Brothers</h5>  
@@ -4734,7 +4795,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             </sl-card>
                             <sl-card class="frameImg">
                                     <a target="_blank" href="https://twitter.com/Maxieprodmoore/status/1190628356473016320">
-                                        <img slot="image" src="/InktoberDay25_Player-WEB.d8a9aaff.png" alt="Inktober2018Day25_Kingdom Hearts Union Cross Player">                                            
+                                        <img slot="image" src="/InktoberDay25_Player-WEB.90466db6.png" alt="Inktober2018Day25_Kingdom Hearts Union Cross Player">                                            
                                     </a>
                                     <div class="caption" slot="footer">
                                         <h5>KHUX Avatar</h5>  
@@ -4837,7 +4898,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         
                         <sl-tab-panel name="asia" id="Asia" class="tabcontent">
                             <div class="writeup">
-                                <img class="promopic" src="/placeimg_600_600_tower.03f8c707.jpg" alt="placeimg_600_600_tower">
+                                <img class="promopic" src="/placeimg_600_600_tower.1017bc3a.jpg" alt="placeimg_600_600_tower">
                                 <div class="paragraph">
                                     <h3>Laoreet non curabitur</h3>
                                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -4851,7 +4912,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         
                         <sl-tab-panel name="africa" id="Africa" class="tabcontent">
                             <div class="writeup">
-                                <img class="promopic" src="/placeimg_600_600_building(1).d285a490.jpg" alt="placeimg_600_600_building(1)">
+                                <img class="promopic" src="/placeimg_600_600_building(1).80cde5f6.jpg" alt="placeimg_600_600_building(1)">
                                 <div class="paragraph">
                                     <h3>Laoreet non curabitur</h3>
                                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -4865,7 +4926,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         
                         <sl-tab-panel name="europe" id="Europe" class="tabcontent">
                             <div class="writeup">
-                                <img class="promopic" src="/placeimg_600_600_arch.4c1801dc.jpg" alt="Europe Arch">
+                                <img class="promopic" src="/placeimg_600_600_arch.03dbf6d3.jpg" alt="Europe Arch">
                                 <div class="paragraph">
                                     <h3>Laoreet non curabitur</h3>
                                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -4879,7 +4940,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         
                         <sl-tab-panel name="carribean" id="Carribean" class="tabcontent">
                             <div class="writeup">
-                                <img class="promopic" src="/placeimg_600_600_lift.871f306a.jpg" alt="placeimg_600_600_lift">
+                                <img class="promopic" src="/placeimg_600_600_lift.4cf58bc2.jpg" alt="placeimg_600_600_lift">
                                 <div class="paragraph">
                                     <h3>Laoreet non curabitur</h3>
                                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -4895,7 +4956,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             
                             <div class="writeup">
                                 <a target="_blank" href="https://www.megaconorlando.com/en/home.html">
-                                    <img class="promopic" src="/MegaConOrlando2020-WEBbutton.e1e512ce.png" alt="MegaCon 2020 Web Button">
+                                    <img class="promopic" src="/MegaConOrlando2020-WEBbutton.8f2b3c6c.png" alt="MegaCon 2020 Web Button">
                                 </a>                               
                                 <div class="paragraph">
                                     <h4>CoVid-19 Announcement</h4>
@@ -4915,7 +4976,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             </div>
                             <div class="writeup">
                                 <a target="_blank" href="https://mizucon.com/">
-                                    <img class="promopic" src="/MizuCon2020-WEBbutton.f84c6167.png" alt="MizuConnect 2020 Web Button">
+                                    <img class="promopic" src="/MizuCon2020-WEBbutton.bc3a5d71.png" alt="MizuConnect 2020 Web Button">
                                 </a>                                
                                 <div class="paragraph">
                                     <p>
@@ -5006,7 +5067,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         <sl-tab-panel class="museum" name="allProd">
                             <sl-card class="productDiv Digital">
                                 <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
-                                    <img slot="image" src="/Wacom1Button.dd840ae9.png" alt="Wacom 1 Tablet">                                                    
+                                    <img slot="image" src="/Wacom1Button.3204e0cb.png" alt="Wacom 1 Tablet">                                                    
                                 </a>
                                 <div class="caption" slot="footer">
                                     <h5>Wacom One Tablet </h5>   
@@ -5015,7 +5076,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             </sl-card>
                             <sl-card class="productDiv canvasProducts">
                                 <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
-                                    <img slot="image" src="/AcryllicPaper.39939f06.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
+                                    <img slot="image" src="/AcryllicPaper.7b3c30f1.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
                                 </a>
                                 <div class="caption" slot="footer">
                                     <h5>
@@ -5026,7 +5087,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                             </sl-card>
                             <sl-card class="productDiv Misc">
                                 <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
-                                    <img slot="image" src="/KneadableEraserButton.77967fbd.png" alt="Daler Rowney Soft Putty Eraser">
+                                    <img slot="image" src="/KneadableEraserButton.c5e5182d.png" alt="Daler Rowney Soft Putty Eraser">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>
@@ -5038,7 +5099,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                                                                                                
                             <sl-card class="productDiv colouringMaterials">
                                 <a target="_blank" href="https://copic.jp/en/product/classic/">
-                                    <img slot="image" src="/CopicMarkersButton.b37cf8a7.png" alt="Copic Markers Classic">
+                                    <img slot="image" src="/CopicMarkersButton.de11f004.png" alt="Copic Markers Classic">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>Copic Markers Classic Set</h5>  
@@ -5048,7 +5109,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                                 
                             <sl-card class="productDiv Misc">
                                 <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
-                                    <img slot="image" src="/derwent-pencil-extenders.9943eda5.png" alt="Derwent Pencil Extender">
+                                    <img slot="image" src="/derwent-pencil-extenders.09943999.png" alt="Derwent Pencil Extender">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>Derwent Pencil Extender</h5>  
@@ -5058,7 +5119,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
 
                             <sl-card class="productDiv Misc">
                                 <a target="_blank" href="https://colorwheelco.com/products/">
-                                    <img slot="image" src="/ColorwheelButton.80c8cd7a.png" alt="Colour Wheel Pocket Guide">
+                                    <img slot="image" src="/ColorwheelButton.ff0d62a9.png" alt="Colour Wheel Pocket Guide">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>Colour Wheel Pocket Guide</h5>  
@@ -5070,7 +5131,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         <sl-tab-panel class="museum" name="canvas">
                             <sl-card class="productDiv canvasProducts">
                                 <a target="_blank" href="https://www.daler-rowney.com/system3-acrylic-paper/">
-                                    <img slot="image" src="/AcryllicPaper.39939f06.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
+                                    <img slot="image" src="/AcryllicPaper.7b3c30f1.jpg" alt="Daler Rowney System 3 Acrylic Paper">                                            
                                 </a>
                                 <div class="caption" slot="footer">
                                     <h5>
@@ -5084,7 +5145,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         <sl-tab-panel class="museum" name="colouring">
                             <sl-card class="productDiv colouringMaterials">
                                 <a target="_blank" href="https://copic.jp/en/product/classic/">
-                                    <img slot="image" src="/CopicMarkersButton.b37cf8a7.png" alt="Copic Markers Classic">
+                                    <img slot="image" src="/CopicMarkersButton.de11f004.png" alt="Copic Markers Classic">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>Copic Markers Classic Set</h5>  
@@ -5096,7 +5157,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         <sl-tab-panel class="museum" name="digitalProd">
                             <sl-card class="productDiv Digital">
                                 <a target="_blank" href="https://store.wacom.sg/en/pen-displays/wacom-one/wacom-one-display-pen-tablet">
-                                    <img slot="image" src="/Wacom1Button.dd840ae9.png" alt="Wacom 1 Tablet">                                                    
+                                    <img slot="image" src="/Wacom1Button.3204e0cb.png" alt="Wacom 1 Tablet">                                                    
                                 </a>
                                 <div class="caption" slot="footer">
                                     <h5>Wacom One Tablet </h5>   
@@ -5108,7 +5169,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
                         <sl-tab-panel class="museum" name="miscProd">
                             <sl-card class="productDiv Misc">
                                 <a target="_blank" href="https://www.amazon.com/Daler-Rowney-Small-Putty-Rubber/dp/B002AF6MV4">
-                                    <img slot="image" src="/KneadableEraserButton.77967fbd.png" alt="Daler Rowney Soft Putty Eraser">
+                                    <img slot="image" src="/KneadableEraserButton.c5e5182d.png" alt="Daler Rowney Soft Putty Eraser">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>
@@ -5120,7 +5181,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
 
                             <sl-card class="productDiv Misc">
                                 <a target="_blank" href="https://www.derwentart.com/en-gb/p/2300124/professional-products/accessories/drawing-aids/pencil-extenders">
-                                    <img slot="image" src="/derwent-pencil-extenders.9943eda5.png" alt="Derwent Pencil Extender">
+                                    <img slot="image" src="/derwent-pencil-extenders.09943999.png" alt="Derwent Pencil Extender">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>Derwent Pencil Extender</h5>  
@@ -5130,7 +5191,7 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
 
                             <sl-card class="productDiv Misc">
                                 <a target="_blank" href="https://colorwheelco.com/products/">
-                                    <img src="/ColorwheelButton.80c8cd7a.png" alt="Colour Wheel Pocket Guide">
+                                    <img src="/ColorwheelButton.ff0d62a9.png" alt="Colour Wheel Pocket Guide">
                                 </a>  
                                 <div class="caption" slot="footer">
                                     <h5>Colour Wheel Pocket Guide</h5>  
@@ -5163,6 +5224,6 @@ var _chunkJHDFAWWCJs = require("../chunks/chunk.JHDFAWWC.js");
         <!--CONTACT FORM OR TEXT-->
         <!--SOCIAL MEDIA ?-->
 
-        <script src="/index.4e4ad1af.js"></script>
+        <script src="/index.42ab764f.js"></script>
     </body> 
 </html>
