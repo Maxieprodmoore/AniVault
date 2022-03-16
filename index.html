@@ -16,12 +16,15 @@
             //-------------------Shoelace module----------------------//
                 import '@shoelace-style/shoelace/dist/themes/light.css';
                 import '@shoelace-style/shoelace/dist/components/button/button.js';
+                import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
+                import '@shoelace-style/shoelace/dist/components/icon/icon.js';
+                import '@shoelace-style/shoelace/dist/components/drawer/drawer.js';
                 import '@shoelace-style/shoelace/dist/components/card/card.js';
                 import '@shoelace-style/shoelace/dist/components/tab-group/tab-group.js';
                 import '@shoelace-style/shoelace/dist/components/tab/tab.js';
                 import '@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js';
                 import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
-                setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.69/dist/');
+                setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.71/dist/');
 
         </script>
         <script src="js/jquery.js"></script>     
@@ -40,17 +43,23 @@
         
         <!--LOGO-->
         <!--NAVIGATION-->
+        <sl-drawer id="drawerNav">
+            <a href="#home">Home</a>
+            <a href="#keyarts">Key Arts</a>
+            <a href="#userscreations">Users' Creations</a>
+            <a href="#newsnevents">News and Events</a>              
+            <a href="#toolkits">Toolkits</a>
+        </sl-drawer>
         <div class="topnav">
             <div class="navcontent">
-                <nav>
-                    <label for="burger">MENU</label>
-                    <input id="burger" type="checkbox">
-                    
+                <nav>                    
                     <a href="#home">Home</a>
                     <a href="#keyarts">Key Arts</a>
                     <a href="#userscreations">Users' Creations</a>
                     <a href="#newsnevents">News and Events</a>              
                     <a href="#toolkits">Toolkits</a>
+
+                    <sl-icon-button name="list" id="burger" label="navigation bar hamburger button" />
                 </nav>
             </div>
                         

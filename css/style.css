@@ -101,8 +101,21 @@ header {
 /* ==========NAVIGATION============= */
 /* Sticky Navigation Bar by Tutorial Republic
 https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-f-using-css.php*/
-label, #burger {
+#burger {
     display: none; 
+    float: right;
+    margin-right: 2%;
+}
+
+#drawerNav::part(base){
+    --size: 70vw; 
+}
+
+#drawerNav::part(body) {
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    --body-spacing: 5%;  
 }
   
  
@@ -771,8 +784,12 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         .navcontent {
-            width: 80vw;
-            margin: 0 10vw;
+            width: 90vw;
+            margin: 0 5vw;
+        }
+
+        #burger {
+            display: block;
         }
 
         #intro .frame {
@@ -848,6 +865,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
 
         .topnav{
             padding-top: 1%;
+        }
+
+        #burger {
+            display: block;
         }
 
         .CSSgal .prevNext a {
