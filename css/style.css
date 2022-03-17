@@ -105,6 +105,7 @@ https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-f-using-css.p
     display: none; 
     float: right;
     margin-right: 2%;
+    font-size: 1.25rem;
 }
 
 #drawerNav::part(base){
@@ -114,20 +115,13 @@ https://www.tutorialrepublic.com/faq/how-to-create-fixed-header-or-f-using-css.p
 #drawerNav::part(body) {
     display: flex;
     flex-direction: column; 
-    text-align: center;
-    --body-spacing: 5%;  
-}
-  
- 
-label {
-    display: block; 
-    padding: 10px;
+    --body-spacing: 5% 15%;  
 }
 
-  
-nav input:checked ~ a { 
-    display: block;
+#drawerNav::part(body) a {
+    margin-bottom: 2%;
 }
+
 
 .topnav  {    
     position: sticky; 
@@ -137,30 +131,27 @@ nav input:checked ~ a {
     background-color:#fbd88f;
 }
 .navcontent {
-    width: 60vw;
-    margin: 0 20vw;
-    padding: 0vw;
+    padding: 0 11.95vw;
     top: 0;
 }
-nav {
-    background-color: #fbd88f;
-}
-/*Button for Website Navigation*/
-nav a {
- display: inline-block;
- text-align: center;
- padding: 1% 4%;
- text-decoration: none;   
+
+#navcontentPC{
+    display: flex;
+    flex-direction: row;
 }
 
-nav a:hover{
+/*Button for Website Navigation*/
+
+.navcontent sl-button-group sl-button::part(base), #drawerNav::part(body), #drawerNav::part(header){
+    background-color: #fbd88f;
+    font-weight: bold;
+}
+
+.navcontent sl-button-group sl-button::part(base):hover, #drawerNav a:hover{
     background-color: #FDB7B3;
     color: black;
 }
 
-a:hover {
-    color: #688FB3;
-}
 /* ==========MAIN BODY CONTENT============= */
 .content {
     width: 100vw;
@@ -736,8 +727,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         .navcontent {
-            width: 70vw;
-            margin: 0 15vw;
+            padding: 0 15vw;
         }
 
 
@@ -784,8 +774,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         .navcontent {
-            width: 90vw;
-            margin: 0 5vw;
+            padding: 0 5vw;
         }
 
         #burger {
@@ -863,14 +852,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             padding-left: 0.5%;
         }
 
-        .topnav{
-            padding-top: 1%;
-        }
-
-        #burger {
-            display: block;
-        }
-
         .CSSgal .prevNext a {
             width:       60px;
             height:      60px;
@@ -883,8 +864,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             line-height: 30px;
         }
         .navcontent {
-            width: 90vw;
-            margin: 0 5vw;
+            padding: 0 0 0 11.95vw;
         }
 
         nav a {
@@ -977,11 +957,6 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             transform: translate(-5%, -55%);
         }
 
-        .navcontent {
-            width: 70vw;
-            margin: 0 15vw;
-        }
-
         #keyartsPromo .info {
             height: 900px;
             max-height: initial;
@@ -989,13 +964,10 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         
     }
 
-    @media only screen and (max-width: 883px) {
+    @media only screen and (max-width: 834px) {
         .navcontent {
-            width: 80vw;
-            margin: 0 10vw;
+            padding: 0 0 0 8vw;
         }
-
-        
     }
 
     @media only screen and (max-width: 820px) {
@@ -1150,10 +1122,8 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         .navcontent {
-            width: 90vw;
-            margin: 0 5vw;
+            padding: 0 0 0 7vw;
         }
-
 
         .writeup {
             position: relative;
@@ -1184,6 +1154,9 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             line-height: 25px;
         }
 
+        #home .segment article.mainblock {
+            margin: -10% 2.5% 1.25%;
+        }
 
     }
 
@@ -1238,7 +1211,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
     @media only screen and (max-width: 616px) { 
         .navcontent {
             width: 100vw;
-            margin: 0;
+            padding: 0;
         }
 
         .paragraph{
@@ -1286,13 +1259,25 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
             font-size: 1.25rem;
         }
 
+        #welcomeMsg h5 {
+            margin-top: 0;
+        }
+
         .CSSgal .slider h3, .CSSgal .slider h2{
             font-size: 2rem;
             margin-top: 0;
         }
 
         #home .segment article.mainblock {
-            margin: 3.5% 2.5% 1.25%;
+            margin: 3.5% 0 1.25% 2.5%;
+        }
+
+        #burger {
+            margin-right: 0;
+        }
+
+        #navcontentPC {
+            display: none;
         }
 
         .promopic {
@@ -1312,7 +1297,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         #intro .frame {
-            margin-bottom: -20%;
+            margin-bottom: 2%;
         }
 
         .frame, .frameImg, .userHighlight{
@@ -1364,7 +1349,7 @@ https://www.w3schools.com/howto/howto_css_mixed_columns.asp
         }
 
         .museum {
-            margin: 0 0.5%;
+            margin: 0 ;
         }
 
         #keyartsPromo .info {

@@ -26,5 +26,10 @@ $('a[href*="#"]')// Remove links that don't actually link to anything
         }
     }
 });
+// Navigation bar drawer opening:
+const navDrawer = document.querySelector("#drawerNav");
+const navBtn = document.querySelector("#burger");
+navBtn.addEventListener('click', ()=>navDrawer.show()
+);
 
 //# sourceMappingURL=index.42ab764f.js.map
